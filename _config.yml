@@ -11,6 +11,7 @@ logo: false
 paginate: 15
 baseurl: /
 #domain_name: 'http://rogership.github.io'
+about: about.md
 google_analytics: 'UA-xx-xx-xx-xx'
 gems: [jekyll-paginate]
 
