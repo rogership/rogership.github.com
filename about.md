@@ -1,15 +1,21 @@
 ---
 layout: page
-title: About me
+title: Sobre
 ---
 
-The volcano in the main page is the place where I grew up. Now I live in London.
+Graduando em Engenharia de Redes de Comunicação pela <a href="http://unb.br">UnB</a> e
+Analista de Redes na empresa <a href="http://reitec.net.br"> Reitec</a>
 
-I'm a freelance software developer working as a <a href="http://cirneco.digital/clojure-consultants-london">Clojure consultant in London</a> and teaching at <a href="http://coderwave.com">Coderwave</a>.
+Tenho as certificações
 
-I develop and maintain <a href="http://roundabout.io">Roundabout.io - London Startup Map</a>.
+- CCNA
+- MTCRE
+- MTCINE
+- MTCIPv6E
 
 
 
-I'm [@_sarhus](http://twitter.com/_sarhus) on Twitter, and you can reach me
-at [rosario@roundabout.io](mailto:rosario@roundbout.io).
+
+
+Twitter: [@rogership_](http://twitter.com/rogership_)
+at [roger.ribeiro6@gmail.com](mailto:roger.ribeiro6@gmail.com).
