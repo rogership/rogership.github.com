@@ -3,11 +3,10 @@ layout: page
 title: Sobre
 ---
 
-Graduando em Engenharia de Redes de Comunicação pela <a href="http://unb.br">**UnB**</a> e
-Analista de Redes na empresa <a href="http://reitec.net.br"> **Reitec**</a>
+- Graduando em Engenharia de Redes de Comunicação pela <a href="http://unb.br">**UnB**</a>
+- Analista de Redes na empresa <a href="http://reitec.net.br"> **Reitec**</a>
 
-
-Tenho as certificações
+Certificados
 - CCNA - Routing & Switching
 - MTCRE
 - MTCINE
