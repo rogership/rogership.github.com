@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Filtro de LSAs"
-categories: [OSPF, IGP, redes]
+title: "OSPF - Filtro de LSAs"
+categories: [OSPF, IGP, Redes]
 ---
 
 ## Porquê filtrar pacotes LSAs? ##
