@@ -75,9 +75,9 @@ Vamos ver a tabela de vizinhança
 
 WTF, full?
 
-![shaqille](https://gph.is/2dnGSbp)
+![shaqille](/images/shaqille.gif)
 
-###Pode isso produção?###
+### Pode isso produção? ###
 
 Fiz um laboratório bem complexo para descobrir isso
 
