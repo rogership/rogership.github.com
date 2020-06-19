@@ -19,7 +19,7 @@ Um colega de trabalho chamado Bruno passou por esse troubleshoot e isso me motiv
 
 ## WTF do I need to know? ##
 
-###Hello Subprotocol###
+### Hello Subprotocol ###
 O *Hello Subprotocol* do OSPF é um dos processos que compõe a operação do OSPF, Database syncronization e Djkistra SPF Algorithm são os outros 'processos' necessários para OSPF operar completamente.
 
 O OSPF é um IGP distribuído, isto é todos os nós participantes agem de alguma forma para o protocolo funcionar, então é necessário que os nós participantes do protocolo se conheçam, troquem informações entre si sobre suas interfaces e redes, saiba como operar com incidentes,e calcular o menor caminho através do algoritmo de busca em grafos, que no caso do OSPF, o algoritmo de DIJKSTRA é usado e categorizado como um algoritmo SHORTEST PATH FIRST.
@@ -68,6 +68,14 @@ mas também diz
 ```
 
 Daí já pode-se concluir que **ACABOU, GG, EZ**
+
+Vamos ver a tabela de vizinhança
+
+
+
+WTF, full?
+
+![shaqille](https://gph.is/2dnGSbp)
 
 ###Pode isso produção?###
 
