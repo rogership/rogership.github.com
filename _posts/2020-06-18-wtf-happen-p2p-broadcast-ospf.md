@@ -33,9 +33,9 @@ Para fechar vizinhança os seguintes campos precisam ser iguais:
 
 - Area - Ambas interfaces deve esta na mesma area
 
-- Hello HelloInterval
+- HelloInterval
 
-- Router dead HelloInterval
+- RouterdeadInterval
 
 - Network Mask
 
@@ -48,7 +48,7 @@ Obs: O campo Área faz parte do OSPF Packet Header e está no header acima do He
 
 Por tanto vamos analisar,
 
-A [RFC 2328](https://tools.ietf.org/html/rfc2328#page-96) fala assim
+A [RFC 2328](https://tools.ietf.org/html/rfc2328#page-96) especifica que no recebimento de um Hello Packet o Router deve,
 
 ```
 "...Next, the values of the Network Mask, HelloInterval,
@@ -56,9 +56,9 @@ A [RFC 2328](https://tools.ietf.org/html/rfc2328#page-96) fala assim
         be checked against the values configured for the receiving
         interface.  Any mismatch causes processing to stop and the
         packet to be dropped"
-```
 
-mas também diz
+```
+Ou seja, cada router verifica a Network Mask, HelloInterval, RouterDeadInterval configurado na sua interface com os campos recebidos no Hello Packet do vizinho
 
 ```
 "However,
@@ -69,20 +69,24 @@ mas também diz
 
 Daí já pode-se concluir que **ACABOU, GG, EZ**
 
-Vamos ver a tabela de vizinhança
+A interface p2p não check o campo Network Mask então nem fecha vizinhança
 
 
-
-WTF, full?
-
-![shaqille](/images/shaqille.gif)
-
-### Pode isso produção? ###
+### Pode isso produção ###
 
 Fiz um laboratório bem complexo para descobrir isso
 
 
+![Topologia](/images/topologia1.png)
 
-## Da topologia da rede ##
 
-![Topologia](images/topologia-ospf-filtro-lsa.jpeg)
+
+Vamos ver a tabela de vizinhança
+
+```
+
+```
+
+WTF, full?
+
+![shaqille](https://media.giphy.com/media/go3X4svFhKdzi/giphy.gif)
