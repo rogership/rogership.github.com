@@ -19,36 +19,38 @@ Um colega de trabalho chamado Bruno passou por esse troubleshoot e isso me motiv
 
 ## WTF do I need to know? ##
 
-### Hello Subprotocol ###
-O *Hello Subprotocol* do OSPF é um dos processos que compõe a operação do OSPF, Database syncronization e Djkistra SPF Algorithm são os outros 'processos' necessários para OSPF operar completamente.
-
-O OSPF é um IGP distribuído, isto é todos os nós participantes agem de alguma forma para o protocolo funcionar, então é necessário que os nós participantes do protocolo se conheçam, troquem informações entre si sobre suas interfaces e redes, saiba como operar com incidentes,e calcular o menor caminho através do algoritmo de busca em grafos, que no caso do OSPF, o algoritmo de DIJKSTRA é usado e categorizado como um algoritmo SHORTEST PATH FIRST.
+O OSPF é um IGP distribuído, isto é, todos os nós participantes agem em conjunto para o protocolo funcionar, portanto, é necessário que os nós participantes do protocolo se conheçam, troquem informações entre si sobre suas interfaces e redes, saiba como operar com incidentes e finalmente calcular o menor caminho através do algoritmo de busca em grafos, que no caso do OSPF, é usado um algoritmo categorizado como **SHORTEST PATH FIRST**, vem daí o nome do protocolo.
 
 Há outros algorimtos de busca em grafos, [CORMEN] é uma boa referência para tais algoritmos.
 
 
-A vizinhaça é feita apenas com o uso do OSPF Hello packet, type 1 entre os 5 OSPF packets.
+### Hello Subprotocol ###
 
-Para fechar vizinhança os seguintes campos precisam ser iguais:
+O *Hello Subprotocol* do OSPF é um dos processos que compõe a operação do OSPF.
+ Database syncronization e Djkistra SPF Algorithm são os outros 'processos' necessários para OSPF operar completamente.
 
-- Area - Ambas interfaces deve esta na mesma area
+A vizinhaça é feita apenas com o uso do OSPF Hello Packet entre os 5 outros pacotes que existem.
 
-- HelloInterval
+A RFC especifica que para fechar vizinhança os seguintes campos precisam ser iguais:
 
-- RouterdeadInterval
+- Área - Ambas interfaces deve esta na mesma área
 
-- Network Mask
+- HelloInterval -
 
-- Options
+- RouterdeadInterval - [John T Moy] explica muito bem as consequências de não ter RouterDeadInterval e HelloInterval iguais entre os vizinhos.
+
+- Network Mask - Ding Ding Ding
+
+- Options - As capacidades dos routers determinam se eles devem fechar vizinhança ou não. Felizmente pra esse post o campo Options não tem referência com o tipo de rede da interface.
 
 A imagem 1 mostra o formato do OSPF type 1 packet
-Obs: O campo Área faz parte do OSPF Packet Header e está no header acima do Hello OSPF Packet
+Obs: O campo Área faz parte do OSPF Packet Header e está no OSPF Packet Header comum a todos os pacotes OSPF.
 
 ![OSPF HELLO PACKET](/images/ospf-hello-packet.png)
 
-Por tanto vamos analisar,
+Beleza, já temos o que precisamos, vamos ver o comportamento do protocolo.
 
-A [RFC 2328](https://tools.ietf.org/html/rfc2328#page-96) especifica que no recebimento de um Hello Packet o Router deve,
+O recebimento de um pacote Hello é especificada seção [RFC 2328](https://tools.ietf.org/html/rfc2328#page-96) e diz,
 
 ```
 "...Next, the values of the Network Mask, HelloInterval,
@@ -58,7 +60,10 @@ A [RFC 2328](https://tools.ietf.org/html/rfc2328#page-96) especifica que no rece
         packet to be dropped"
 
 ```
-Ou seja, cada router verifica a Network Mask, HelloInterval, RouterDeadInterval configurado na sua interface com os campos recebidos no Hello Packet do vizinho
+
+Não sendo igual os valores nos campos mencionados, o processo de vizinhança é interrompido e o pacote descartado.
+
+Mas também diz,
 
 ```
 "However,
@@ -67,12 +72,22 @@ Ou seja, cada router verifica a Network Mask, HelloInterval, RouterDeadInterval 
         Hello Packet should be ignored."
 ```
 
-Daí já pode-se concluir que **ACABOU, GG, EZ**
+Ou seja, para redes point-to-point e virtual links os valores do campo *Network Mask*
+devem ser ignorados ao serem recebidos em um Hello OSPF Packet.
 
-A interface p2p não check o campo Network Mask então nem fecha vizinhança
+Para envio de Hello Packets a [RFC 2328](https://tools.ietf.org/html/rfc2328#page-130) diz
+
+```
+"The Hello packet also contains the IP address
+        mask of the attached network (Network Mask).  On unnumbered
+        point-to-point networks and on virtual links this field should
+        be set to 0.0.0.0."
+```
+Como assim unnumbered?
 
 
-### Pode isso produção ###
+
+### Pode isso produção ?###
 
 Fiz um laboratório bem complexo para descobrir isso
 
