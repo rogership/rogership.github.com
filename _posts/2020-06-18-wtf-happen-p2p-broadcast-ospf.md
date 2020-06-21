@@ -86,7 +86,7 @@ Como assim unnumbered?
 Na real é simples, point-to-point networks são redes no qual há somente dois participantes, todo pacote que sai de uma interface point-to-point sempre terá somente um destino, não há necessidade de identificação alguma (IP) para envio de pacotes em redes point-to-point.
 
 
-### Pode isso produção ?###
+### Pode isso produção? ###
 
 Fiz um laboratório bem complexo para descobrir isso
 
