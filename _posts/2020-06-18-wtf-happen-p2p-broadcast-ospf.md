@@ -187,8 +187,7 @@ Gateway of last resort is not set
 R2#
 
 ```
-**!!!**
-
+**Nenhuma rota é aprendida !!!**
 ![Vish](https://media.giphy.com/media/SDogLD4FOZMM8/giphy.gif)
 
 
