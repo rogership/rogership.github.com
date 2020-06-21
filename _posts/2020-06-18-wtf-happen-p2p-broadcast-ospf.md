@@ -90,7 +90,7 @@ Na real é simples, point-to-point networks são redes no qual há somente dois 
 
 **Fiz um laboratório bem complexo para descobrir isso**
 
-{% include image.html file="/images/topologia1.png" description="O funcionamento normal do protocolo especifica é o aprendizado das redes entre os roteadores."}
+{% include image.html file="/images/topologia1.png" description="O funcionamento normal do protocolo especifica é o aprendizado das redes entre os roteadores." %}
 
 **Configuração R1 - (point-to-point)**
 
@@ -147,7 +147,7 @@ Além de terem sido eleitos o DR e BDR no estado exstart, a adjacência foi form
 
 **P2P e BROADCAST fecham adjacência???**
 
-**![WTF](https://media.giphy.com/media/ukGm72ZLZvYfS/giphy.gif)**
+![WTF](https://media.giphy.com/media/ukGm72ZLZvYfS/giphy.gif)
 
 **Vamos ver a tabela de rotas**
 
