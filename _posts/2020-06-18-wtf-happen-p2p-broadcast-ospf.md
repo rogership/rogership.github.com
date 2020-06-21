@@ -88,10 +88,9 @@ Na real é simples, point-to-point networks são redes no qual há somente dois 
 
 ### Pode isso produção? ###
 
-Fiz um laboratório bem complexo para descobrir isso
+**Fiz um laboratório bem complexo para descobrir isso**
 
-<% include image.html file="/images/topologia1.png" description="O funcionamento normal do protocolo especifica é o aprendizado das redes entre os roteadores.">
-
+{include image.html file="/images/topologia1.png" description="O funcionamento normal do protocolo especifica é o aprendizado das redes entre os roteadores."}
 
 **Configuração R1 - (point-to-point)**
 
@@ -121,7 +120,7 @@ interface Ethernet0/1
 
 ```
 
-Vamos ver a tabela de vizinhança de R1
+**Vamos ver a tabela de vizinhança de R1**
 
 ```
   R1(config-router)#do show ip ospf nei
@@ -131,11 +130,11 @@ Vamos ver a tabela de vizinhança de R1
 
 ```
 
-HOHOHOHO, full?
+**HOHOHOHO, full?**
 
 ![shaqille](https://media.giphy.com/media/go3X4svFhKdzi/giphy.gif)
 
-e a de R2?
+**e a de R2?**
 
 ```
   R2(config)#do show ip ospf nei
@@ -146,11 +145,11 @@ e a de R2?
 ```
 Além de terem sido eleitos o DR e BDR no estado exstart, a adjacência foi formada pelo processo de sincronização da database, isto é ambos os Routers tem a mesma tabela [Database Summary List](https://tools.ietf.org/html/rfc2328#section-10)
 
-**P2P** e **BROADCAST**
+**P2P e BROADCAST fecham adjacência???**
 
 **![WTF](https://media.giphy.com/media/ukGm72ZLZvYfS/giphy.gif)**
 
-Vamos ver a tabela de rotas
+**Vamos ver a tabela de rotas**
 
 **R1#**
 ```
@@ -187,5 +186,9 @@ Gateway of last resort is not set
 R2#
 
 ```
+**!!!**
 
-![Smart](https://media.giphy.com/media/d3mlE7uhX8KFgEmY/giphy.gif)
+![Vish](https://media.giphy.com/media/Um3ljJl8jrnHy/giphy.gif)
+
+
+**E agora??**
