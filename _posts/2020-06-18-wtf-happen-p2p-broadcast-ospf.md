@@ -41,12 +41,12 @@ A RFC especifica que para fechar vizinhança os seguintes campos precisam ser ig
 A imagem 1 mostra o formato do OSPF type 1 packet
 Obs: O campo Área faz parte do OSPF Packet Header e está no OSPF Packet Header comum a todos os pacotes OSPF.
 
-<img src="/images/ospf-hello-packet.png" alt="Ospf Hello Packet">  
-<span class="caption">OSPF HELLO PACKET - É acrescentado ao pacote o RID de cada vizinho no qual o Hello Packet foi recebido, portanto é adcionado 4 bytes ao Header do OSPF.</span>
+![OSPF HELLO PACKET](/images/ospf-hello-packet.png)
+<small> "OSPF HELLO PACKET - É acrescentado ao pacote o RID de cada vizinho no qual o Hello Packet foi recebido, portanto é adcionado 4 bytes ao Header do OSPF."</small>
 
-Beleza, já temos o que precisamos, vamos ver o comportamento do protocolo.
+**Beleza, já temos o que precisamos, vamos ver o comportamento do protocolo.**
 
-O recebimento de um pacote Hello é especificada seção [RFC 2328](https://tools.ietf.org/html/rfc2328#page-96) e diz que...
+**O recebimento de um pacote Hello é especificada seção [RFC 2328](https://tools.ietf.org/html/rfc2328#page-96) e diz que...**
 
 
 ```
@@ -73,7 +73,7 @@ O recebimento de um pacote Hello é especificada seção [RFC 2328](https://tool
 Porém, para redes point-to-point e virtual links os valores do campo *Network Mask*
 devem ser ignorados ao serem recebidos em um Hello OSPF Packet.
 
-Para envio de Hello Packets a [RFC 2328](https://tools.ietf.org/html/rfc2328#page-130) diz
+**Para envio de Hello Packets a [RFC 2328](https://tools.ietf.org/html/rfc2328#page-130) diz**
 
 ```
 "The Hello packet also contains the IP address
@@ -81,7 +81,7 @@ Para envio de Hello Packets a [RFC 2328](https://tools.ietf.org/html/rfc2328#pag
         point-to-point networks and on virtual links this field should
         be set to 0.0.0.0."
 ```
-Como assim unnumbered?
+**Como assim unnumbered?**
 
 Na real é simples, point-to-point networks são redes no qual há somente dois participantes, todo pacote que sai de uma interface point-to-point sempre terá somente um destino, não há necessidade de identificação alguma (IP) para envio de pacotes em redes point-to-point.
 
@@ -91,8 +91,7 @@ Na real é simples, point-to-point networks são redes no qual há somente dois 
 **Fiz um laboratório bem complexo para descobrir isso**
 
 ![Topologia](/images/topologia1.png)
-
-{% include image.html file="/images/topologia1.png" description="O funcionamento normal do protocolo determina que as rotas 172.16.10.0/24 e 172.16.20.0/24 serão aprendidas via OSPF entre R1 e R2" %}
+<small> *O funcionamento normal do protocolo determina que as rotas 172.16.10.0/24 e 172.16.20.0/24 serão aprendidas via OSPF entre R1 e R2* </small>
 
 **Configuração R1 - (point-to-point)**
 
