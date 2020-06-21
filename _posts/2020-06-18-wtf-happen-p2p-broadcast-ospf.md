@@ -90,10 +90,8 @@ Na real é simples, point-to-point networks são redes no qual há somente dois 
 
 Fiz um laboratório bem complexo para descobrir isso
 
-<img src="/images/topologia1.png" alt="Topologia em laboratório">  
-<span class="caption"> O comportamento normal do OSPF é que ao final do processo R1 tenha em sua tabela de rota a rede 172.16.20.0/24 e R2 a rede 172.16.10.0/24 </span>
+<% include image.html file="/images/topologia1.png" description="O funcionamento normal do protocolo especifica é o aprendizado das redes entre os roteadores.">
 
-![Topologia](/images/topologia1.png)
 
 **Configuração R1 - (point-to-point)**
 
@@ -123,12 +121,71 @@ interface Ethernet0/1
 
 ```
 
-Vamos ver a tabela de vizinhança
+Vamos ver a tabela de vizinhança de R1
+
+```
+  R1(config-router)#do show ip ospf nei
+
+  Neighbor ID     Pri   State           Dead Time   Address         Interface
+  2.2.2.2           0   FULL/  -        00:00:31    192.168.0.2     Ethernet0/0
 
 ```
 
-```
-
-WTF, full?
+HOHOHOHO, full?
 
 ![shaqille](https://media.giphy.com/media/go3X4svFhKdzi/giphy.gif)
+
+e a de R2?
+
+```
+  R2(config)#do show ip ospf nei
+
+  Neighbor ID     Pri   State           Dead Time   Address         Interface
+  1.1.1.1           1   FULL/BDR        00:00:34    192.168.0.1     Ethernet0/0
+
+```
+Além de terem sido eleitos o DR e BDR no estado exstart, a adjacência foi formada pelo processo de sincronização da database, isto é ambos os Routers tem a mesma tabela [Database Summary List](https://tools.ietf.org/html/rfc2328#section-10)
+
+**P2P** e **BROADCAST**
+
+**![WTF](https://media.giphy.com/media/ukGm72ZLZvYfS/giphy.gif)**
+
+Vamos ver a tabela de rotas
+
+**R1#**
+```
+R1#show ip route ospf
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       a - application route
+       + - replicated route, % - next hop override
+
+Gateway of last resort is not set
+
+R1#
+```
+**R2#**
+```
+R2#show ip route ospf
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       a - application route
+       + - replicated route, % - next hop override
+
+Gateway of last resort is not set
+
+R2#
+
+```
+
+![Smart](https://media.giphy.com/media/d3mlE7uhX8KFgEmY/giphy.gif)
