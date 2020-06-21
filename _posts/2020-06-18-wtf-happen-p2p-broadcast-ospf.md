@@ -188,7 +188,7 @@ R2#
 ```
 **!!!**
 
-![Vish](https://media.giphy.com/media/Um3ljJl8jrnHy/giphy.gif)
+![Vish](https://media.giphy.com/media/V0IdVIIW1y5d6/giphy.gif)
 
 
 **E agora??**
