@@ -90,7 +90,9 @@ Na real é simples, point-to-point networks são redes no qual há somente dois 
 
 **Fiz um laboratório bem complexo para descobrir isso**
 
-{% include image.html file="/images/topologia1.png" description="O funcionamento normal do protocolo especifica é o aprendizado das redes entre os roteadores." %}
+![Topologia](/images/topologia1.png)
+
+{% include image.html file="/images/topologia1.png" description="O funcionamento normal do protocolo determina que as rotas 172.16.10.0/24 e 172.16.20.0/24 serão aprendidas via OSPF entre R1 e R2" %}
 
 **Configuração R1 - (point-to-point)**
 
