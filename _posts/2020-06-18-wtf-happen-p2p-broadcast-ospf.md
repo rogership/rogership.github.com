@@ -46,7 +46,7 @@ Obs: O campo Área faz parte do OSPF Packet Header e está no OSPF Packet Header
 
 **Beleza, já temos o que precisamos, vamos ver o comportamento do protocolo.**
 
-**O recebimento de um pacote Hello é especificada seção [RFC 2328](https://tools.ietf.org/html/rfc2328#page-96) e diz que...**
+O recebimento de um pacote Hello é especificada seção [RFC 2328](https://tools.ietf.org/html/rfc2328#page-96) e diz que...
 
 
 ```
@@ -73,7 +73,7 @@ Obs: O campo Área faz parte do OSPF Packet Header e está no OSPF Packet Header
 Porém, para redes point-to-point e virtual links os valores do campo *Network Mask*
 devem ser ignorados ao serem recebidos em um Hello OSPF Packet.
 
-**Para envio de Hello Packets a [RFC 2328](https://tools.ietf.org/html/rfc2328#page-130) diz**
+Para envio de Hello Packets a [RFC 2328](https://tools.ietf.org/html/rfc2328#page-130) diz
 
 ```
 "The Hello packet also contains the IP address
