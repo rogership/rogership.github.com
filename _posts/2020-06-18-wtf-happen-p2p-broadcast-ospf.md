@@ -1,91 +1,51 @@
 ---
 layout: post
-title: "WTF happens between P2P and BROADCAST neighbors on OSPF??"
+title: "WTF really happens quando se tenta fechar adjacência entre dois roteadores com as interaces setadas em point-to-point e o outro lado broadcast?"
 categories: [OSPF, IGP, Redes, WTF]
 ---
 
 
-Já imaginou o que realmente acontece quando se tenta formar adjacência entre 2 roteadores com *OSPF INTERFACE TYPE* point-to-point de um lado e broadcast do outro lado?
+Um brother de trabalho chegou no escritório falando -
 
-Fecha vizinhança entre os 2? E adjacência? Funciona?
+"Vei, passei a noite toda resolvendo um problema de OSPF, acabou que no final uma interface estava em point-to-point e a outra em broadcast."
 
-Bem, vamos ver...
+Aconteceu esse troubleshoot justamente enquanto eu estava estudando OSPF para prova de CCNP e eu na hora comecei a raciocinar, **WTF really happens quando se tenta fechar adjacência entre dois roteadores com as interaces setadas em point-to-point e o outro lado broadcast?**
 
-Um colega de trabalho chamado Bruno passou por esse troubleshoot e isso me motivou a escrever sobre.
+![Thinking](https://media.giphy.com/media/DfSXiR60W9MVq/giphy.gif)
+
 
 ## WTF do I need to know? ##
 
-O OSPF é um IGP distribuído, isto é, todos os nós participantes agem em conjunto para o protocolo funcionar, portanto, é necessário que os nós participantes do protocolo se conheçam, troquem informações entre si sobre suas interfaces e redes, saiba como operar com incidentes, atualizações na topologia e finalmente calcular o menor caminho através do algoritmo de busca em grafos, que no caso do OSPF, é usado algoritmo de DJIKSTRA categorizado como **SHORTEST PATH FIRST**, vem daí o nome do protocolo.
+O OSPF é um IGP *distribuído*, isto é, todos os nós participantes agem em conjunto para o protocolo funcionar, portanto, é necessário que os nós participantes do protocolo se conheçam, troquem informações entre si sobre suas interfaces e redes, saiba como operar com incidentes, atualizações na topologia e finalmente calcular o menor caminho através [DJIKSTRA SPF Algorithm]¹(link de como funciona o djkstra).
 
-> Há outros algoritmos de busca em grafos, [CORMEN]() é uma boa referência para tais algoritmos.
+Todos essas funções podem ser divididas em 3 processos para melhor entendimento do protocolo.
 
-> OSPF é encapsulado pelo pacote IP diretamente, utiliza-se o código 89 no campo Protocolo do cabeçalho IPV4 para identificação
+- **OSPF Hello Subprotocol**
 
-### Hello Subprotocol ###
+ - Descoberta de vizinhos;
+ - Assegura uma comunicação two-way (bidirecional) entre os dois vizinhos, isto é os pacotes de um; router alcançam o router vizinho e vice-versa. O OSPF é um IGP que trabalha com endereços de multicast e unicast;
+ - Keepalive - É usado um tempo para que cada router informe aos seus vizinhos que o mesmo se encontra; ativo e operante. Caso contrário é necessário reformulação da topologia;
+ - Elege o DR e BDR em redes broadcast e non-boradcast;
+ - Faz a validação se os roteadores vizinhos concordam em fechar vizinhança²;
 
-O *Hello Subprotocol* do OSPF é um dos processos que compõe a operação do OSPF.
- Database syncronization e Djkistra SPF Algorithm são os outros 'processos' necessários para o protocolo operar completamente.
+> ¹Há outros algoritmos de busca em grafos, [CORMEN]() é uma boa referência para tais algoritmos.
 
-A vizinhança é feita apenas com o uso do OSPF Hello Packet entre os [5 outros pacotes que existem](https://tools.ietf.org/html/rfc2328#appendix-A.3).
-
-A RFC especifica que para fechar vizinhança os seguintes campos precisam ser iguais:
-
-- **Área** - Ambas interfaces devem pertencer a mesma área.
-
-- **HelloInterval, RouterDeadInterval**
-
-- **Network Mask** - Ding Ding Ding
-
-- **Options** - As capacidades dos routers determinam se eles devem fechar vizinhança ou não. Felizmente pra esse post o campo Options não tem referência com o tipo de rede da interface.
-
-A imagem 1 mostra o formato do OSPF type 1 packet
-Obs: O campo Área faz parte do OSPF Packet Header e está no OSPF Packet Header comum a todos os pacotes OSPF.
-
-![OSPF HELLO PACKET](/images/ospf-hello-packet.png)
-<small> "OSPF HELLO PACKET - É acrescentado ao pacote o RID de cada vizinho no qual o Hello Packet foi recebido, portanto é adcionado 4 bytes ao Header do OSPF."</small>
-
-**Beleza, já temos o que precisamos, vamos ver o comportamento do protocolo.**
-
-O recebimento de um pacote Hello é especificada seção [RFC 2328](https://tools.ietf.org/html/rfc2328#page-96) e diz que...
+> ²Dos campos OSPF Header e OSPF Hello Header - Area, Network Mask, Options, Hello Interval e RouterDeadInterval tem que ser iguais para haver vizinhança.
 
 
-```
-"...Next, the values of the Network Mask, HelloInterval,
-        and RouterDeadInterval fields in the received Hello packet must
-        be checked against the values configured for the receiving
-        interface.  Any mismatch causes processing to stop and the
-        packet to be dropped"
+- **Database Syncronization**
+ - Utiliza os 4 Pacotes dos 5 Pacotes especificado para o protocolo OSPF. Database Descriptor Packet, Link State Request Packet, Link State Update Packet e Link State Ack;
+ - Troca de Pacotes carregando apenas o cabeçalho dos pacotes Link State informando quais LSAs cada roteador tem³;
+ - É feito um Link State Request quando um router identifica que não tem determinada LSA ou tem uma versão antiga do LSA
+ -
+ - Flooding de Pacotes Link State Update na rede através do endereço **multicast 224.0.0.5**;
+ -
 
-```
+ > ³
 
-  ...após um Router receber um Hello Packet de um vizinho são verificado os campos Network Mask, Hello Interval, RouterDeadInterval e comparados com seu próprio, se forem iguais o pacote é aceito, caso não, o pacote é descartado.
-
-
-
-```
-"However,
-        there is one exception to the above rule: on point-to-point
-        networks and on virtual links, the Network Mask in the received
-        Hello Packet should be ignored."
-```
-
-
-Porém, para redes point-to-point e virtual links os valores do campo *Network Mask*
-devem ser ignorados ao serem recebidos em um Hello OSPF Packet.
-
-Para envio de Hello Packets a [RFC 2328](https://tools.ietf.org/html/rfc2328#page-130) diz
-
-```
-"The Hello packet also contains the IP address
-        mask of the attached network (Network Mask).  On unnumbered
-        point-to-point networks and on virtual links this field should
-        be set to 0.0.0.0."
-```
-**Como assim unnumbered?**
-
-Na real é simples, point-to-point networks são redes no qual há somente dois participantes, todo pacote que sai de uma interface point-to-point sempre terá somente um destino, não há necessidade de identificação alguma (IP) para envio de pacotes em redes point-to-point.
-
-
+- **DJIKSTRA SPF Algorithm**
+ -
+ 
 ### Pode isso produção? ###
 
 **Fiz um laboratório bem complexo para descobrir isso**
@@ -146,6 +106,43 @@ interface Ethernet0/1
 ```
 Além de terem sido eleitos o DR e BDR no estado exstart, a adjacência foi formada pelo processo de sincronização da database, isto é ambos os Routers tem a mesma tabela [Database Summary List](https://tools.ietf.org/html/rfc2328#section-10)
 
+**R1**
+```
+R1#show ip ospf database
+
+            OSPF Router with ID (1.1.1.1) (Process ID 1)
+
+		Router Link States (Area 0)
+
+Link ID         ADV Router      Age         Seq#       Checksum Link count
+1.1.1.1         1.1.1.1         709         0x80000072 0x00EAD0 2
+2.2.2.2         2.2.2.2         598         0x80000072 0x00FDD3 1
+
+		Net Link States (Area 0)
+
+Link ID         ADV Router      Age         Seq#       Checksum
+192.168.0.2     2.2.2.2         598         0x8000006E 0x003914
+R1#
+```
+**R2**
+```
+R2#show ip ospf database
+
+            OSPF Router with ID (2.2.2.2) (Process ID 1)
+
+		Router Link States (Area 0)
+
+Link ID         ADV Router      Age         Seq#       Checksum Link count
+1.1.1.1         1.1.1.1         908         0x80000072 0x00EAD0 2
+2.2.2.2         2.2.2.2         795         0x80000072 0x00FDD3 1
+
+		Net Link States (Area 0)
+
+Link ID         ADV Router      Age         Seq#       Checksum
+192.168.0.2     2.2.2.2         795         0x8000006E 0x003914
+R2#
+
+```
 **P2P e BROADCAST fecham adjacência???**
 
 ![WTF](https://media.giphy.com/media/ukGm72ZLZvYfS/giphy.gif)
@@ -187,8 +184,15 @@ Gateway of last resort is not set
 R2#
 
 ```
-**Nenhuma rota é aprendida !!!**
+
 ![Vish](https://media.giphy.com/media/SDogLD4FOZMM8/giphy.gif)
 
 
 **E agora??**
+
+### Captura de pacotes ###
+
+![Captura](/images/captura-topologia1.png)
+<small> Captura de pacotes de todo o processo OSPF.</small>
+
+Vamos analisar o processo de database syncronization e troca de LSAs.
