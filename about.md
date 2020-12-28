@@ -1,16 +1,12 @@
 ---
 layout: page
-title: Sobre
+title: Referências
 ---
 
-- Graduando em Engenharia de Redes de Comunicação pela <a href="http://unb.br">**UnB**</a>
-- Analista de Redes na empresa <a href="http://reitec.net.br"> **Reitec**</a>
+- Vou citar aqui as referências que eu tive contato e que considero boas para aprendizado de redes e seus protocolos.
+- Vai haver atualização períodica de acordo com os documentos que entram no meu repertório
 
-Certificados
-- CCNA - Routing & Switching
-- MTCRE
-- MTCINE
-- MTCIPv6E
+
 
 
 
