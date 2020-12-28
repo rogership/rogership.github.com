@@ -7,24 +7,24 @@ title: Referências
 
 [1] J. F. Kurose e K. W. Ross, Computer networking: a top-down approach,
 Seventh edition, Global edition. Boston Columbus Indianapolis Amsterdam
-Cape Town: Pearson Education, 2017.
+Cape Town: Pearson Education, 2017.<br/>
 [2] L. L. Peterson e B. S. Davie, Computer networks: a systems approach, 5th
-ed. Amsterdam ; Boston: Morgan Kaufmann, 2012.
+ed. Amsterdam ; Boston: Morgan Kaufmann, 2012.<br/>
 [3] W. Stallings, Data and computer communications, Tenth edition. Boston:
-Pearson, 2014.
+Pearson, 2014.<br/>
 [4] B. A. Forouzan, Data communications and networking, 5th ed. New York,
-NY: McGraw-Hill, 2013.
-[5] D. Comer, Internetworking with TCP/IP. 2014.
+NY: McGraw-Hill, 2013.<br/>
+[5] D. Comer, Internetworking with TCP/IP. 2014.<br/>
 [6] P. Southwick, Juniper Networks warrior. Sebastopol, CA: O’Reilly Media,
-Inc, 2012.
+Inc, 2012.<br/>
 [7] G. A. Donahue, Network warrior, 2nd. ed. Sebastopol, Calif: O’Reilly,
-2011.
+2011.<br/>
 [8] K. R. Fall e W. R. Stevens, TCP/IP illustrated, 2nd ed. Upper Saddle River,
-NJ: Addison-Wesley, 2012.
+NJ: Addison-Wesley, 2012.<br/>
 [9] W. Goralski, The illustrated network: how TCP/IP works in a modern
 network. Amsterdam ; Boston: Elsevier/Morgan Kaufmann Publishers,
-2009.
-[10] C. M. Kozierok, The TCP/IP Guide. 2005.
+2009.<br/>
+[10] C. M. Kozierok, The TCP/IP Guide. 2005.<br/>
 
 
 
