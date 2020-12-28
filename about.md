@@ -8,6 +8,8 @@ São boas referências para aprendizado dos protocolos de redes e aconselho a da
 
 Também vou atualizar a lista de acordo com os livros e documentos que vou encontrando no caminho.
 
+Teste de mudança do git
+
 # Referências 
 
 __[1]__ J. F. Kurose e K. W. Ross, Computer networking: a top-down approach,
