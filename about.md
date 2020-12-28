@@ -3,8 +3,7 @@ layout: page
 title: Referências
 ---
 
-- Vou citar aqui as referências que eu tive contato e que considero boas para aprendizado de redes e seus protocolos.
-- Vai haver atualização períodica de acordo com os documentos que entram no meu repertório
+- Vou citar aqui as referências que eu tive contato e que considero boas para aprendizado dos protocolos de redes. Também vou atualizar a lista de acordo com os livros e documentos que vou encontrando no caminho.
 
 
 
