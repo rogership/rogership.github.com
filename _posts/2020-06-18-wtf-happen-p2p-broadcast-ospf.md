@@ -50,7 +50,7 @@ Todos essas funções podem ser divididas em 3 processos para melhor entendiment
 
 **Fiz um laboratório bem complexo para descobrir isso**
 
-![Topologia](../images/topologia1.png)
+![Topologia](/images/topologia1.png)
 <small> *O funcionamento normal do protocolo determina que as rotas 172.16.10.0/24 e 172.16.20.0/24 serão aprendidas via OSPF entre R1 e R2* </small>
 
 **Configuração R1 - (point-to-point)**
