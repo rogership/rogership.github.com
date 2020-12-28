@@ -1,9 +1,14 @@
 ---
 layout: page
-title: Referências
+title: About
 ---
 
-- Vou citar aqui as referências que eu tive contato e que considero boas para aprendizado dos protocolos de redes. Também vou atualizar a lista de acordo com os livros e documentos que vou encontrando no caminho.
+Melhor que falar sobre mim, vou citar aqui as referências que eu li ou tenho interesse em ler.
+São boas referências para aprendizado dos protocolos de redes e aconselho a darem uma olhada. 
+
+Também vou atualizar a lista de acordo com os livros e documentos que vou encontrando no caminho.
+
+# Referências 
 
 __[1]__ J. F. Kurose e K. W. Ross, Computer networking: a top-down approach,
 Seventh edition, Global edition. Boston Columbus Indianapolis Amsterdam
