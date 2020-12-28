@@ -12,4 +12,4 @@ Porém implementações de projetos envolve inúmeros fatores e acabei tratando 
 
 ## Da topologia da rede ##
 
-![Topologia](images/topologia-ospf-filtro-lsa.jpeg)
+![OSPF-PACKET](images/ospf-packet.png)
