@@ -22,7 +22,7 @@ O OSPF é um IGP *distribuído*, isto é, todos os nós participantes agem em co
 
 > ¹Há outros algoritmos de busca em grafos, [CORMEN]() é uma boa referência para tais algoritmos.
 
-Como todo o protocolo funciona pode ser dividido em 3 processos para melhor entendimento do protocolo.
+O OSPF pode ser dividido em 3 processos
 
 [Diagrama com os 3 processos](imagem-diagrama.png)
 
@@ -62,12 +62,12 @@ Fiz um laboratório bem complexo/s para descobrir isso
 **Configuração R1 - (point-to-point)**
 
 ```config r1
-R1(config-router)#do show run | sec interface
-interface Loopback0
- ip address 1.1.1.1 255.255.255.255
-interface Ethernet0/0
- ip address 192.168.0.1 255.255.255.0
- ip ospf network point-to-point
+  R1(config-router)#do show run | sec interface
+  interface Loopback0
+   ip address 1.1.1.1 255.255.255.255
+  interface Ethernet0/0
+   ip address 192.168.0.1 255.255.255.0
+   ip ospf network point-to-point
 ```
 
 **Configuração R2 (broadcast)**
@@ -84,10 +84,8 @@ interface Ethernet0/0
 
 ```neighbor r1
   R1(config-router)#do show ip ospf nei
-
   Neighbor ID     Pri   State           Dead Time   Address         Interface
   2.2.2.2           0   FULL/  -        00:00:31    192.168.0.2     Ethernet0/0
-
 ```
 
 **HOHOHOHO, full?**
