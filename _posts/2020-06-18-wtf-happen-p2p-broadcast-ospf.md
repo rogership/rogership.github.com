@@ -10,6 +10,7 @@ categories: [OSPF, IGP, Redes, WTF]
   - [3.2 - P2P e BROADCAST fecham adjacência???](#32---p2p-e-broadcast-fecham-adjacência)
 - [4 - The Fucking LSA](#4---the-fucking-lsa)
   - [4.1 - The Router LSA](#41---the-router-lsa)
+  - [4.2 - Network-LSA](#42---network-lsa)
 - [5 - WTF os routers se anunciam então?](#5---wtf-os-routers-se-anunciam-então)
     - [5.1 - Captura de pacotes e Interpetação ###](#51---captura-de-pacotes-e-interpetação-)
 
@@ -189,11 +190,11 @@ O **LSA** aka **Link State Advertisement** é a menor unidade de informação da
 
 Todo **LSA** possui um cabeçalho no qual indica parâmetros importantes para distinguir entre outros LSAs geradas pelo próprio roteador e também para distinguir LSAs geradas dos outros roteadores.
 
-![LSA OSPF Header](../images/wtf-really-happens/lsa-header.png)
+![LSA OSPF Header](/images/wtf-really-happens/lsa-header.png)
 <small> O header tem função de identificar cada instância de LSA emitida, Sequence Number, originador do LSA e a quanto tempo esse LSA existe dentro do domínio.
 O campo ***Link State ID*** difere para cada ***TYPE*** de LSA, a [RFC 2328](rfc)  define 11 tipos de LSAs </small>
 
-![LSAs definidios](../images/wtf-really-happens/lsa-types.png)
+![LSAs definidios](/images/wtf-really-happens/lsa-types.png)
 
 ## 4.1 - The Router LSA ##
 
@@ -204,7 +205,7 @@ Isto é, as informações da rede 192.168.0.0/30 estão contidas neste LSA.
 
 O formato do Router LSA está na figurax, lembrar que todo LSA possui Header.
 
-![Router LSA](../images/wtf-really-happens/router-lsa.png)
+![Router LSA](/images/wtf-really-happens/router-lsa.png)
 <small>Router Link State Advertisement </small>
 
 Vou falar apenas dos campos ***Link type, Link ID e Link Data***, os campos ***Link ID*** e ***Link Data*** diferem de acordo com o Link Type, a **tabela 1**  descreve os valores de cada um.
@@ -221,6 +222,9 @@ Vou falar apenas dos campos ***Link type, Link ID e Link Data***, os campos ***L
 |**4 - virtual-link**|Router-ID do vizinho| MiB Index da interface
 
 > Obs: Uma rede **stub** é uma rede no qual não há nenhum outro roteador conectado
+
+## 4.2 - Network-LSA
+
 
 # 5 - WTF os routers se anunciam então? #
 
@@ -259,41 +263,49 @@ Observe aqui o campo ***Sequence Number*** do LSA Header, esse campo difere LSAs
 		Router Link States (Area 0)
 
     Link ID         ADV Router      Age         Seq#       Checksum Link count
-    1.1.1.1         1.1.1.1         287         0x80000002 0x00241B 2
-    2.2.2.2         2.2.2.2         286         0x80000002 0x006BD0 2
+    1.1.1.1         1.1.1.1         287         0x8000002e 0x00B55E 2
+    2.2.2.2         2.2.2.2         286         0x80000030 0x00FEF5 2
 
 
-
-![Letsgo](https://media.giphy.com/media/XDSBGwnjvTpoZGJhxY/giphy.gif)
-
-
-Boris para o Wireshark então
+**Boris para o Wireshark então**
 
 
 ### 5.1 - Captura de pacotes e Interpetação ### 
 
-![Captura](../images/wtf-really-happens/ospf-msg-lsupdate.png)
+![Captura](/images/wtf-really-happens/ospf-msg-lsupdate.png)
 <small> Aqui to filtrando os pacotes LS Update.</small>
 
 Estamos interessado nos LSAs com **Sequence Number == 0x80000002**, no qual está presente na Link State database dos routers, vou deixar a Captura [**AQUI**](../images/wtf-really-happens/captura-wtf.pcap) para uso do leitor.
 
+Vamos analisar os pacotes LSAs anunciados por cada roteador, são pacotes Router-LSAs onde tem descrito quais redes/segmenos/links estão conectados e suas métricas.
+
 **LSA R1(Broadcast) para R2(Point-to-Point)**
 
-![ROUTER-LSA-R1-PARA-R2](../images/wtf-really-happens/routerlsa-r1-para-r2.png)
+![ROUTER-LSA-R1-PARA-R2](/images/wtf-really-happens/router-lsa-r1-para-r2.png)
 
-- Observe que o número de LSAs é 1
+- Observe que o número de LSAs é 2, Router-LSA e Network-LSA
 - ***LS Type*** é o Router-LSA(1)
 - Os campos ***Link State ID*** e ***Advertising Router*** são iguais, como discutido antes
-- O campo ***Sequence Number*** é o esperado
-- E o número de Links nesse LSA, 2
-  - Anúncio de **loopback** é como rede **stub** com **máscara /32**
-  - R1(Interface em Broadcast) anuncia que a rede 192.168.0.0/30 é uma rede de trânsito, isto é, há pelo menos um outro roteador conectado e que o **Designated Router** dessa rede é o ***Link ID*** **192.168.0.2** (Interface do R2) e o campo ***Data Link*** informa qual é o endereço da minha interface na rede.
+- O campo ***Sequence Number*** é o esperado, o valor bate com o LinkState database dos Routers
+- O número de Links nesse LSA é 2
+  - Anúncio de **loopback** é como rede **stub** com **máscara /32** - **OK**
+  - R1(Interface Broadcast) anuncia que a rede 192.168.0.0/30 é uma rede de trânsito, isto é, há pelo menos um outro roteador conectado e que o **Designated Router** dessa rede é o ***Link ID*** **192.168.0.2** (Interface do R2) e o campo ***Data Link*** informa qual é o endereço da minha interface na rede.
+  - NETWORK LSA
+
 
 
 **LSA R2(P2P) para R1(Broadcast)**
 
-![ROUTER-LSA-R2-PARA-R1](../images/wtf-really-happens/router-lsa-r2-para-r1.png)
+![ROUTER-LSA-R2-PARA-R1](/images/wtf-really-happens/router-lsa-r2-para-r1.png)
 
+Vamos analisar os campos do Router LSA gerado pelo R2
+
+Vou direto para o que interessa, os campos do OSPF Header ***Link State ID*** e ***Advertising Router já foram discutidos*** 
+
+- Número de links: 3
+- Anúncio da loopback como rede **STUB** e máscara /32 - **OK**
+- Anúncio de uma rede **PTP** com o vizinho de RID e interface local 192.168.0.2 - **OK a config do Router config é PTP**
+- Anúncio de uma rede **STUB** 192.168.0.0/30 - **WTF**
 
 
 
