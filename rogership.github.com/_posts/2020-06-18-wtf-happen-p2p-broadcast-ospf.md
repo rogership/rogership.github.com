@@ -12,7 +12,7 @@ categories: [OSPF, IGP, Redes, WTF]
   - [4.1 - The Router LSA](#41---the-router-lsa)
   - [4.2 - The Network-LSA](#42---the-network-lsa)
 - [5 - WTF os routers se anunciam então?](#5---wtf-os-routers-se-anunciam-então)
-    - [5.1 - Captura de pacotes ###](#51---captura-de-pacotes-)
+    - [5.1 - Captura de pacotes](#51---captura-de-pacotes)
   - [6 - Conclusion](#6---conclusion)
 
 # 1 - WTF REALLY HAPPENS
@@ -291,7 +291,7 @@ Observe aqui o campo ***Sequence Number*** do LSA Header, esse campo difere LSAs
 **Boris para o Wireshark então**
 
 
-### 5.1 - Captura de pacotes ### 
+### 5.1 - Captura de pacotes 
 
 ![Captura](/images/wtf-really-happens/ospf-msg-lsupdate.png)
 <small> Aqui to filtrando os pacotes LS Update.</small>
