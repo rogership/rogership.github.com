@@ -295,7 +295,7 @@ Observe aqui o campo ***Sequence Number*** do LSA Header, esse campo difere LSAs
 ![Captura](/images/wtf-really-happens/ospf-msg-lsupdate.png)
 <small> Aqui to filtrando os pacotes LS Update.</small>
 
-Estamos interessado nos LSAs com ***Sequence Number*** no qual está presente na Link State database dos routers, vou deixar a Captura [**AQUI**](../images/wtf-really-happens/captura-wtf.pcap) para uso do leitor.
+Estamos interessado nos LSAs com ***Sequence Number*** no qual está presente na Link State database dos routers, vou deixar a Captura [**AQUI**](../images/wtf-really-happens/captura-wtf.pcapng) para uso do leitor.
 
 Vamos analisar os pacotes LSAs anunciados por cada roteador, são pacotes Router-LSAs onde tem descrito quais redes/segmenos/links estão conectados ao próprio roteador e suas métricas.
 
