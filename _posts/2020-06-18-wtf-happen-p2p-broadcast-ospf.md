@@ -10,9 +10,10 @@ categories: [OSPF, IGP, Redes, WTF]
   - [3.2 - P2P e BROADCAST fecham adjacência???](#32---p2p-e-broadcast-fecham-adjacência)
 - [4 - The Fucking LSA](#4---the-fucking-lsa)
   - [4.1 - The Router LSA](#41---the-router-lsa)
-  - [4.2 - Network-LSA](#42---network-lsa)
+  - [4.2 - The Network-LSA](#42---the-network-lsa)
 - [5 - WTF os routers se anunciam então?](#5---wtf-os-routers-se-anunciam-então)
-    - [5.1 - Captura de pacotes e Interpetação ###](#51---captura-de-pacotes-e-interpetação-)
+    - [5.1 - Captura de pacotes ###](#51---captura-de-pacotes-)
+  - [6 - Conclusion](#6---conclusion)
 
 # 1 - WTF REALLY HAPPENS
 
@@ -24,13 +25,12 @@ categories: [OSPF, IGP, Redes, WTF]
 
 # 2 - WTF do I need to know? ##
 
-O OSPF é um IGP *distribuído*, isto é, todos os nós participantes agem em conjunto para o protocolo funcionar, portanto, é necessário que os nós participantes do protocolo se conheçam, troquem informações entre si sobre suas interfaces e redes, saiba como operar com incidentes, atualizações na topologia e finalmente calcular o menor caminho através do algoritmo de busca de menor caminho em um GRAFO - o video ilustra como funciona -> [DJIKSTRA SPF Algorithm]¹(link de como funciona o djkstra).
+O OSPF é um IGP *distribuído*, isto é, todos os nós participantes agem em conjunto para o protocolo funcionar, portanto, é necessário que os nós participantes do protocolo se conheçam, troquem informações entre si sobre suas interfaces e redes, saiba como operar com incidentes, atualizações na topologia e finalmente calcular o menor caminho através do algoritmo de busca de menor caminho em um GRAFO -> [DJIKSTRA](https://www.youtube.com/watch?v=pVfj6mxhdMw)).
 
-> ¹Há outros algoritmos de busca em grafos, [CORMEN]() é uma boa referência para tais algoritmos.
+> ¹Há outros algoritmos de busca em grafos, [CORMEN](https://www.amazon.com.br/dp/B08FH8N996/ref=dp-kindle-redirect?_encoding=UTF8&btkr=1) é uma boa referência para tais algoritmos.
 
-O OSPF pode ser dividido em 3 processos e 
+O OSPF pode ser dividido em 3 processos
 
-[Diagrama com os 3 processos](imagem-diagrama.png)
 
 - **OSPF Hello Subprotocol**
 
@@ -56,15 +56,15 @@ O OSPF pode ser dividido em 3 processos e
 
 - **Shortest Path First - DIJKSTRA Algorithm**
   - Após toda a rede tiver com os mesmos pacotes LSA's, isto é, os headers LSA forem identicos, roda-se o algoritmo de DIJKSTRA
-  - Cada roteador executa o algoritmo de DIJKSTRA e calcula o menor caminho para a cada REDE anunciada em todo o domínio OSPF utilizando-se das métricas.
+  - Cada roteador executa o algoritmo de DIJKSTRA e calcula o menor caminho para a cada **ROTEADOR** e **REDE** anunciada em todo o domínio OSPF utilizando-se das métricas.
     
 # 3 - O LAB
 
 ![LAB](https://media.giphy.com/media/iNQ2cIve8rUqI/giphy.gif)
 Fiz um laboratório bem complexo/s para descobrir isso
 
-![Topologia](/images/topologia1.png)
-<small> *O funcionamento normal do protocolo determina que as rotas 172.16.10.0/24 e 172.16.20.0/24 serão aprendidas via OSPF entre R1 e R2* </small>
+![Topologia](/images/wtf-really-happens/topologia1.png)
+<small> *O funcionamento normal do protocolo determina que as interfaces de loopback serão aprendidas via OSPF entre R1 e R2* </small>
 
 ## 3.1 - Configurações e verificações
 
@@ -203,7 +203,7 @@ Estamos interessado no **Router LSA**.
 Todo Roteador gera **Router LSAs** onde descreve as redes no qual o roteador está diretamente conectado, o tipo de rede e o custo (métrica) para chegar a esta rede.
 Isto é, as informações da rede 192.168.0.0/30 estão contidas neste LSA.
 
-O formato do Router LSA está na figurax, lembrar que todo LSA possui Header.
+Lembrar que todo LSA possui Header.
 
 ![Router LSA](/images/wtf-really-happens/router-lsa.png)
 <small>Router Link State Advertisement </small>
@@ -223,7 +223,14 @@ Vou falar apenas dos campos ***Link type, Link ID e Link Data***, os campos ***L
 
 > Obs: Uma rede **stub** é uma rede no qual não há nenhum outro roteador conectado
 
-## 4.2 - Network-LSA
+## 4.2 - The Network-LSA
+
+O Network LSA descreve redes de multi-acesso conectadas ao roteador, é bem pequeno, possui apenas 2 campos fora o LSA Header
+
+![Router LSA](/images/wtf-really-happens/network-lsa.png)
+
+- ***Network Mask***
+- ***Attached Routers*** - Roteadores (**RIDs**) conectados a rede 
 
 
 # 5 - WTF os routers se anunciam então? #
@@ -241,9 +248,15 @@ Vamos ver o que acontece a nível de pacotes, primeiro vamos verificar quais LSA
 		Router Link States (Area 0)
 
     Link ID         ADV Router      Age         Seq#       Checksum Link count
-    1.1.1.1         1.1.1.1         148         0x80000002 0x00241B 2
-    2.2.2.2         2.2.2.2         149         0x80000002 0x006BD0 2
+    1.1.1.1         1.1.1.1         1522        0x8000002e 0x009170 2
+    2.2.2.2         2.2.2.2         1238        0x80000030 0x00DA08 3
+
+		Net Link States (Area 0)
+
+     Link ID         ADV Router      Age         Seq#       Checksum
+    192.168.0.1     1.1.1.1         1522        0x80000001 0x00169A
     R1#
+
 
 
 Vamos ver alguns campos, aqui o output chama de **Link ID** o campo ***State Link ID*** do cabeçalho do LSA, esse campo vem com o valor do Router-ID do router que originou o LSA, lembre-se que o campo ***State Link ID*** varia com o tipo de LSA.
@@ -263,34 +276,41 @@ Observe aqui o campo ***Sequence Number*** do LSA Header, esse campo difere LSAs
 		Router Link States (Area 0)
 
     Link ID         ADV Router      Age         Seq#       Checksum Link count
-    1.1.1.1         1.1.1.1         287         0x8000002e 0x00B55E 2
-    2.2.2.2         2.2.2.2         286         0x80000030 0x00FEF5 2
+    1.1.1.1         1.1.1.1         1628        0x8000002e 0x009170 2
+    2.2.2.2         2.2.2.2         1343        0x80000030 0x00DA08 3
+
+        Net Link States (Area 0)
+
+    Link ID         ADV Router      Age         Seq#       Checksum
+    192.168.0.1     1.1.1.1         1628        0x80000001 0x00169A
+    R2#
+
 
 
 **Boris para o Wireshark então**
 
 
-### 5.1 - Captura de pacotes e Interpetação ### 
+### 5.1 - Captura de pacotes ### 
 
 ![Captura](/images/wtf-really-happens/ospf-msg-lsupdate.png)
 <small> Aqui to filtrando os pacotes LS Update.</small>
 
-Estamos interessado nos LSAs com **Sequence Number == 0x80000002**, no qual está presente na Link State database dos routers, vou deixar a Captura [**AQUI**](../images/wtf-really-happens/captura-wtf.pcap) para uso do leitor.
+Estamos interessado nos LSAs com ***Sequence Number*** no qual está presente na Link State database dos routers, vou deixar a Captura [**AQUI**](../images/wtf-really-happens/captura-wtf.pcap) para uso do leitor.
 
-Vamos analisar os pacotes LSAs anunciados por cada roteador, são pacotes Router-LSAs onde tem descrito quais redes/segmenos/links estão conectados e suas métricas.
+Vamos analisar os pacotes LSAs anunciados por cada roteador, são pacotes Router-LSAs onde tem descrito quais redes/segmenos/links estão conectados ao próprio roteador e suas métricas.
 
 **LSA R1(Broadcast) para R2(Point-to-Point)**
 
 ![ROUTER-LSA-R1-PARA-R2](/images/wtf-really-happens/router-lsa-r1-para-r2.png)
 
 - Observe que o número de LSAs é 2, Router-LSA e Network-LSA
-- ***LS Type*** é o Router-LSA(1)
-- Os campos ***Link State ID*** e ***Advertising Router*** são iguais, como discutido antes
-- O campo ***Sequence Number*** é o esperado, o valor bate com o LinkState database dos Routers
-- O número de Links nesse LSA é 2
+- ***LS Type*** == Router-LSA(1)
+  - Os campos ***Link State ID*** e ***Advertising Router*** são iguais, como discutido antes
+  - O campo ***Sequence Number*** é o esperado, o valor bate com o LinkState database dos Routers
+  - O número de Links nesse LSA é 2
   - Anúncio de **loopback** é como rede **stub** com **máscara /32** - **OK**
   - R1(Interface Broadcast) anuncia que a rede 192.168.0.0/30 é uma rede de trânsito, isto é, há pelo menos um outro roteador conectado e que o **Designated Router** dessa rede é o ***Link ID*** **192.168.0.2** (Interface do R2) e o campo ***Data Link*** informa qual é o endereço da minha interface na rede.
-  - NETWORK LSA
+- ***LS Type*** == NETWORK LSA(2), LSA que descreve um segmento de rede
 
 
 
@@ -308,11 +328,21 @@ Vou direto para o que interessa, os campos do OSPF Header ***Link State ID*** e 
 - Anúncio de uma rede **STUB** 192.168.0.0/30 - **WTF**
 
 
+## 6 - Conclusion ##
+
+Veja que é impossível montar essa árvore que é anunciada pelos LSAs um roteador anuncia uma rede de transito /30 o outro anuncia que tá conectado a uma rede **ponto-a-ponto** pela mesma interface que tá conectado a uma rede **stub**, isto é, sem roteador algum na rede.
+
+Obviamente o grafo não é montado, e portando o algoritmo de Djikstra não calcula menores caminhos.
+
+Interessante observar que a formação de vizinhança e o estado da adjacência não dependem do algoritmo rodar na caixa ou possuir tabela de rotas para destinos. Na verdade a RFC 2328 especifica que para haver adjacência os roteadores precisam possuir a mesma **Link State Database**, por isso que cada Roteador apresenta adjacência **FULL** e ainda há eleição de **DR** e **BDR**
+
+Well that's it folks.
 
 
+Foi um bom troubleshoot para entender melhor o comportamento do protocolo e seus pacotes.
 
+**Mais um MEME**
 
+![MindBlown](https://media.giphy.com/media/26ufdipQqU2lhNA4g/source.gif)
 
-
-
-
+**Noice**
