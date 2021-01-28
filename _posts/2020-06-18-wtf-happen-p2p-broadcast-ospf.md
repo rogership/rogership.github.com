@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "WTF really happens quando se tenta fechar adjacência entre dois roteadores com as interaces setadas em point-to-point e o outro lado broadcast?"
+title: "WTF really entre adjacência Broadcast e Point-to-Point?"
 categories: [OSPF, IGP, Redes, WTF]
 ---
 - [1 - WTF REALLY HAPPENS](#1---wtf-really-happens)
@@ -25,7 +25,7 @@ categories: [OSPF, IGP, Redes, WTF]
 
 # 2 - WTF do I need to know? ##
 
-O OSPF é um IGP *distribuído*, isto é, todos os nós participantes agem em conjunto para o protocolo funcionar, portanto, é necessário que os nós participantes do protocolo se conheçam, troquem informações entre si sobre suas interfaces e redes, saiba como operar com incidentes, atualizações na topologia e finalmente calcular o menor caminho através do algoritmo de busca de menor caminho em um GRAFO -> [DJIKSTRA](https://www.youtube.com/watch?v=pVfj6mxhdMw)).
+O OSPF é um IGP *distribuído*, isto é, todos os nós participantes agem em conjunto para o protocolo funcionar, portanto, é necessário que os nós participantes do protocolo se conheçam, troquem informações entre si, sobre suas interfaces e redes, saiba como operar com incidentes, atualizações na topologia e finalmente calcular o menor caminho através do algoritmo de busca de menor caminho em um GRAFO -> [DJIKSTRA](https://www.youtube.com/watch?v=pVfj6mxhdMw)).
 
 > ¹Há outros algoritmos de busca em grafos, [CORMEN](https://www.amazon.com.br/dp/B08FH8N996/ref=dp-kindle-redirect?_encoding=UTF8&btkr=1) é uma boa referência para tais algoritmos.
 
@@ -126,11 +126,10 @@ Fiz um laboratório bem complexo/s para descobrir isso
     1.1.1.1           0   FULL/  -        00:00:33    192.168.0.1     GigabitEthernet0/0
 
 
-Aqui vamos prestar atenção em alguns elementos - O campo **priority** é 1, este é um campo diretamente proporcional, isto é, a preferência maior é do valor mais alto entre as interfaces do domínio de broadcast. A interface foi eleita como
- DR</code> pelo processo de elelição, a adjacência foi formada pelo processo de sincronização da database, isto é ambos os Routers tem a mesma tabela [Database Summary List](https://tools.ietf.org/html/rfc2328#section-10)
+Aqui vamos prestar atenção em alguns elementos - O campo **priority** é 1, este é um campo diretamente proporcional, isto é, a preferência maior é do valor mais alto entre as interfaces do domínio de broadcast. A interface foi eleita como **Designated Router** pelo processo de elelição, a adjacência foi formada pelo processo de sincronização da database, isto é ambos os Routers tem a mesma tabela **Link State Database** 
 
 
-Então a princípio é pra haver troca de rotas pois há adjacência.
+**Então a princípio é pra haver troca de rotas pois há adjacência.**
 
 ## 3.2 - P2P e BROADCAST fecham adjacência??? ##
 
@@ -237,7 +236,8 @@ O Network LSA descreve redes de multi-acesso conectadas ao roteador, é bem pequ
 
 ![WTF3](https://media.giphy.com/media/WRAaC4EGVIzcb7Io34/giphy.gif)
 
-Vamos ver o que acontece a nível de pacotes, primeiro vamos verificar quais LSAs estão presentes no LSA database 
+Vamos ver o que acontece a nível de pacotes.
+Primeiro vamos verificar quais LSAs estão presentes no LSA database 
 
 **R1**
 
@@ -297,7 +297,7 @@ Observe aqui o campo ***Sequence Number*** do LSA Header, esse campo difere LSAs
 
 Estamos interessado nos LSAs com ***Sequence Number*** no qual está presente na Link State database dos routers, vou deixar a Captura [**AQUI**](../images/wtf-really-happens/captura-wtf.pcapng) para uso do leitor.
 
-Vamos analisar os pacotes LSAs anunciados por cada roteador, são pacotes Router-LSAs onde tem descrito quais redes/segmenos/links estão conectados ao próprio roteador e suas métricas.
+Vamos analisar os pacotes LSAs anunciados por cada roteador, são pacotes Router-LSAs onde tem descrito quais redes/segmentos/links estão conectados ao próprio roteador e suas métricas.
 
 **LSA R1(Broadcast) para R2(Point-to-Point)**
 
@@ -330,11 +330,11 @@ Vou direto para o que interessa, os campos do OSPF Header ***Link State ID*** e 
 
 ## 6 - Conclusion ##
 
-Veja que é impossível montar essa árvore que é anunciada pelos LSAs um roteador anuncia uma rede de transito /30 o outro anuncia que tá conectado a uma rede **ponto-a-ponto** pela mesma interface que tá conectado a uma rede **stub**, isto é, sem roteador algum na rede.
+Veja que é impossível montar essa árvore que é anunciada pelos LSAs, um roteador anuncia uma rede de transito /30 o outro anuncia que tá conectado a uma rede **ponto-a-ponto** pela mesma interface que tá conectado a uma rede **stub**, isto é, sem roteador algum na rede.
 
-Obviamente o grafo não é montado, e portando o algoritmo de Djikstra não calcula menores caminhos.
+Obviamente o grafo não é montado e portando o algoritmo de Djikstra não calcula os menores caminhos.
 
-Interessante observar que a formação de vizinhança e o estado da adjacência não dependem do algoritmo rodar na caixa ou possuir tabela de rotas para destinos. Na verdade a RFC 2328 especifica que para haver adjacência os roteadores precisam possuir a mesma **Link State Database**, por isso que cada Roteador apresenta adjacência **FULL** e ainda há eleição de **DR** e **BDR**
+Interessante observar que a formação de vizinhança e o estado da adjacência não dependem do algoritmo rodar na caixa ou possuir tabela de rotas para destinos. Na verdade a [RFC 2328(https://tools.ietf.org/html/rfc2328)] especifica que para haver adjacência, os roteadores precisam possuir a mesma **Link State Database**, por isso que cada Roteador apresenta adjacência **FULL**.
 
 Well that's it folks.
 
@@ -346,3 +346,4 @@ Foi um bom troubleshoot para entender melhor o comportamento do protocolo e seus
 ![MindBlown](https://media.giphy.com/media/26ufdipQqU2lhNA4g/source.gif)
 
 **Noice**
+
