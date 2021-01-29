@@ -213,7 +213,8 @@ Vou falar apenas dos campos ***Link type, Link ID e Link Data***, os campos ***L
 - **Link Type**: Link type é basicamente o tipo de rede a qual o roteador está conectado, esta podendo ser uma rede point-to-point, transit network, stub ou um virtual link.
 
 <small> Tabela 1 - Tipos de redes especificados para o Router-LSA</small>
-| Link Type  | Link ID  | Link Data
+
+| Link Type  | Link ID  | Link Data |
 |:---:|:---:|:---:|
 |**1 - Point-to-Point**|Router ID do vizinho|IP da interface local da rede p2p|
 |**2 - Connection to a transit Network**|DR IP Adress|IP da interface local da rede|
@@ -334,7 +335,7 @@ Veja que é impossível montar essa árvore que é anunciada pelos LSAs, um rote
 
 Obviamente o grafo não é montado e portando o algoritmo de Djikstra não calcula os menores caminhos.
 
-Interessante observar que a formação de vizinhança e o estado da adjacência não dependem do algoritmo rodar na caixa ou possuir tabela de rotas para destinos. Na verdade a [RFC 2328(https://tools.ietf.org/html/rfc2328)] especifica que para haver adjacência, os roteadores precisam possuir a mesma **Link State Database**, por isso que cada Roteador apresenta adjacência **FULL**.
+Interessante observar que a formação de vizinhança e o estado da adjacência não dependem do algoritmo rodar na caixa ou possuir tabela de rotas para destinos. Na verdade a [RFC 2328](https://tools.ietf.org/html/rfc2328) especifica que para haver adjacência, os roteadores precisam possuir a mesma **Link State Database**, por isso que cada Roteador apresenta adjacência **FULL**.
 
 Well that's it folks.
 
