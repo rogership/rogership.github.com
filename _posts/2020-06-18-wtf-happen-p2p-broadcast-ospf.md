@@ -12,7 +12,7 @@ categories: [OSPF, IGP, Redes, WTF]
   - [4.1 - The Router LSA](#41---the-router-lsa)
   - [4.2 - The Network-LSA](#42---the-network-lsa)
 - [5 - WTF os routers se anunciam então?](#5---wtf-os-routers-se-anunciam-então)
-    - [5.1 - Captura de pacotes ###](#51---captura-de-pacotes-)
+  - [5.1 - Captura de pacotes](#51---captura-de-pacotes)
 - [6 - Conclusion](#6---conclusion)
 
 # 1 - WTF REALLY HAPPENS
@@ -35,18 +35,18 @@ O OSPF pode ser dividido em 3 processos
 - **OSPF Hello Subprotocol**
 
   - Descoberta de vizinhos;
-  - Assegura uma comunicação two-way (bidirecional) entre os dois vizinhos, isto é os pacotes do router alcançam o router vizinho e vice-versa. 
-  - Keepalive - É usado um tempo para que cada router informe aos seus vizinhos que o mesmo se encontra; ativo e operante. Caso contrário é necessário reformulação da topologia;
-  - Elege o DR e BDR em redes broadcast e non-boradcast;
-  - Faz a validação se os roteadores vizinhos concordam em fechar vizinhança²;
-  - Utiliza o OSPF packet type - Hello Protocol
-
+  - Assegura comunicação two-way (bidirecional) entre os dois vizinhos, isto é, os pacotes do router alcançam o router vizinho e vice-versa. 
+  - Keepalive - É utlilzado o tempo de keepalive para que cada router informe aos seus vizinhos que o mesmo se encontra ativo e operante. Caso contrário é necessário reformulação da topologia;
+  - Faz a validação se os roteadores vizinhos concordam em fechar vizinhança;
+  - Utiliza o OSPF packet type - Hello Protocol;
 
 
 - **Database Syncronization**
   
   - Faz toda a troca de informação da topologia entre os roteadores do domínio
   - Envolve flooding via **IP multicast 224.0.0.5 e 226.0.0.6 para DROTHERs** ou unicast
+  - Elege o DR e BDR em redes broadcast e non-boradcast;
+
 
   - Utiliza os 4 Pacotes dos 5 Pacotes totais do OSPF. 
     1. Database Descriptor Packet
@@ -290,7 +290,7 @@ Observe aqui o campo ***Sequence Number*** do LSA Header, esse campo difere LSAs
 **Boris para o Wireshark então**
 
 
-### 5.1 - Captura de pacotes ### 
+## 5.1 - Captura de pacotes ##
 
 ![Captura](/images/wtf-really-happens/ospf-msg-lsupdate.png)
 <small> Aqui to filtrando os pacotes LS Update.</small>
