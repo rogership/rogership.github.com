@@ -13,7 +13,7 @@ categories: [OSPF, IGP, Redes, WTF]
   - [4.2 - The Network-LSA](#42---the-network-lsa)
 - [5 - WTF os routers se anunciam então?](#5---wtf-os-routers-se-anunciam-então)
     - [5.1 - Captura de pacotes ###](#51---captura-de-pacotes-)
-  - [6 - Conclusion](#6---conclusion)
+- [6 - Conclusion](#6---conclusion)
 
 # 1 - WTF REALLY HAPPENS
 
@@ -328,7 +328,7 @@ Vou direto para o que interessa, os campos do OSPF Header ***Link State ID*** e 
 - Anúncio de uma rede **STUB** 192.168.0.0/30 - **WTF**
 
 
-## 6 - Conclusion ##
+# 6 - Conclusion #
 
 Veja que é impossível montar essa árvore que é anunciada pelos LSAs, um roteador anuncia uma rede de transito /30 o outro anuncia que tá conectado a uma rede **ponto-a-ponto** pela mesma interface que tá conectado a uma rede **stub**, isto é, sem roteador algum na rede.
 
