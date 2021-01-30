@@ -357,5 +357,7 @@ Foi um bom troubleshoot para entender melhor o comportamento do protocolo e seus
 
 # Referências
 **[1] -** **[RFC 2328](https://tools.ietf.org/html/rfc2328)**
+</br>
 **[2] -** J. Doyle and J. D. Carroll, **Routing TCP/IP. Indianapolis**, Ind: Macmillan, 1998.
+</br>
 **[3] -** J. T. Moy, **OSPF: anatomy of an Internet routing protocol.** Reading, Mass: Addison-Wesley, 1998.
