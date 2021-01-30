@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "WTF really entre adjacência Broadcast e Point-to-Point?"
+title: "WTF really between broadcast and point-to-point interfaces"
 categories: [OSPF, IGP, Redes, WTF]
 ---
 - [1 - WTF REALLY HAPPENS](#1---wtf-really-happens)
@@ -14,6 +14,7 @@ categories: [OSPF, IGP, Redes, WTF]
 - [5 - WTF os routers se anunciam então?](#5---wtf-os-routers-se-anunciam-então)
   - [5.1 - Captura de pacotes](#51---captura-de-pacotes)
 - [6 - Conclusion](#6---conclusion)
+- [Referências](#referências)
 
 # 1 - WTF REALLY HAPPENS
 
@@ -25,38 +26,44 @@ categories: [OSPF, IGP, Redes, WTF]
 
 # 2 - WTF do I need to know? ##
 
-O OSPF é um IGP *distribuído*, isto é, todos os nós participantes agem em conjunto para o protocolo funcionar, portanto, é necessário que os nós participantes do protocolo se conheçam, troquem informações entre si, sobre suas interfaces e redes, saiba como operar com incidentes, atualizações na topologia e finalmente calcular o menor caminho através do algoritmo de busca de menor caminho em um GRAFO -> [DJIKSTRA](https://www.youtube.com/watch?v=pVfj6mxhdMw)).
+O OSPF é um IGP *distribuído*, isto é, todos os nós participantes agem em conjunto para o protocolo funcionar, portanto, é necessário que os nós participantes do protocolo se conheçam, troquem informações entre si, sobre suas interfaces e redes, saiba como operar com incidentes e atualizações na topologia e finalmente calcular o menor caminho. O cálculo do menor caminho ocorre através do algoritmo de busca SHORTEST PATH FIRST - SPF, chamado **Dijkstra**. O funcionamento do algoritmo pode ser visto - [AQUI](https://www.youtube.com/watch?v=pVfj6mxhdMw)
 
 > ¹Há outros algoritmos de busca em grafos, [CORMEN](https://www.amazon.com.br/dp/B08FH8N996/ref=dp-kindle-redirect?_encoding=UTF8&btkr=1) é uma boa referência para tais algoritmos.
 
-O OSPF pode ser dividido em 3 processos
+O OSPF pode ser segmentado em 3 processos no qual utiliza 5 tipos de pacotes OSPF e um [Packet Header](https://tools.ietf.org/html/rfc2328#appendix-A.3.1) padrão a todos
 
+Os pacotes são utilizados para efetuar funções de cada processo.
+
+**Utilizado pelo OSPF Hello Subprotocol**
+> 1. [OSPF Hello packet.](https://tools.ietf.org/html/rfc2328#page-193)
+
+**Utilizado pelo processo database synchronization**
+
+> 2. [OSPF Database Descriptor Packet.](https://tools.ietf.org/html/rfc2328#page-194)
+> 3. [OSPF Link-State Request Packet.](https://tools.ietf.org/html/rfc2328#page-196)
+> 4. [OSPF Link-State Update Packet.](https://tools.ietf.org/html/rfc2328#page-198)
+> 5. [Link-State Acknowledgement.](https://tools.ietf.org/html/rfc2328#page-200)
+
+Os processos podem ser definidos em: 
 
 - **OSPF Hello Subprotocol**
 
   - Descoberta de vizinhos;
   - Assegura comunicação two-way (bidirecional) entre os dois vizinhos, isto é, os pacotes do router alcançam o router vizinho e vice-versa. 
-  - Keepalive - É utlilzado o tempo de keepalive para que cada router informe aos seus vizinhos que o mesmo se encontra ativo e operante. Caso contrário é necessário reformulação da topologia;
-  - Faz a validação se os roteadores vizinhos concordam em fechar vizinhança;
-  - Utiliza o OSPF packet type - Hello Protocol;
-
+  - Keepalive - Utiliza-se o tempo de **keepalive** para que cada router informe aos seus vizinhos que o mesmo se encontra ativo e operante. Caso contrário é necessário reformulação da topologia;
+  - Faz a validação se os roteadores vizinhos concordam em estabelecer vizinhança através do campo **Options**;
+</br>
 
 - **Database Syncronization**
   
   - Faz toda a troca de informação da topologia entre os roteadores do domínio
   - Envolve flooding via **IP multicast 224.0.0.5 e 226.0.0.6 para DROTHERs** ou unicast
   - Elege o DR e BDR em redes broadcast e non-boradcast;
-
-
-  - Utiliza os 4 Pacotes dos 5 Pacotes totais do OSPF. 
-    1. Database Descriptor Packet
-    2. Link State Request Packet
-    3. Link State Update Packet
-    4. Link State Ack
-
+  </br>
+  
 - **Shortest Path First - DIJKSTRA Algorithm**
-  - Após toda a rede tiver com os mesmos pacotes LSA's, isto é, os headers LSA forem identicos, roda-se o algoritmo de DIJKSTRA
-  - Cada roteador executa o algoritmo de DIJKSTRA e calcula o menor caminho para a cada **ROTEADOR** e **REDE** anunciada em todo o domínio OSPF utilizando-se das métricas.
+  - Após todos os roteadores possuírem os mesmos pacotes LSA's, isto é, os headers LSA forem idênticos.
+  - Cada roteador executa o algoritmo de DIJKSTRA como sendo o root da árvore topológica e calcula o menor caminho primeiro para a cada **ROTEADOR** e posteriormente cada **REDE** anunciada em todo o domínio OSPF.
     
 # 3 - O LAB
 
@@ -69,8 +76,6 @@ Fiz um laboratório bem complexo/s para descobrir isso
 ## 3.1 - Configurações e verificações
 
 **Configuração R1 - (brodcast)**
-
-
 
     R1#show run | sec interface
       interface Loopback0
@@ -117,6 +122,11 @@ Fiz um laboratório bem complexo/s para descobrir isso
 
 ![shaqille](https://media.giphy.com/media/go3X4svFhKdzi/giphy.gif)
 
+Aqui vamos prestar atenção em alguns elementos.
+ - O campo **priority** é 1, usado para eleição do DR e BRD.
+ -  A interface foi eleita como **Designated Router** pelo processo de eleição. 
+ -  A adjacência foi formada pelo processo de sincronização da database, isto é ambos os Routers tem a mesma **Link State Database** 
+
 **e a de R2?**
 
 
@@ -126,10 +136,7 @@ Fiz um laboratório bem complexo/s para descobrir isso
     1.1.1.1           0   FULL/  -        00:00:33    192.168.0.1     GigabitEthernet0/0
 
 
-Aqui vamos prestar atenção em alguns elementos - O campo **priority** é 1, este é um campo diretamente proporcional, isto é, a preferência maior é do valor mais alto entre as interfaces do domínio de broadcast. A interface foi eleita como **Designated Router** pelo processo de elelição, a adjacência foi formada pelo processo de sincronização da database, isto é ambos os Routers tem a mesma tabela **Link State Database** 
-
-
-**Então a princípio é pra haver troca de rotas pois há adjacência.**
+**Então a princípio haverá troca de rotas pois há adjacência.**
 
 ## 3.2 - P2P e BROADCAST fecham adjacência??? ##
 
@@ -348,3 +355,7 @@ Foi um bom troubleshoot para entender melhor o comportamento do protocolo e seus
 
 **Noice**
 
+# Referências
+**[1] -** **[RFC 2328](https://tools.ietf.org/html/rfc2328)**
+**[2] -** J. Doyle and J. D. Carroll, **Routing TCP/IP. Indianapolis**, Ind: Macmillan, 1998.
+**[3] -** J. T. Moy, **OSPF: anatomy of an Internet routing protocol.** Reading, Mass: Addison-Wesley, 1998.
