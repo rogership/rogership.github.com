@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "WTF really between broadcast and point-to-point interfaces"
+title: "WTF really happens between broadcast and point-to-point interfaces"
 categories: [OSPF, IGP, Redes, WTF]
 ---
 - [1 - WTF REALLY HAPPENS](#1---wtf-really-happens)
