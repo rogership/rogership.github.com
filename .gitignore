@@ -2,5 +2,5 @@
 _site/*
 _drafts
 .sass-cache
-.code-workspace
+*.code-workspace
 .gitignore
