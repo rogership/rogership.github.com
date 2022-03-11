@@ -5,3 +5,5 @@ categories: [Generic, Javascript, Google, how-to]
 ---
 
 # 1 - Como criar 
+
+teste de escrita para aparecer no blog
