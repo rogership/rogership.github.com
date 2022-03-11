@@ -4,8 +4,7 @@ title: "Como criar um cronograma de estudo no Google Sheets sincronizado com o G
 categories: [Generic, Javascript, Google, how-to]
 ---
 
-# Como criar um cronograma de estudo no Google Sheets e sincronizar com o Calendar automaticamente.
+**Como criar um cronograma de estudo no Google Sheets e sincronizar com o Calendar automaticamente.**
 
 
-
-teste de escrita para aparecer no blog
+## 
