@@ -32,7 +32,7 @@ O OSPF é um IGP *distribuído*, isto é, todos os nós participantes agem em co
 
 O OSPF pode ser segmentado em 3 processos, **OSPF Hello Subprotocol**, **OSPF Database Synchronization**, **Djikstra Shortest Path Algorithm**. Estes 3 processos utilizam os 5 tipos de pacotes OSPF definidos na RFC. Há um [OSPF Packet Header](https://tools.ietf.org/html/rfc2328#appendix-A.3.1) comum a todos os 5 tipos de pacotes OSPF
 
-Os pacotes são utilizados para efetuar funções de cada processo.
+Os pacotes OSPF realizam as funções de cada sub-processo do IGP.
 
 **Utilizado pelo OSPF Hello Subprotocol**
 > 1. [OSPF Hello packet.](https://tools.ietf.org/html/rfc2328#page-193)
@@ -188,7 +188,7 @@ Aqui vamos prestar atenção em alguns elementos.
 
 # 4 - The Fucking LSA #
 
-**OSPF** é um protocolo distribuído, isso quer dizer que todos os nós do domínio OSPF interagem entre si, o protocolo envolve todos os routers para seu funcionamento.
+**OSPF** é um protocolo distribuído, isso quer dizer que todos os nós do domínio OSPF interagem entre si, o protocolo necessita que todos os routers troquem informações entre si para montarem uma topologia única. E como isso é feito? Através de pacotes **Link State Advertisement** enviados por multicast.
 
 O **LSA** aka **Link State Advertisement** é a menor unidade de informação da topologia que é trocada entre os roteadores para informar ***links/redes*** que cada roteador poussui, esse LSA é redistribuído através de ***flooding*** **(multicast)** por todo o domínio OSPF, assim todos os routers recebem a mesma informação.
 
