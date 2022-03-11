@@ -30,7 +30,7 @@ O OSPF é um IGP *distribuído*, isto é, todos os nós participantes agem em co
 
 > ¹Há outros algoritmos de busca em grafos, [CORMEN](https://www.amazon.com.br/dp/B08FH8N996/ref=dp-kindle-redirect?_encoding=UTF8&btkr=1) é uma boa referência para tais algoritmos.
 
-O OSPF pode ser segmentado em 3 processos no qual utiliza 5 tipos de pacotes OSPF e um [Packet Header](https://tools.ietf.org/html/rfc2328#appendix-A.3.1) padrão a todos
+O OSPF pode ser segmentado em 3 processos, **OSPF Hello Subprotocol**, **OSPF Database Synchronization**, **Djikstra Shortest Path Algorithm**. Estes 3 processos utilizam os 5 tipos de pacotes OSPF definidos na RFC. Há um [OSPF Packet Header](https://tools.ietf.org/html/rfc2328#appendix-A.3.1) comum a todos os 5 tipos de pacotes OSPF
 
 Os pacotes são utilizados para efetuar funções de cada processo.
 
@@ -44,7 +44,7 @@ Os pacotes são utilizados para efetuar funções de cada processo.
 > 4. [OSPF Link-State Update Packet.](https://tools.ietf.org/html/rfc2328#page-198)
 > 5. [Link-State Acknowledgement.](https://tools.ietf.org/html/rfc2328#page-200)
 
-Os processos podem ser definidos em: 
+Os 3 sub-processos do OSPF:
 
 - **OSPF Hello Subprotocol**
 
@@ -52,14 +52,16 @@ Os processos podem ser definidos em:
   - Assegura comunicação two-way (bidirecional) entre os dois vizinhos, isto é, os pacotes do router alcançam o router vizinho e vice-versa. 
   - Keepalive - Utiliza-se o tempo de **keepalive** para que cada router informe aos seus vizinhos que o mesmo se encontra ativo e operante. Caso contrário é necessário reformulação da topologia;
   - Faz a validação se os roteadores vizinhos concordam em estabelecer vizinhança através do campo **Options**;
-</br>
+
+
 
 - **Database Syncronization**
   
   - Faz toda a troca de informação da topologia entre os roteadores do domínio
   - Envolve flooding via **IP multicast 224.0.0.5 e 226.0.0.6 para DROTHERs** ou unicast
   - Elege o DR e BDR em redes broadcast e non-boradcast;
-  </br>
+
+
   
 - **Shortest Path First - DIJKSTRA Algorithm**
   - Após todos os roteadores possuírem os mesmos pacotes LSA's, isto é, os headers LSA forem idênticos.
@@ -206,7 +208,7 @@ O campo ***Link State ID*** difere para cada ***TYPE*** de LSA, a [RFC 2328](rfc
 
 Estamos interessado no **Router LSA**.
 
-Todo Roteador gera **Router LSAs** onde descreve as redes no qual o roteador está diretamente conectado, o tipo de rede e o custo (métrica) para chegar a esta rede.
+Todo Roteador com um daemon OSPF rodando gera **Router LSAs** onde descreve as redes de suas interfaces, o tipo de rede em suas próprias interfaces e o custo (métrica) para chegar a esta rede.
 Isto é, as informações da rede 192.168.0.0/30 estão contidas neste LSA.
 
 Lembrar que todo LSA possui Header.
