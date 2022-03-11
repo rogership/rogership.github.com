@@ -3,20 +3,7 @@ layout: post
 title: "WTF really happens between broadcast and point-to-point interfaces"
 categories: [OSPF, IGP, Redes, WTF]
 ---
-- [1 - WTF REALLY HAPPENS](#1---wtf-really-happens)
-- [2 - WTF do I need to know?](#2---wtf-do-i-need-to-know)
-- [3 - O LAB](#3---o-lab)
-  - [3.1 - Configurações e verificações](#31---configurações-e-verificações)
-  - [3.2 - P2P e BROADCAST fecham adjacência???](#32---p2p-e-broadcast-fecham-adjacência)
-- [4 - The Fucking LSA](#4---the-fucking-lsa)
-  - [4.1 - The Router LSA](#41---the-router-lsa)
-  - [4.2 - The Network-LSA](#42---the-network-lsa)
-- [5 - WTF os routers se anunciam então?](#5---wtf-os-routers-se-anunciam-então)
-  - [5.1 - Captura de pacotes](#51---captura-de-pacotes)
-- [6 - Conclusion](#6---conclusion)
-    - [Referências](#referências)
 
-# 1 - WTF REALLY HAPPENS
 
 **WTF really happens quando se tenta fechar adjacência entre dois roteadores vizinhos com a interface network type em point-to-point e o outro lado broadcast?**
 
@@ -24,7 +11,7 @@ categories: [OSPF, IGP, Redes, WTF]
 ![Thinking](https://media.giphy.com/media/DfSXiR60W9MVq/giphy.gif)
 
 
-# 2 - WTF do I need to know? ##
+## 1 - WTF do I need to know? ##
 
 O OSPF é um IGP *distribuído*, isto é, todos os nós participantes agem em conjunto para o protocolo funcionar, portanto, é necessário que os nós participantes do protocolo se conheçam, troquem informações entre si, sobre suas interfaces e redes, saiba como operar com incidentes e atualizações na topologia e finalmente calcular o menor caminho. O cálculo do menor caminho ocorre através do algoritmo de busca SHORTEST PATH FIRST - SPF, chamado **Dijkstra**. O funcionamento do algoritmo pode ser visto - [AQUI](https://www.youtube.com/watch?v=pVfj6mxhdMw)
 
@@ -67,7 +54,7 @@ Os 3 sub-processos do OSPF:
   - Após todos os roteadores possuírem os mesmos pacotes LSA's, isto é, os headers LSA forem idênticos.
   - Cada roteador executa o algoritmo de DIJKSTRA como sendo o root da árvore topológica e calcula o menor caminho primeiro para a cada **ROTEADOR** e posteriormente cada **REDE** anunciada em todo o domínio OSPF.
     
-# 3 - O LAB
+## 2 - O LAB
 
 ![LAB](https://media.giphy.com/media/iNQ2cIve8rUqI/giphy.gif)
 Fiz um laboratório bem complexo/s para descobrir isso
@@ -75,7 +62,7 @@ Fiz um laboratório bem complexo/s para descobrir isso
 ![Topologia](/images/wtf-really-happens/topologia1.png)
 <small> *O funcionamento normal do protocolo determina que as interfaces de loopback serão aprendidas via OSPF entre R1 e R2* </small>
 
-## 3.1 - Configurações e verificações
+### 2.1 - Configurações e verificações
 
 **Configuração R1 - (brodcast)**
 
@@ -140,7 +127,7 @@ Aqui vamos prestar atenção em alguns elementos.
 
 **Então a princípio haverá troca de rotas pois há adjacência.**
 
-## 3.2 - P2P e BROADCAST fecham adjacência??? ##
+### 2.2 - P2P e BROADCAST fecham adjacência??? ##
 
 ![WTF](https://media.giphy.com/media/ukGm72ZLZvYfS/giphy.gif)
 
@@ -186,7 +173,7 @@ Aqui vamos prestar atenção em alguns elementos.
 **E agora??**
 
 
-# 4 - The Fucking LSA #
+## 3 - The Fucking LSA
 
 **OSPF** é um protocolo distribuído, isso quer dizer que todos os nós do domínio OSPF interagem entre si, o protocolo necessita que todos os routers troquem informações entre si para montarem uma topologia única. E como isso é feito? Através de pacotes **Link State Advertisement** enviados por multicast.
 
@@ -204,7 +191,7 @@ O campo ***Link State ID*** difere para cada ***TYPE*** de LSA, a [RFC 2328](rfc
 
 ![LSAs definidios](/images/wtf-really-happens/lsa-types.png)
 
-## 4.1 - The Router LSA ##
+### 3.1 - The Router LSA
 
 Estamos interessado no **Router LSA**.
 
@@ -232,7 +219,7 @@ Vou falar apenas dos campos ***Link type, Link ID e Link Data***, os campos ***L
 
 > Obs: Uma rede **stub** é uma rede no qual não há nenhum outro roteador conectado
 
-## 4.2 - The Network-LSA
+### 3.2 - The Network-LSA
 
 O Network LSA descreve redes de multi-acesso conectadas ao roteador, é bem pequeno, possui apenas 2 campos fora o LSA Header
 
@@ -242,7 +229,7 @@ O Network LSA descreve redes de multi-acesso conectadas ao roteador, é bem pequ
 - ***Attached Routers*** - Roteadores (**RIDs**) conectados a rede 
 
 
-# 5 - WTF os routers se anunciam então? #
+## 4 - WTF os routers se anunciam então?
 
 ![WTF3](https://media.giphy.com/media/WRAaC4EGVIzcb7Io34/giphy.gif)
 
@@ -300,7 +287,7 @@ Observe aqui o campo ***Sequence Number*** do LSA Header, esse campo difere LSAs
 **Boris para o Wireshark então**
 
 
-## 5.1 - Captura de pacotes ##
+## 4.1 - Captura de pacotes
 
 ![Captura](/images/wtf-really-happens/ospf-msg-lsupdate.png)
 <small> Aqui to filtrando os pacotes LS Update.</small>
@@ -338,7 +325,7 @@ Vou direto para o que interessa, os campos do OSPF Header ***Link State ID*** e 
 - Anúncio de uma rede **STUB** 192.168.0.0/30 - **WTF**
 
 
-# 6 - Conclusion #
+## 5 - Conclusion
 
 Veja que é impossível montar essa árvore que é anunciada pelos LSAs, um roteador anuncia uma rede de transito /30 o outro anuncia que tá conectado a uma rede **ponto-a-ponto** pela mesma interface que tá conectado a uma rede **stub**, isto é, sem roteador algum na rede.
 
