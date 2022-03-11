@@ -14,7 +14,7 @@ categories: [OSPF, IGP, Redes, WTF]
 - [5 - WTF os routers se anunciam então?](#5---wtf-os-routers-se-anunciam-então)
   - [5.1 - Captura de pacotes](#51---captura-de-pacotes)
 - [6 - Conclusion](#6---conclusion)
-- [Referências](#referências)
+    - [Referências](#referências)
 
 # 1 - WTF REALLY HAPPENS
 
@@ -355,9 +355,9 @@ Foi um bom troubleshoot para entender melhor o comportamento do protocolo e seus
 
 ![MindBlown](https://media.giphy.com/media/26ufdipQqU2lhNA4g/source.gif)
 
-**Noice**
 
-# Referências
+### Referências
+
 **[1] -** **[RFC 2328](https://tools.ietf.org/html/rfc2328)**
 
 **[2] -** J. Doyle and J. D. Carroll, **Routing TCP/IP. Indianapolis**, Ind: Macmillan, 1998.

@@ -3,10 +3,7 @@ layout: page
 title: About
 ---
 
-Melhor que falar sobre mim, vou citar aqui as referências que eu li ou tenho interesse em ler.
-São boas referências para aprendizado dos protocolos de redes e aconselho a darem uma olhada. 
-
-Também vou atualizar a lista de acordo com os livros e documentos que vou encontrando no caminho.
+Referências de estudo de Redes.
 
 
 # Referências 
