@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WTF really happens between broadcast and point-to-point interfaces"
-categories: [OSPF, IGP, Redes, WTF]
+categories: [OSPF, IGP, Redes]
 ---
 
 
