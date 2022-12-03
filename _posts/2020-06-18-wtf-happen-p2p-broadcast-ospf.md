@@ -8,6 +8,8 @@ categories: [OSPF, IGP, Redes]
 **WTF really happens quando se tenta fechar adjacência entre dois roteadores vizinhos com a interface network type em point-to-point e o outro lado broadcast?**
 
 
+{:toc}
+
 ![Thinking](https://media.giphy.com/media/DfSXiR60W9MVq/giphy.gif)
 
 
