@@ -20,6 +20,6 @@ url:            '/'
 author:         'Roger Ribeiro'
 
 # Build settings
-theme: minima
-plugins:
-  - jekyll-feed
+#theme: minima
+#plugins:
+#  - jekyll-feed
