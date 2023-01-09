@@ -18,3 +18,8 @@ gems: [jekyll-paginate]
 # Details for the RSS feed generator
 url:            '/'
 author:         'Roger Ribeiro'
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed
