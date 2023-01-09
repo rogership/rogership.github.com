@@ -2,8 +2,16 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 
+/* We need to add display:inline in order to align the '>>' of the 'read more' link */
+.post-excerpt p {
+	display:inline;
+}
+
 /*@import "minima";*/
-@import "syntax";
+@import 
+"syntax"
+"minima"
+;
 
 /* ********************************************************* */
 /* SIDEBAR */
@@ -16,8 +24,8 @@ table,hr,p,div.highlight {width:65%;max-width:640;}
 /* FIXED SIDEBAR */
 nav.toc-fixed {position:fixed;top:50px;left:80%;max-width:280px}
 nav.toc-fixed ul {list-style:none;padding-left:0;margin-left:0;}
-div.wrapper {max-width:960px;margin-left:5%;}
-div.post-content > p {width:65%;max-width:640;}
+div.wrapper {max-width:500px;margin-left:5%;}
+div.post-content > p {width:95%;max-width:640;}
 
 /* SIDEBAR WITHOUT MORE LEVELS OFTAGS */
 div.post-content > #markdown-toc {float:right;width:30%;max-width:320px;margin-top:-70px;}
