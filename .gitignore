@@ -1,7 +1,4 @@
 .DS_Store
-_artigos/*
-_site/*
-_drafts
 .sass-cache
 *.code-workspace
 .gitignore
