@@ -37,6 +37,7 @@ Analisa-se o efeito de bottleneck ou gargalo em um fluxo UDP entre cliente e ser
 
 
 
+
 ## Desenvolvimento
 
 ## Resultados
