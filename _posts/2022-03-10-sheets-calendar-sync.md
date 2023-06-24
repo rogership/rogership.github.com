@@ -32,14 +32,52 @@ Crie um novo script, como mostrado na figura 2
   <img src="/images/sheets-calendar-sync/new_script.png" />
 </p>
 
-
-
-
 ## Coleta do CalendarID
 
+Colete o CalendarID do calendário específico no Google Calendar
 
+## Template do Cronograma
 
+O script utiliza-se dos parâmetros no cabeçalho da planilha, portanto alterá-la pode ocasionar a falha na sincronização do cronograma no sheets
 
-## Bibliografia
+## O script
+
+O script foi dividido em 3 etapas + Criação do botão na Ui do Google Sheets
+
+1. Setup das Classes to Calendar e Spreadsheets do Appscript
+2. Tratar células vazias
+3. Comparação dos eventos na planilha com os eventos já existentes no calendar
+4. Criação do botão UI
+
+~~~Javascript
+function syncCalendarEvents() {
+  /**
+    * 1) Open the Event Calendar, spreadsheet, and get events in calendar.
+  **/
+  var spreadsheet = SpreadsheetApp.getActiveSheet();
+  var calendarId = spreadsheet.getRange("C4").getValue();
+  var calendar = CalendarApp.getCalendarById(calendarId);
+
+  //get start day and last day of spreadsheet agenda
+  var startDay = spreadsheet.getRange("C10").getValue();
+  var endDay = spreadsheet.getRange("D10:D").getNextDataCell(SpreadsheetApp.Direction.DOWN).getValue();
+  
+  //console.log("Start Day: " + startDay);
+  //console.log("End Day: " + endDay);
+
+  var events = calendar.getEvents(new Date(startDay), new Date(endDay));
+  var eventMap = {};
+
+  // Create a map of existing calendar events
+  for (var i = 0; i < events.length; i++) {
+    var event = events[i];
+    var eventTitle = event.getTitle();
+    eventMap[eventTitle] = event;
+
+    Logger.log('Event on Calendar: ' + eventMap[eventTitle].getTitle());
+  }
+~~~
+
+## Referencias
 
 [1]: https://developers.google.com/apps-script
