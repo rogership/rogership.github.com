@@ -40,6 +40,8 @@ Analisa-se o efeito de bottleneck ou gargalo em um fluxo UDP entre cliente e ser
 
 ## Desenvolvimento
 
+>  ubuntu@ns3:~/ns-allinone-3.38/ns-3.38$ ./ns3 run "exp02-udpgargalo.cc --DataRate=80kbps --Delay=2ms" --cwd=/home/ubuntu/ns-allinone-3.38/ns-3.38/scratch/adr --vis
+
 ## Resultados
 
 ## Conclusão
