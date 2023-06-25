@@ -2,7 +2,6 @@
 layout: post
 title: "Como criar um cronograma\ de estudo no Google Sheets\ sincronizado com o Google Calendar"
 categories: [Produtividade, Javascript, G Suite, how-to]
-bibliography: references.bib
 ---
 
 <nav class="toc-fixed" markdown="1">
