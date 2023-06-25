@@ -43,9 +43,13 @@ Fiquem a vontade para copiar o [Template Cronograma](https://docs.google.com/spr
 
 ## O script
 
-Appscript utiliza-se de Javascript, por tanto todo o código é Javascript.
+A planilha manipula todas as agendas do calendário sem necessidade de interação manual pelo Google Calendar para gerenciar os eventos do calendário.
 
-A planilha manipula todas as agendas do calendário sem necessidade de interação manual para gerenciar os eventos do calendário.
+**Ações:**
+
+1. Criar Agenda
+2. Atualizar hora de Início, hora fim e descrição de um evento
+3. Deletar eventos inexistentes na planilha
 
 O script foi dividido em 3 etapas + Criação do botão na Ui do Google Sheets
 
