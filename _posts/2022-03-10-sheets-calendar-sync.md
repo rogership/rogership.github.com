@@ -11,7 +11,9 @@ categories: [Produtividade, Javascript, G Suite, how-to]
 
 **Sincronizando Google Sheets e Google Calendar como ferramenta de estudo**
 
-![sheets-to-calendar-sync](https://github.com/rogership/rogership.github.com/blob/master/images/sheets-calendar-sync/example2.gif)
+<p align="center">
+  <img src="/images/sheets-calendar-sync/example2.gif"/>
+</p>
 
 As ferramentas do G Suite são extremamentes poderosas e este artigo mostra como sincronizar o Google Sheets com o Google Calendar para um cronograma de estudo.
 

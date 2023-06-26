@@ -16,5 +16,5 @@ google_analytics: 'UA-xx-xx-xx-xx'
 gems: [jekyll-paginate]
 
 # Details for the RSS feed generator
-url:            '/'
+url:            'https://rogership.github.io/'
 author:         'Roger Ribeiro'
