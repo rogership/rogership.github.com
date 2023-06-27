@@ -4,15 +4,6 @@ title: "Como criar um cronograma\ de estudo no Google Sheets\ sincronizado com o
 categories: [Produtividade, Javascript, G Suite, how-to]
 ---
 
-<nav class="toc-fixed" markdown="1">
-* TOC
-{:toc}
-</nav>
-
-**Sincronizando Google Sheets e Google Calendar como ferramenta de estudo**
-
-![]
-
 As ferramentas do G Suite são extremamentes poderosas e neste artigo mostro como sincronizar o Google Sheets com o Google Calendar para um cronograma de estudo.
 
 ## O Appscript do Google Sheets e setups
