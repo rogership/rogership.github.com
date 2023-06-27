@@ -4,47 +4,44 @@ title: "Como criar um cronograma\ de estudo no Google Sheets\ sincronizado com o
 categories: [Produtividade, Javascript, G Suite, how-to]
 ---
 
+<nav class="toc-fixed" markdown="1">
+* TOC
+{:toc}
+</nav>
 
 **Sincronizando Google Sheets e Google Calendar como ferramenta de estudo**
 
-<p align="center">
-  <img src="/images/sheets-calendar-sync/example2.gif"/>
-</p>
+![]
 
-As ferramentas do G Suite são extremamentes poderosas e este artigo mostra como sincronizar o Google Sheets com o Google Calendar para um cronograma de estudo.
+As ferramentas do G Suite são extremamentes poderosas e neste artigo mostro como sincronizar o Google Sheets com o Google Calendar para um cronograma de estudo.
 
 ## O Appscript do Google Sheets e setups
 
-Segundo a google, <cite>[Appscript][1]</cite>:
+Assim é definido o <cite>[Appscript][1]</cite>:
 
 >  Apps Script is a cloud-based JavaScript platform that lets you integrate with and automate tasks across Google products.
 
-Assim, usaremos o Google Sheets como agenda de cronograma de estudo sincronizado com o Google Calendar.
-
-**A planilha criar, atualiza e apaga as agendas diretamente no calendar.
-**
-
-Vamos precisar do CalendarID, portanto, copiamos o CalendarID nas configurações do Google Calendar e da planilha de cronograma.
-
-![](gif do calendarID)
-
-### Template do Cronograma
-
-Fiquem a vontade para copiar o [Template Cronograma](https://docs.google.com/spreadsheets/d/18yDeBRuJG0KqTidovBiFiWT06EAvJa2YV39_jBgzroI/edit?usp=sharing)
-
-O template já possui o script e a Ui, *Sync to Calendar* por padrão, pronto para uso.
-
-Cole o CalendarID na na célula específica e a planilha estará pronta para uso.
+A figura 1 ilustra como o Appscript é acessado
 
 <p align="center">
   <img src="/images/sheets-calendar-sync/appscript_spreadsheet.png" />
 </p>
- 
+
+Crie um novo script, como mostrado na figura 2
 
 <p align="center">
   <img src="/images/sheets-calendar-sync/new_script.png" />
 </p>
- 
+
+### Coleta do CalendarID
+
+Colete o CalendarID do calendário específico no Google Calendar
+
+*Inserir as figuras indicando local de verificação do CalendarID*
+
+### Template do Cronograma
+
+Fiquem a vontade para copiar o [Template Cronograma](https://docs.google.com/spreadsheets/d/18yDeBRuJG0KqTidovBiFiWT06EAvJa2YV39_jBgzroI/edit?usp=sharing) 
 
 ## O script
 
@@ -100,7 +97,7 @@ O script foi dividido em 3 etapas + Criação do botão na Ui do Google Sheets
 
 A classe Range coleta todos os valores em um range de células de uma planilha, inclusive valores vazios, portanto, é necessário tratar os valores vazios.
 
-~~~javascript
+~~~Javascript
   /**
     * 2) Handle sheets and non-empty cells
   **/
@@ -121,7 +118,7 @@ A classe Range coleta todos os valores em um range de células de uma planilha, 
 
 ### O laço que tudo acontece
 
-~~~javascript
+~~~Javascript
   /**
    * 3) For loop comparing calendar event titles and spreadsheet event titles
   **/
@@ -169,9 +166,6 @@ A classe Range coleta todos os valores em um range de células de uma planilha, 
   
   }
 ~~~
-
-
-### O laço que tudo acontece
 
 
 ### A Ui
