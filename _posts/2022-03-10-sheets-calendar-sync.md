@@ -9,6 +9,7 @@ categories: [Produtividade, Javascript, G Suite]
 {:toc}
 </nav>
 
+![example](/images/sheets-calendar-sync/example2.gif)
 
 <p align="left">
   <img src="/images/sheets-calendar-sync/example2.gif" width="300" height="200"/>
