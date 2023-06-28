@@ -8,7 +8,11 @@ As ferramentas do G Suite são extremamentes poderosas e neste artigo mostro com
 
 ## O Appscript do Google Sheets e setups
 
+<<<<<<< HEAD
 Assim é definido o <cite>[Appscript][1]</cite>:
+=======
+Assim é definido o Appscript:
+>>>>>>> ef178ab (update)
 
 >  Apps Script is a cloud-based JavaScript platform that lets you integrate with and automate tasks across Google products.
 
