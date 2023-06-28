@@ -11,7 +11,7 @@ categories: [Produtividade, Javascript, G Suite]
 
 
 <p align="left">
-  <img src="/images/sheets-calendar-sync/example2.gif" width="400" height="500"/>
+  <img src="/images/sheets-calendar-sync/example2.gif" width="300" height="200"/>
 </p>
 
 As ferramentas do G Suite são extremamentes poderosas e neste artigo mostro como sincronizar o Google Sheets com o Google Calendar para um cronograma de estudo.
