@@ -11,7 +11,7 @@ categories: [Produtividade, Javascript, G Suite, how-to]
 
 **Sync Google Sheets com o Google Calendar**
 
-<p align="center">
+<p align="left">
   <img src="/images/sheets-calendar-sync/example2.gif" width="400" height="500"/>
 </p>
 
