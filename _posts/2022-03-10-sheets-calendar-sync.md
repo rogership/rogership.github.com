@@ -4,39 +4,55 @@ title: "Como criar um cronograma\ de estudo no Google Sheets\ sincronizado com o
 categories: [Produtividade, Javascript, G Suite, how-to]
 ---
 
+<nav class="toc-fixed" markdown="1">
+* TOC
+{:toc}
+</nav>
+
+**Sync Google Sheets com o Google Calendar**
+
+<p align="center">
+  <img src="/images/sheets-calendar-sync/example2.gif" width="400" height="500"/>
+</p>
+
 As ferramentas do G Suite são extremamentes poderosas e neste artigo mostro como sincronizar o Google Sheets com o Google Calendar para um cronograma de estudo.
+
 
 ## O Appscript do Google Sheets e setups
 
-<<<<<<< HEAD
-Assim é definido o <cite>[Appscript][1]</cite>:
-=======
-Assim é definido o Appscript:
->>>>>>> ef178ab (update)
+Assim é definido o **Appscript**:
 
 >  Apps Script is a cloud-based JavaScript platform that lets you integrate with and automate tasks across Google products.
 
-A figura 1 ilustra como o Appscript é acessado
+Assim, utilizo da ferramenta do Appscript para sincronizar cronograma de estudo no Google Sheets com o Google Calendar.
 
-<p align="center">
-  <img src="/images/sheets-calendar-sync/appscript_spreadsheet.png" />
-</p>
+O script permite gerenciar todas as agendas através da planilha,
 
-Crie um novo script, como mostrado na figura 2
-
-<p align="center">
-  <img src="/images/sheets-calendar-sync/new_script.png" />
-</p>
+1. Criar novas agendas (eventos)
+2. Atualizar agendas existentes
+3. Deletar eventos
 
 ### Coleta do CalendarID
 
-Colete o CalendarID do calendário específico no Google Calendar
+Para sincronizar o Google Sheets com o Google Calendar será necessário coletar o CalendarID do calendário
 
-*Inserir as figuras indicando local de verificação do CalendarID*
+<p align="center">
+  <img src="/images/sheets-calendar-sync/calendarid.gif" width="400" height="500"/>
+</p>
 
 ### Template do Cronograma
 
-Fiquem a vontade para copiar o [Template Cronograma](https://docs.google.com/spreadsheets/d/18yDeBRuJG0KqTidovBiFiWT06EAvJa2YV39_jBgzroI/edit?usp=sharing) 
+O template já herda o script e toda a estrutura da planilha para uso, portanto, fiquem a vontade para copiar o [Template Cronograma](https://docs.google.com/spreadsheets/d/18yDeBRuJG0KqTidovBiFiWT06EAvJa2YV39_jBgzroI/edit?usp=sharing) 
+
+Insira o calendarId do calendário que deseja utilizar na célula específica, será necessário autorizar as permissões de uso do Google sheets para o Google Calendar, este processo é feito ao executar o script pela primeira vez.
+
+## Execução do script
+
+É possível criar uma nova guia no menu de ferramentas, assim para executar o script basta clicar em *Sincronizar agenda* no menu.
+
+<p align="center">
+  <img src="/images/sheets-calendar-sync/sync_button.gif" width="400" height="500"/>
+</p>
 
 ## O script
 
