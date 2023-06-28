@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Como criar um cronograma\ de estudo no Google Sheets\ sincronizado com o Google Calendar"
-categories: [Produtividade, Javascript, G Suite, how-to]
+title: "Sync Google Sheets com o Google Calendar"
+categories: [Produtividade, Javascript, G Suite]
 ---
 
 <nav class="toc-fixed" markdown="1">
@@ -9,7 +9,6 @@ categories: [Produtividade, Javascript, G Suite, how-to]
 {:toc}
 </nav>
 
-**Sync Google Sheets com o Google Calendar**
 
 <p align="left">
   <img src="/images/sheets-calendar-sync/example2.gif" width="400" height="500"/>
