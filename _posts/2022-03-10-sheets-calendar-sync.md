@@ -11,7 +11,7 @@ categories: [Produtividade, Javascript, G Suite]
 
 <iframe width="420" height="315" src="http://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
 
-<iframe width="420" height="315" src="images/sheets-calendar-sync/sync-preview.mp4" frameborder="0" allowfullscreen></iframe>
+<iframe width="420" height="315" src="/images/sheets-calendar-sync/sync-preview.mp4" frameborder="0" allowfullscreen></iframe>
 
 {:refdef: style="text-align: center;"}
 ![My Image](/images/sheets-calendar-sync/sync-preview.mp4)
