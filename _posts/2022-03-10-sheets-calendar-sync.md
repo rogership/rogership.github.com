@@ -57,7 +57,7 @@ Insira o calendarId na célula específica, será necessário autorizar as permi
 É possível criar uma nova guia no menu de ferramentas, assim para executar o script basta clicar em *Sincronizar agenda* no menu.
 
 <p align="center">
-  <img src="/images/sheets-calendar-sync/sheets_sync_ui.png" width="640" height="480"/>
+  <img src="/images/sheets-calendar-sync/sheets_sync_ui_640.png"/>
 </p>
 
 ## O script
