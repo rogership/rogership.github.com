@@ -43,11 +43,7 @@ Apenas a planilha é necessária para gerar, atualizar e deletar eventos.
 Para sincronizar o Google Sheets com o Google Calendar será necessário coletar o CalendarID do calendário
 
 <p align="center">
-<<<<<<< HEAD
   <img src="/images/sheets-calendar-sync/calendar_settings.png" width="640" height="480"/>
-=======
-  <img src="/images/sheets-calendar-sync/calendarid.gif" width="640" height="480"/>
->>>>>>> refs/remotes/origin/master
 </p>
 
 ### Template do Cronograma
@@ -93,16 +89,10 @@ As referências podem ser consultadas [Aqui](https://developers.google.com/apps-
 
 Cria-se os objeteos de cada serviço, Calendar e Sheets, trata-se os valores necessários e principalmente criamos um dicionário chamado **eventMap** com eventos já existentes no calendário com estrutura
 
-<<<<<<< HEAD
 
 > {key: value}
 > { "Título do Evento" : Objeto do evento}
 
-=======
-~~~javascript
-{ "Título do Evento" : Objeto do evento}
-~~~
->>>>>>> refs/remotes/origin/master
 
 ~~~Javascript
   /**
@@ -220,7 +210,6 @@ Iteramos sobre toda a planilha e comparamos os tópicos com os títulos de event
 ### A Ui
 
 Para transformar o script em uma ação dem UI, cria-se um botão no layout do Google Sheets
-<<<<<<< HEAD
 
 ~~~javascript
 /**
@@ -239,26 +228,6 @@ function onOpen() {
 
 ## Referências
 
-=======
-
-~~~javascript
-/**
- * 
- * 4) Make it easy to use.
- * UI GUI
- */
-
-function onOpen() {
-  var ui = SpreadsheetApp.getUi();
-  ui.createMenu("Sync to Calendar")
-    .addItem("Sincronizar a agenda", "syncCalendarEvents")
-    .addToUi();
-}
-~~~
-
-## Referencias
-
->>>>>>> refs/remotes/origin/master
 [1] https://developers.google.com/apps-script
 
 [2] https://cloud.google.com/blog/products/g-suite/g-suite-pro-tip-how-to-automatically-add-a-schedule-from-google-sheets-into-calendar
