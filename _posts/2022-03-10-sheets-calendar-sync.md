@@ -10,7 +10,7 @@ categories: [Produtividade, Javascript, G Suite]
 </nav>
 
 {:refdef: style="text-align: center;"}
-![My Image](/images/sheets-calendar-sync/example2.gif)
+![My Image](/images/sheets-calendar-sync/sync-preview.mp4)
 {: refdef}
 
 
