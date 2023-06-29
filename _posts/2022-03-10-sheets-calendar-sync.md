@@ -18,16 +18,6 @@ Gif
 {: refdef}
 
 
-
-
-![example](/images/sheets-calendar-sync/example2.gif)
-
-<p align="left">
-  <img src="/images/sheets-calendar-sync/example2.gif" width="300" height="200"/>
-</p>
-
-<img class="example" src="/images/sheets-calendar-sync/example2.gif" alt="/images/sheets-calendar-sync/example2.gif" jsname="exmample" jsaction="click:HTIlC" loading="lazy">
-
 As ferramentas do G Suite são extremamentes poderosas e neste artigo mostro como sincronizar o Google Sheets com o Google Calendar para um cronograma de estudo.
 
 
@@ -37,7 +27,7 @@ Assim é definido o **Appscript**:
 
 >  Apps Script is a cloud-based JavaScript platform that lets you integrate with and automate tasks across Google products.
 
-Assim, utilizo da ferramenta do Appscript para sincronizar cronograma de estudo no Google Sheets com o Google Calendar.
+Este artigo trata-se de um código para sincronizar cronograma de estudo no Google Sheets com o Google Calendar.
 
 O script permite gerenciar todas as agendas através da planilha,
 
@@ -45,19 +35,22 @@ O script permite gerenciar todas as agendas através da planilha,
 2. Atualizar agendas existentes
 3. Deletar eventos
 
+Apenas a planilha é necessária para gerar, atualizar e deletar eventos.
+
+
 ### Coleta do CalendarID
 
 Para sincronizar o Google Sheets com o Google Calendar será necessário coletar o CalendarID do calendário
 
 <p align="center">
-  <img src="/images/sheets-calendar-sync/calendarid.gif" width="400" height="500"/>
+  <img src="/images/sheets-calendar-sync/calendarid.gif" width="640" height="480"/>
 </p>
 
 ### Template do Cronograma
 
 O template já herda o script e toda a estrutura da planilha para uso, portanto, fiquem a vontade para copiar o [Template Cronograma](https://docs.google.com/spreadsheets/d/18yDeBRuJG0KqTidovBiFiWT06EAvJa2YV39_jBgzroI/edit?usp=sharing) 
 
-Insira o calendarId do calendário que deseja utilizar na célula específica, será necessário autorizar as permissões de uso do Google sheets para o Google Calendar, este processo é feito ao executar o script pela primeira vez.
+Insira o calendarId na célula específica, será necessário autorizar as permissões de uso do Google sheets para o Google Calendar, este processo é feito ao executar o script pela primeira vez.
 
 ## Execução do script
 
@@ -86,7 +79,19 @@ O script foi dividido em 3 etapas + Criação do botão na Ui do Google Sheets
 3. Laço onde acontece as ações
 4. Criação do botão UI
 
+Existe uma excelente documentação das classes existentes para uso em integração com o G Suite
+
+Utiliza-se dos serviços ***Calendar*** e do ***Sheets***.
+
+As referências podem ser consultadas [Aqui](https://developers.google.com/apps-script/reference).
+
 ### Classes CalendarApp e SpreadsheetApp
+
+Cria-se os objeteos de cada serviço, Calendar e Sheets, trata-se os valores necessários e principalmente criamos um dicionário chamado **eventMap** com eventos já existentes no calendário com estrutura
+
+~~~javascript
+{ "Título do Evento" : Objeto do evento}
+~~~
 
 ~~~Javascript
   /**
@@ -121,6 +126,12 @@ O script foi dividido em 3 etapas + Criação do botão na Ui do Google Sheets
 
 A classe Range coleta todos os valores em um range de células de uma planilha, inclusive valores vazios, portanto, é necessário tratar os valores vazios.
 
+Esta etapa do script atribui a variável **lastRow** a última linha em uso da coluna *B10*, coluna dos tópicos de estudo.
+
+A variável **lastColumn** recebe a última coluna em uso.
+
+Assim trata-se todos os valores existentes do tópico, hora de início e hora de fim de estudo. 
+
 ~~~Javascript
   /**
     * 2) Handle sheets and non-empty cells
@@ -141,6 +152,10 @@ A classe Range coleta todos os valores em um range de células de uma planilha, 
 ~~~
 
 ### O laço que tudo acontece
+
+Este laço, trata-se eventos a serem criados, atualização da hora de início e hora final de eventos com mesmo nome ao tópico da planilha e apaga eventos que não estão na planilha.
+
+Iteramos sobre toda a planilha e comparamos os tópicos com os títulos de eventos já existentes, a partir desse etapa, toma-se ação se cria o evento, atualiza ou deleta.
 
 ~~~Javascript
   /**
@@ -191,9 +206,29 @@ A classe Range coleta todos os valores em um range de células de uma planilha, 
   }
 ~~~
 
-
 ### A Ui
+
+Para transformar o script em uma ação dem UI, cria-se um botão no layout do Google Sheets
+
+~~~javascript
+/**
+ * 
+ * 4) Make it easy to use.
+ * UI GUI
+ */
+
+function onOpen() {
+  var ui = SpreadsheetApp.getUi();
+  ui.createMenu("Sync to Calendar")
+    .addItem("Sincronizar a agenda", "syncCalendarEvents")
+    .addToUi();
+}
+~~~
 
 ## Referencias
 
-[1]: https://developers.google.com/apps-script
+[1] https://developers.google.com/apps-script
+
+[2] https://cloud.google.com/blog/products/g-suite/g-suite-pro-tip-how-to-automatically-add-a-schedule-from-google-sheets-into-calendar
+
+[3] https://developers.google.com/apps-script
