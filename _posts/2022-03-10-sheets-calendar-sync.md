@@ -9,6 +9,11 @@ categories: [Produtividade, Javascript, G Suite]
 {:toc}
 </nav>
 
+{:refdef: style="text-align: center;"}
+![My Image](/images/sheets-calendar-sync/example2.gif)
+{: refdef}
+
+
 ![example](/images/sheets-calendar-sync/example2.gif)
 
 <p align="left">
