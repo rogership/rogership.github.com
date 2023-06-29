@@ -57,7 +57,7 @@ Insira o calendarId na célula específica, será necessário autorizar as permi
 É possível criar uma nova guia no menu de ferramentas, assim para executar o script basta clicar em *Sincronizar agenda* no menu.
 
 <p align="center">
-  <img src="/images/sheets-calendar-sync/sync_button.gif" width="400" height="500"/>
+  <img src="/images/sheets-calendar-sync/sheets_sync_ui.png" width="640" height="480"/>
 </p>
 
 ## O script
@@ -83,7 +83,7 @@ Existe uma excelente documentação das classes existentes para uso em integraç
 
 Utiliza-se dos serviços ***Calendar*** e do ***Sheets***.
 
-As referências podem ser consultadas [Aqui](https://developers.google.com/apps-script/reference).
+As referências podem ser consultadas em https://developers.google.com/apps-script/reference.
 
 ### Classes CalendarApp e SpreadsheetApp
 
@@ -228,8 +228,8 @@ function onOpen() {
 
 ## Referências
 
-[1] https://developers.google.com/apps-script
+https://developers.google.com/apps-script
 
-[2] https://cloud.google.com/blog/products/g-suite/g-suite-pro-tip-how-to-automatically-add-a-schedule-from-google-sheets-into-calendar
+https://cloud.google.com/blog/products/g-suite/g-suite-pro-tip-how-to-automatically-add-a-schedule-from-google-sheets-into-calendar
 
-[3] https://developers.google.com/apps-script
+https://developers.google.com/apps-script
