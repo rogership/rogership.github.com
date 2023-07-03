@@ -8,8 +8,6 @@ categories: [Produtividade, Javascript, G Suite]
 ![Exemplo](/images/sheets-calendar-sync/calendar-sync-480.gif)
 {: refdef}
 
- <video loop src="/images/sheets-calendar-sync/calendar_sync480.mp4">  video </video>
-
  <img class="JcsBte mZzdH" src="/images/sheets-calendar-sync/calendar_sync480.mp4" jsname="P3Vluc" jsaction="click:HTIlC" loading="lazy">
 
 As ferramentas do G Suite são extremamentes poderosas e neste artigo mostro como sincronizar o Google Sheets com o Google Calendar para um cronograma de estudo.
