@@ -9,9 +9,7 @@ categories: [Produtividade, Javascript, G Suite]
 {:toc}
 </nav>
 
-{:refdef: style="text-align: center;"}
 ![Exemplo](/images/sheets-calendar-sync/calendar_sync.gif)
-{: refdef}
 
 
 As ferramentas do G Suite são extremamentes poderosas e neste artigo mostro como sincronizar o Google Sheets com o Google Calendar para um cronograma de estudo.
