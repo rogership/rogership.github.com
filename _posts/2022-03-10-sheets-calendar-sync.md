@@ -9,12 +9,8 @@ categories: [Produtividade, Javascript, G Suite]
 {:toc}
 </nav>
 
-Video
-<iframe width="420" height="315" src="/images/sheets-calendar-sync/sync-preview.mp4" frameborder="0" allowfullscreen></iframe>
-
-Gif
 {:refdef: style="text-align: center;"}
-![My Image](/images/sheets-calendar-sync/sync-preview.gif)
+![Exemplo](/images/sheets-calendar-sync/calendar_sync.gif)
 {: refdef}
 
 
