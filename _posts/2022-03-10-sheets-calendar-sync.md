@@ -5,7 +5,7 @@ categories: [Produtividade, Javascript, G Suite]
 ---
 
 {:refdef: style="text-align: center;"}
-![Exemplo](/images/sheets-calendar-sync/sync-480.gif)
+![Exemplo](/images/sheets-calendar-sync/calendar-sync-480.gif)
 {: refdef}
 
 
