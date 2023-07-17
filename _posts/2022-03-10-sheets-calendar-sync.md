@@ -4,14 +4,6 @@ title: "Sync Google Sheets com o Google Calendar"
 categories: [Produtividade, Javascript, G Suite]
 ---
 
-{:refdef: style="text-align: center;"}
-![Exemplo](/images/sheets-calendar-sync/calendar-sync-480.gif)
-{: refdef}
-
-
-<iframe width="640" height="480" src="/images/sheets-calendar-sync/calendar-sync-480.gif" frameborder="0" allowfullscreen></iframe>
-
-
 As ferramentas do G Suite são extremamentes poderosas e neste artigo mostro como sincronizar o Google Sheets com o Google Calendar para um cronograma de estudo.
 
 
@@ -46,13 +38,6 @@ O template já herda o script e toda a estrutura da planilha para uso, portanto,
 
 Insira o calendarId na célula específica, será necessário autorizar as permissões de uso do Google sheets para o Google Calendar, este processo é feito ao executar o script pela primeira vez.
 
-## Execução do script
-
-É possível criar uma nova guia no menu de ferramentas do Google sheets, assim para executar o script basta clicar em *Sincronizar agenda* no menu.
-
-<p align="center">
-  <img src="/images/sheets-calendar-sync/sheets_sync_ui_640.png"/>
-</p>
 
 ## O script
 
@@ -78,6 +63,12 @@ Existe uma excelente documentação das classes existentes para uso em integraç
 Utiliza-se dos serviços ***Calendar*** e do ***Sheets***.
 
 As referências podem ser consultadas em <https://developers.google.com/apps-script/reference>.
+
+É possível criar uma nova guia no menu de ferramentas do Google sheets, assim para executar o script basta clicar em *Sincronizar agenda* no menu.
+
+<p align="center">
+  <img src="/images/sheets-calendar-sync/sheets_sync_ui_640.png"/>
+</p>
 
 ### Classes CalendarApp e SpreadsheetApp
 
@@ -204,7 +195,7 @@ Iteramos sobre toda a planilha e comparamos os tópicos com os títulos de event
 
 ### A Ui
 
-Para transformar o script em uma ação dem UI, cria-se um botão no layout do Google Sheets
+Para transformar o script em uma ação em UI, cria-se um botão no layout do Google Sheets
 
 ~~~javascript
 /**
