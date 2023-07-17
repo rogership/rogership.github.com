@@ -4,6 +4,11 @@ title: "Sync Google Sheets com o Google Calendar"
 categories: [Produtividade, Javascript, G Suite]
 ---
 
+<nav class="toc-fixed" markdown="1">
+* TOC
+{:toc}
+</nav>
+
 As ferramentas do G Suite são extremamentes poderosas e neste artigo mostro como sincronizar o Google Sheets com o Google Calendar para um cronograma de estudo.
 
 
