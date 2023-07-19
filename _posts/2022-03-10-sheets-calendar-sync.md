@@ -4,14 +4,12 @@ title: "Sync Google Sheets com o Google Calendar"
 categories: [Produtividade, Javascript, G Suite]
 ---
 
-<nav class="toc-fixed" markdown="1">
-* TOC
-{:toc}
-</nav>
-
 {:refdef: style="text-align: center;"}
-![Exemplo](/images/sheets-calendar-sync/calendar_sync.gif)
+![Exemplo](/images/sheets-calendar-sync/calendar-sync-480.gif)
 {: refdef}
+
+
+<iframe width="640" height="480" src="/images/sheets-calendar-sync/calendar-sync-480.gif" frameborder="0" allowfullscreen></iframe>
 
 
 As ferramentas do G Suite são extremamentes poderosas e neste artigo mostro como sincronizar o Google Sheets com o Google Calendar para um cronograma de estudo.
@@ -50,7 +48,7 @@ Insira o calendarId na célula específica, será necessário autorizar as permi
 
 ## Execução do script
 
-É possível criar uma nova guia no menu de ferramentas, assim para executar o script basta clicar em *Sincronizar agenda* no menu.
+É possível criar uma nova guia no menu de ferramentas do Google sheets, assim para executar o script basta clicar em *Sincronizar agenda* no menu.
 
 <p align="center">
   <img src="/images/sheets-calendar-sync/sheets_sync_ui_640.png"/>
@@ -79,7 +77,7 @@ Existe uma excelente documentação das classes existentes para uso em integraç
 
 Utiliza-se dos serviços ***Calendar*** e do ***Sheets***.
 
-As referências podem ser consultadas em https://developers.google.com/apps-script/reference.
+As referências podem ser consultadas em <https://developers.google.com/apps-script/reference>.
 
 ### Classes CalendarApp e SpreadsheetApp
 
@@ -87,6 +85,7 @@ Cria-se os objeteos de cada serviço, Calendar e Sheets, trata-se os valores nec
 
 
 > {key: value}
+> 
 > { "Título do Evento" : Objeto do evento}
 
 
@@ -224,8 +223,8 @@ function onOpen() {
 
 ## Referências
 
-https://developers.google.com/apps-script
+<https://developers.google.com/apps-script>
 
-https://cloud.google.com/blog/products/g-suite/g-suite-pro-tip-how-to-automatically-add-a-schedule-from-google-sheets-into-calendar
+<https://cloud.google.com/blog/products/g-suite/g-suite-pro-tip-how-to-automatically-add-a-schedule-from-google-sheets-into-calendar>
 
-https://developers.google.com/apps-script
+<https://developers.google.com/apps-script>
