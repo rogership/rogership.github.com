@@ -9,7 +9,7 @@ categories: [Produtividade, Javascript, G Suite]
 {:toc}
 </nav>
 
-<img src="images/sheets-calendar-sync/calendar_sync.gif" width="450"/>
+<img src="images/sheets-calendar-sync/calendar_sync.gif"/>
 
 As ferramentas do G Suite são extremamentes poderosas e neste artigo mostro como sincronizar o Google Sheets com o Google Calendar para um cronograma de estudo.
 
