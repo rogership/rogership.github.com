@@ -9,7 +9,7 @@ categories: [Produtividade, Javascript, G Suite]
 {:toc}
 </nav>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/PiNdcBg3xC8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qqxB5OzOWUE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 As ferramentas do G Suite são extremamentes poderosas e neste artigo mostro como sincronizar o Google Sheets com o Google Calendar para um cronograma de estudo.
 
