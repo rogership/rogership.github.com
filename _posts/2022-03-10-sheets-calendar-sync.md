@@ -9,7 +9,7 @@ categories: [Produtividade, Javascript, G Suite]
 {:toc}
 </nav>
 
-![steam-fish-1](/images/sheets-calendar-sync/calendar_sync.mp4){: width="150" }
+![steam-fish-1](/images/sheets-calendar-sync/calendar_sync.mp4){: width="100" }
 
 As ferramentas do G Suite são extremamentes poderosas e neste artigo mostro como sincronizar o Google Sheets com o Google Calendar para um cronograma de estudo.
 
