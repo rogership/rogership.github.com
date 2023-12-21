@@ -1,3 +1,14 @@
+---
+layout: post
+title: "Python Dictionary"
+categories: [Python]
+---
+
+<nav class="toc-fixed" markdown="1">
+* TOC
+{:toc}
+</nav>
+
 ## Dictionaries
 
 ### Key value pair
