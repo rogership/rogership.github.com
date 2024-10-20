@@ -30,7 +30,7 @@ The files typically start by getting the root config object:
     #add the line
     c.InteractiveShell.ast_node_interactivity = "all"
 
-You need to restar the Jupyer Kernel server
+You need to restar the Jupyer Kernel server, do it by closing all Jupyter instances and opening again or 
 
 Make sure that your ipython is running the right profile
 
