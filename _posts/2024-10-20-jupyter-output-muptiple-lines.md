@@ -34,15 +34,16 @@ You need to restar the Jupyer Kernel server, do it by closing all Jupyter instan
 
 Make sure that your ipython is running the right profile
 
-       ~/.ipython/profile_default  ipython --show-config                                                                 ✔ 
+       ~/.ipython/profile_default  ipython --show-config ✔ 
+    
     Python 3.12.6 (main, Sep  8 2024, 13:18:56) [GCC 14.2.1 20240805]
     Type 'copyright', 'credits' or 'license' for more information
     IPython 8.27.0 -- An enhanced Interactive Python. Type '?' for help.
     Loaded config files:
     /home/roger/.ipython/profile_default/ipython_config.py
 
-    InteractiveShell
-    .ast_node_interactivity = 'all'
+    InteractiveShell.ast_node_interactivity = 'all'
+    
 
 
 
