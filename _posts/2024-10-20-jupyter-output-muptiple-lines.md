@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Jupyter Notebook configuring to print multiple line outputs"
+title: "Jupyter Notebook - Multiple lines output configuration"
 categories: [Python]
 ---
 
