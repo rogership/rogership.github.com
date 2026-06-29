@@ -89,7 +89,7 @@ main#quarto-document-content pre {
     font-size: 0.9em !important;
     white-space: pre;
     overflow: auto;
-    background: #F7FAFB !important;
+    background: #e8e8e8 !important;
     border-radius: 3px !important;
     line-height: 1.6;
 }
