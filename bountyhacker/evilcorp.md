@@ -1,6 +1,5 @@
 ---
 share: true
-path: evilcorp
 title: EvilCorp CTF
 date: 2026-06-28
 categories:
@@ -10,7 +9,7 @@ categories:
   - wordpress
   - docker
 description: Unrestricted File Upload → Password Reuse → sudo vim para root.
-image: Images/newsletter-upload.png
+image: newsletter-upload.png
 tags:
   - writeup
   - ctf
@@ -24,6 +23,7 @@ platform: Docker
 dificuldade: Médio
 data: 2026-06-28
 status: concluído
+path: evilcorp
 ---
 
 >[!info] Resolução do CTF EvilCorp elaborado por Roger Ribeiro — 2026-06-28
