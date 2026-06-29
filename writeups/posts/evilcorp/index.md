@@ -1,5 +1,4 @@
 ---
-share: true
 title: EvilCorp CTF
 date: 2026-06-28
 categories:
@@ -10,23 +9,9 @@ categories:
   - docker
 description: Unrestricted File Upload → Password Reuse → sudo vim para root.
 image: newsletter-upload.png
-tags:
-  - writeup
-  - ctf
-  - linux
-  - wordpress
-  - file-upload
-  - password-reuse
-  - privilege-escalation
-  - vim
-platform: Docker
-dificuldade: Médio
-data: 2026-06-28
-status: concluído
-path: evilcorp
 ---
 
->[!info] Resolução do CTF EvilCorp elaborado por Roger Ribeiro — 2026-06-28
+> Resolução do CTF EvilCorp elaborado por Roger Ribeiro — 2026-06-28
 
 ## Target Info
 
@@ -119,7 +104,7 @@ Disallow: /wp-content/uploads/
 
 O `robots.txt` expõe o plugin interno `evilcorp-newsletter`. Acesso direto ao diretório retorna 403, mas há um endpoint de upload.
 
-![newsletter-upload.png](newsletter-upload.png)
+![newsletter-upload](newsletter-upload.png)
 
 ### 1.5 Enumeração do WordPress (wpscan)
 
