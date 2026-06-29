@@ -1,0 +1,36 @@
+---
+title: "Projetos"
+toc: false
+---
+
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-6}
+### bookwatcher
+Daemon que monitora PDFs em `~/Estudo` e extrai metadados automaticamente via PyMuPDF + Open Library.
+
+`Python` `inotifywait` `systemd`
+:::
+
+::: {.g-col-12 .g-col-md-6}
+### EvilCorp CTF
+Ambiente Docker de CTF autoral com WordPress vulnerável. Cadeia: file upload → password reuse → sudo vim.
+
+`Docker` `WordPress` `Pentest`
+:::
+
+::: {.g-col-12 .g-col-md-6}
+### NetBox Lab
+Instância Docker do NetBox para documentação de redes no laptop.
+
+`Docker` `NetBox` `IPAM`
+:::
+
+::: {.g-col-12 .g-col-md-6}
+### TheLounge
+Cliente IRC com tray icon via Nativefier + AppIndicator3 no GNOME Wayland.
+
+`Electron` `Python` `Linux`
+:::
+
+:::

@@ -1,0 +1,20 @@
+---
+title: "Sobre"
+toc: false
+---
+
+Estudante de Engenharia de Redes na **Universidade de Brasília (UnB)**.
+
+Interesses principais: segurança ofensiva, redes de computadores, Linux, DevOps e deep learning aplicado a redes (GNNs).
+
+## Contato
+
+- GitHub: [rogership](https://github.com/rogership)
+- Email: roger.ribeiro6@gmail.com
+
+## Stack
+
+- **OS:** Manjaro Linux
+- **Pentest:** Kali, TryHackMe, CTFs
+- **ML:** Python, PyTorch, NumPy
+- **Infra:** Docker, NetBox, Zabbix

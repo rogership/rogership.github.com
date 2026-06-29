@@ -1,0 +1,50 @@
+---
+title: ""
+page-layout: full
+toc: false
+---
+
+::: {.hero}
+
+![](assets/profile.png){.profile-pic}
+
+# Roger Ribeiro
+
+**Redes de Computadores · Segurança Ofensiva · Deep Learning**
+
+Estudante de Engenharia de Redes na UnB. Estudando offensive security,
+graph neural networks e sistemas Linux.
+
+[Blog](blog/index.qmd){.btn .btn-primary}
+[Writeups](writeups/index.qmd){.btn .btn-outline-secondary}
+[Livros](livros/index.qmd){.btn .btn-outline-secondary}
+[Sobre mim](about.qmd){.btn .btn-outline-secondary}
+
+:::
+
+---
+
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-4}
+### 🔐 Segurança
+CTF writeups, técnicas de pentest, ferramentas ofensivas e defensivas.
+
+[Ver writeups →](writeups/index.qmd)
+:::
+
+::: {.g-col-12 .g-col-md-4}
+### 🧠 Deep Learning
+Implementações, experimentos e notas de estudo — de regressão linear até GNNs.
+
+[Ver blog →](blog/index.qmd)
+:::
+
+::: {.g-col-12 .g-col-md-4}
+### 📚 Livros
+Leituras em redes, segurança, machine learning e computação.
+
+[Ver lista →](livros/index.qmd)
+:::
+
+:::

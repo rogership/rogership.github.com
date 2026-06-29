@@ -1,0 +1,17 @@
+---
+title: "EvilCorp CTF"
+date: "2026-06-28"
+categories: [ctf, linux, wordpress, docker]
+description: "WordPress com upload sem autenticação → reutilização de senha → sudo vim"
+---
+
+## Visão Geral
+
+CTF autoral em Docker. Cadeia: Unrestricted File Upload → Password Reuse → sudo misconfiguration.
+
+| Campo      | Valor              |
+|------------|--------------------|
+| IP         | 172.20.0.20        |
+| SO         | Ubuntu 22.04       |
+| Plataforma | Docker (local)     |
+| Dificuldade| Médio              |

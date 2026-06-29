@@ -1,0 +1,10 @@
+---
+title: "Writeups"
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: true
+  fields: [date, title, categories, description]
+page-layout: full
+---

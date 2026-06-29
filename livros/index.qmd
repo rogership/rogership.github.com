@@ -1,0 +1,766 @@
+---
+title: "Livros"
+toc: false
+page-layout: full
+---
+
+Lista sincronizada automaticamente com o [Goodreads](https://www.goodreads.com/user/show/85180846-rogership) · 92 livros
+
+```{=html}
+<div class="book-filters">
+  <button class="filter-btn active" onclick="filterBooks('todos', this)">Todos (92)</button>
+  <button class="filter-btn" onclick="filterBooks('currently-reading', this)">Lendo (1)</button>
+  <button class="filter-btn" onclick="filterBooks('read', this)">Lidos (12)</button>
+  <button class="filter-btn" onclick="filterBooks('to-read', this)">Quero ler (79)</button>
+</div>
+
+<div class="books-grid">
+
+  <div class="book-card" data-status="currently-reading">
+    <div class="book-status" style="background:#0d6efd">Lendo</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1629679336l/55723020.jpg" alt="Dopamine Nation: Finding Balance in the Age of Indulgence" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Dopamine Nation: Finding Balance in the Age of Indulgence</h4>
+      <p class="book-author">Anna Lembke</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="read">
+    <div class="book-status" style="background:#198754">Lido</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1386923108l/81903.jpg" alt="Curtain" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Curtain</h4>
+      <p class="book-author">Agatha Christie</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="read">
+    <div class="book-status" style="background:#198754">Lido</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1387704437l/624465.jpg" alt="Modern Digital and Analog Communication Systems" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Modern Digital and Analog Communication Systems</h4>
+      <p class="book-author">B.P. Lathi</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="read">
+    <div class="book-status" style="background:#198754">Lido</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1708114013l/37781.jpg" alt="Things Fall Apart" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Things Fall Apart</h4>
+      <p class="book-author">Chinua Achebe</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="read">
+    <div class="book-status" style="background:#198754">Lido</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1554230952l/27712.jpg" alt="The Neverending Story" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>The Neverending Story</h4>
+      <p class="book-author">Michael Ende</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="read">
+    <div class="book-status" style="background:#198754">Lido</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1532714506l/40961427.jpg" alt="1984" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>1984</h4>
+      <p class="book-author">George Orwell</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="read">
+    <div class="book-status" style="background:#198754">Lido</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1764703833l/54493401.jpg" alt="Project Hail Mary" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Project Hail Mary</h4>
+      <p class="book-author">Andy Weir</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="read">
+    <div class="book-status" style="background:#198754">Lido</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1442726934l/4865.jpg" alt="How to Win Friends & Influence People" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>How to Win Friends & Influence People</h4>
+      <p class="book-author">Dale Carnegie</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="read">
+    <div class="book-status" style="background:#198754">Lido</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1545854312l/12609433.jpg" alt="The Power of Habit: Why We Do What We Do in Life and Business" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>The Power of Habit: Why We Do What We Do in Life and Business</h4>
+      <p class="book-author">Charles Duhigg</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="read">
+    <div class="book-status" style="background:#198754">Lido</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1433341026l/38396.jpg" alt="Einstein's Cosmos: How Albert Einstein's Vision Transformed Our Understanding of Space and Time" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Einstein's Cosmos: How Albert Einstein's Vision Transformed Our Understanding of Space and Time</h4>
+      <p class="book-author">Michio Kaku</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="read">
+    <div class="book-status" style="background:#198754">Lido</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1436227012l/40745.jpg" alt="Mindset: The New Psychology of Success" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Mindset: The New Psychology of Success</h4>
+      <p class="book-author">Carol S. Dweck</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="read">
+    <div class="book-status" style="background:#198754">Lido</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1752514552l/6088007.jpg" alt="Neuromancer" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Neuromancer</h4>
+      <p class="book-author">William Gibson</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="read">
+    <div class="book-status" style="background:#198754">Lido</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1536184191l/41721428.jpg" alt="Can't Hurt Me: Master Your Mind and Defy the Odds" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Can't Hurt Me: Master Your Mind and Defy the Odds</h4>
+      <p class="book-author">David Goggins</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1348519197l/801754.jpg" alt="The Decline of the West" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>The Decline of the West</h4>
+      <p class="book-author">Oswald Spengler</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1348757857l/83518.jpg" alt="The Singularity is Near: When Humans Transcend Biology" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>The Singularity is Near: When Humans Transcend Biology</h4>
+      <p class="book-author">Ray Kurzweil</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1312060837l/6064051.jpg" alt="Adam's Tongue: How Humans Made Language, How Language Made Humans" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Adam's Tongue: How Humans Made Language, How Language Made Humans</h4>
+      <p class="book-author">Derek Bickerton</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1552706544l/44439783.jpg" alt="Compreender o Behaviorismo: Comportamento, Cultura e Evolução" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Compreender o Behaviorismo: Comportamento, Cultura e Evolução</h4>
+      <p class="book-author">William M. Baum</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1381294249l/17435246.jpg" alt="Linguistic Relativity: Evidence Across Languages and Cognitive Domains" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Linguistic Relativity: Evidence Across Languages and Cognitive Domains</h4>
+      <p class="book-author">Caleb Everett</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1686576883l/112976399.jpg" alt="A Myriad of Tongues: How Languages Reveal Differences in How We Think" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>A Myriad of Tongues: How Languages Reveal Differences in How We Think</h4>
+      <p class="book-author">Caleb Everett</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1461354651l/15839976.jpg" alt="Red Rising" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Red Rising</h4>
+      <p class="book-author">Pierce Brown</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1308801188l/95379.jpg" alt="Behold a Pale Horse" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Behold a Pale Horse</h4>
+      <p class="book-author">Milton William Cooper</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1440030941l/26131898.jpg" alt="Comunicação não-violenta: Técnicas para aprimorar relacionamentos pessoais e profissionais" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Comunicação não-violenta: Técnicas para aprimorar relacionamentos pessoais e profissionais</h4>
+      <p class="book-author">Marshall B. Rosenberg</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1440657672l/46674.jpg" alt="Feeling Good: The New Mood Therapy" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Feeling Good: The New Mood Therapy</h4>
+      <p class="book-author">David D. Burns</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1632020500l/81959.jpg" alt="As a Man Thinketh" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>As a Man Thinketh</h4>
+      <p class="book-author">James Allen</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1737131981l/222490389.jpg" alt="Alchemised" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Alchemised</h4>
+      <p class="book-author">SenLinYu</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1369691030l/335864.jpg" alt="The Practicing Mind: Bringing Discipline and Focus into Your Life" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>The Practicing Mind: Bringing Discipline and Focus into Your Life</h4>
+      <p class="book-author">Thomas M. Sterner</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1351101941l/15756277.jpg" alt="Prisoner B-3087" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Prisoner B-3087</h4>
+      <p class="book-author">Alan Gratz</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1565872483l/2159.jpg" alt="Confessions of an Economic Hit Man" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Confessions of an Economic Hit Man</h4>
+      <p class="book-author">John Perkins</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1533132407l/41021145.jpg" alt="The Botany of Desire: A Plant's-Eye View of the World" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>The Botany of Desire: A Plant's-Eye View of the World</h4>
+      <p class="book-author">Michael Pollan</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1704228309l/274392.jpg" alt="Black Skin, White Masks" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Black Skin, White Masks</h4>
+      <p class="book-author">Frantz Fanon</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1487071230l/34299180.jpg" alt="Histórias de Ninar Para Garotas Rebeldes" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Histórias de Ninar Para Garotas Rebeldes</h4>
+      <p class="book-author">Elena Favilli</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1552228430l/40591670.jpg" alt="I Will Teach You to Be Rich: No Guilt. No Excuses. No BS. Just a 6-Week Program That Works" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>I Will Teach You to Be Rich: No Guilt. No Excuses. No BS. Just a 6-Week Program That Works</h4>
+      <p class="book-author">Ramit Sethi</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1673728072l/77197.jpg" alt="Assassin's Apprentice" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Assassin's Apprentice</h4>
+      <p class="book-author">Robin Hobb</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1577711076l/50157837.jpg" alt="The Price of Tomorrow: Why Deflation is the Key to an Abundant Future" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>The Price of Tomorrow: Why Deflation is the Key to an Abundant Future</h4>
+      <p class="book-author">Jeff Booth</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1681822696l/125231490.jpg" alt="Principles of Economics" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Principles of Economics</h4>
+      <p class="book-author">Saifedean Ammous</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1517051735l/36448501.jpg" alt="The Bitcoin Standard: The Decentralized Alternative to Central Banking" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>The Bitcoin Standard: The Decentralized Alternative to Central Banking</h4>
+      <p class="book-author">Saifedean Ammous</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1636061175l/59539733.jpg" alt="The Fiat Standard: Debt Slavery Alternative to Human Civilization" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>The Fiat Standard: Debt Slavery Alternative to Human Civilization</h4>
+      <p class="book-author">Saifedean Ammous</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1703217260l/204236621.jpg" alt="You Become What You think: Insights to Level Up Your Happiness, Personal Growth, Relationships, and Mental Health" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>You Become What You think: Insights to Level Up Your Happiness, Personal Growth, Relationships, and Mental Health</h4>
+      <p class="book-author">Shubham Kumar Singh</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1347852696l/87398.jpg" alt="Soft Power: The Means to Success in World Politics" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Soft Power: The Means to Success in World Politics</h4>
+      <p class="book-author">Joseph S. Nye Jr.</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1517732866l/31170723.jpg" alt="Behave: The Biology of Humans at Our Best and Worst" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Behave: The Biology of Humans at Our Best and Worst</h4>
+      <p class="book-author">Robert M. Sapolsky</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1331399232l/171970.jpg" alt="Alamut" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Alamut</h4>
+      <p class="book-author">Vladimir Bartol</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1409010057l/20410154.jpg" alt="Forensics: The Anatomy of Crime" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Forensics: The Anatomy of Crime</h4>
+      <p class="book-author">Val McDermid</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1701627678l/203150088.jpg" alt="The Art of Laziness: Overcome Procrastination & Improve Your Productivity" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>The Art of Laziness: Overcome Procrastination & Improve Your Productivity</h4>
+      <p class="book-author">Library Mindset</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1405633994l/9062653.jpg" alt="O Poder do Agora" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>O Poder do Agora</h4>
+      <p class="book-author">Eckhart Tolle</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1421037599l/21412226.jpg" alt="The Like Switch: An Ex-FBI Agent's Guide to Influencing, Attracting, and Winning People Over" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>The Like Switch: An Ex-FBI Agent's Guide to Influencing, Attracting, and Winning People Over</h4>
+      <p class="book-author">Jack Schafer</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1317793965l/11468377.jpg" alt="Thinking, Fast and Slow" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Thinking, Fast and Slow</h4>
+      <p class="book-author">Daniel Kahneman</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1472831109l/31823677.jpg" alt="Tools of Titans: The Tactics, Routines, and Habits of Billionaires, Icons, and World-Class Performers" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Tools of Titans: The Tactics, Routines, and Habits of Billionaires, Icons, and World-Class Performers</h4>
+      <p class="book-author">Timothy Ferriss</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1518777664l/35212990.jpg" alt="All That Remains: A Life in Death" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>All That Remains: A Life in Death</h4>
+      <p class="book-author">Sue Black</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1623669374l/57771229.jpg" alt="The Expectation Effect: How Your Mindset Can Change Your World" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>The Expectation Effect: How Your Mindset Can Change Your World</h4>
+      <p class="book-author">David   Robson</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1401875701l/16068755.jpg" alt="Rebels: City of Indra" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Rebels: City of Indra</h4>
+      <p class="book-author">Kendall Jenner</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1441384423l/35506.jpg" alt="The Language of God: A Scientist Presents Evidence for Belief" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>The Language of God: A Scientist Presents Evidence for Belief</h4>
+      <p class="book-author">Francis S. Collins</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1769553330l/22200.jpg" alt="Count Zero" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Count Zero</h4>
+      <p class="book-author">William Gibson</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1442885694l/588138.jpg" alt="The Hero with a Thousand Faces" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>The Hero with a Thousand Faces</h4>
+      <p class="book-author">Joseph Campbell</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388373561l/587906.jpg" alt="Deep Simplicity: Bringing Order to Chaos and Complexity" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Deep Simplicity: Bringing Order to Chaos and Complexity</h4>
+      <p class="book-author">John Gribbin</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1379621430l/17274667.jpg" alt="Metro 2033" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Metro 2033</h4>
+      <p class="book-author">Dmitry Glukhovsky</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1344922523l/1953.jpg" alt="A Tale of Two Cities" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>A Tale of Two Cities</h4>
+      <p class="book-author">Charles Dickens</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1433671750l/333867.jpg" alt="The Stars My Destination" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>The Stars My Destination</h4>
+      <p class="book-author">Alfred Bester</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1628421687l/21420117.jpg" alt="Battle Royale" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Battle Royale</h4>
+      <p class="book-author">Koushun Takami</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1431127356l/64216.jpg" alt="Guards! Guards!" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Guards! Guards!</h4>
+      <p class="book-author">Terry Pratchett</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1623983854l/58311980.jpg" alt="Move The Body, Heal The Mind: Overcome Anxiety, Depression, and Dementia and Improve Focus, Creativity, and Sleep" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Move The Body, Heal The Mind: Overcome Anxiety, Depression, and Dementia and Improve Focus, Creativity, and Sleep</h4>
+      <p class="book-author">Jennifer Heisz</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1347422951l/825450.jpg" alt="Lead the Field" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Lead the Field</h4>
+      <p class="book-author">Earl Nightingale</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1329470108l/12383405.jpg" alt="Thinking the Twentieth Century" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Thinking the Twentieth Century</h4>
+      <p class="book-author">Tony Judt</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1589842551l/40651883.jpg" alt="Snow Crash" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Snow Crash</h4>
+      <p class="book-author">Neal Stephenson</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1523311515l/37976541.jpg" alt="Bad Blood: Secrets and Lies in a Silicon Valley Startup" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Bad Blood: Secrets and Lies in a Silicon Valley Startup</h4>
+      <p class="book-author">John Carreyrou</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1575009552l/18693655.jpg" alt="A Mind for Numbers: How to Excel at Math and Science" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>A Mind for Numbers: How to Excel at Math and Science</h4>
+      <p class="book-author">Barbara Oakley</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1360572413l/16248051.jpg" alt="High Price: A Neuroscientist's Journey of Self-Discovery That Challenges Everything You Know About Drugs and Society" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>High Price: A Neuroscientist's Journey of Self-Discovery That Challenges Everything You Know About Drugs and Society</h4>
+      <p class="book-author">Carl L. Hart</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1349045442l/146969.jpg" alt="Drugs, Society, and Human Behavior, 12th Edition" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Drugs, Society, and Human Behavior, 12th Edition</h4>
+      <p class="book-author">Carl L. Hart</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1708114068l/37774.jpg" alt="Arrow of God" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Arrow of God</h4>
+      <p class="book-author">Chinua Achebe</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1708114041l/111085.jpg" alt="No Longer at Ease" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>No Longer at Ease</h4>
+      <p class="book-author">Chinua Achebe</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1344270846l/11451348.jpg" alt="Time for Outrage: Indignez-vous!" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Time for Outrage: Indignez-vous!</h4>
+      <p class="book-author">Stéphane Hessel</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1590445068l/53481723.jpg" alt="Drug Use for Grown-Ups: Chasing Liberty in the Land of Fear" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Drug Use for Grown-Ups: Chasing Liberty in the Land of Fear</h4>
+      <p class="book-author">Carl L. Hart</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1621245328l/57094295.jpg" alt="Termination Shock" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Termination Shock</h4>
+      <p class="book-author">Neal Stephenson</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1733191854l/53019456.jpg" alt="Shards of Earth" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Shards of Earth</h4>
+      <p class="book-author">Adrian Tchaikovsky</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1360936414l/7108725.jpg" alt="Start with Why: How Great Leaders Inspire Everyone to Take Action" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Start with Why: How Great Leaders Inspire Everyone to Take Action</h4>
+      <p class="book-author">Simon Sinek</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1374778887l/154091.jpg" alt="Mona Lisa Overdrive" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Mona Lisa Overdrive</h4>
+      <p class="book-author">William Gibson</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1703329310l/23692271.jpg" alt="Sapiens: A Brief History of Humankind" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Sapiens: A Brief History of Humankind</h4>
+      <p class="book-author">Yuval Noah Harari</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1526486698l/37794149.jpg" alt="A Memory Called Empire" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>A Memory Called Empire</h4>
+      <p class="book-author">Arkady Martine</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1631585309l/32758901.jpg" alt="All Systems Red" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>All Systems Red</h4>
+      <p class="book-author">Martha Wells</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1310424016l/12015154.jpg" alt="A Sombra do Vento" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>A Sombra do Vento</h4>
+      <p class="book-author">Carlos Ruiz Zafón</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1512705866l/30257963.jpg" alt="12 Rules for Life: An Antidote to Chaos" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>12 Rules for Life: An Antidote to Chaos</h4>
+      <p class="book-author">Jordan B. Peterson</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1581527774l/41881472.jpg" alt="The Psychology of Money: Timeless Lessons on Wealth, Greed, and Happiness" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>The Psychology of Money: Timeless Lessons on Wealth, Greed, and Happiness</h4>
+      <p class="book-author">Morgan Housel</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1465761302l/28257707.jpg" alt="The Subtle Art of Not Giving a F*ck: A Counterintuitive Approach to Living a Good Life" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>The Subtle Art of Not Giving a F*ck: A Counterintuitive Approach to Living a Good Life</h4>
+      <p class="book-author">Mark Manson</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1757619021l/69571.jpg" alt="Rich Dad Poor Dad: What the Rich Teach Their Kids About Money—That the Poor and Middle Class Do Not!" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Rich Dad Poor Dad: What the Rich Teach Their Kids About Money—That the Poor and Middle Class Do Not!</h4>
+      <p class="book-author">Robert T. Kiyosaki</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1390705374l/10263.jpg" alt="The Early History of God: Yahweh and the Other Deities in Ancient Israel" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>The Early History of God: Yahweh and the Other Deities in Ancient Israel</h4>
+      <p class="book-author">Mark S. Smith</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1347808436l/5476065.jpg" alt="The Competitive Internet Service Provider: Network Architecture, Interconnection, Traffic Engineering and Network Design" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>The Competitive Internet Service Provider: Network Architecture, Interconnection, Traffic Engineering and Network Design</h4>
+      <p class="book-author">Oliver M. Heckmann</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1427665814l/51291.jpg" alt="How to Lie with Statistics" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>How to Lie with Statistics</h4>
+      <p class="book-author">Darrell Huff</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1393783800l/67890.jpg" alt="The Archetypes and the Collective Unconscious" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>The Archetypes and the Collective Unconscious</h4>
+      <p class="book-author">C.G. Jung</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1364653211l/17702796.jpg" alt="Mercado Financeiro" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Mercado Financeiro</h4>
+      <p class="book-author">Alexandre Assaf Neto</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1545238592l/39020.jpg" alt="1491: New Revelations of the Americas Before Columbus" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>1491: New Revelations of the Americas Before Columbus</h4>
+      <p class="book-author">Charles C. Mann</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388620656l/55030.jpg" alt="Cosmos" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Cosmos</h4>
+      <p class="book-author">Carl Sagan</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1631519495l/6289283.jpg" alt="Born to Run: A Hidden Tribe, Superathletes, and the Greatest Race the World Has Never Seen" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Born to Run: A Hidden Tribe, Superathletes, and the Greatest Race the World Has Never Seen</h4>
+      <p class="book-author">Christopher McDougall</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1333578746l/3869.jpg" alt="A Brief History of Time" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>A Brief History of Time</h4>
+      <p class="book-author">Stephen W. Hawking</p>
+    </div>
+  </div>
+</div>
+
+<script>
+function filterBooks(status, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.book-card').forEach(card => {
+    card.style.display = (status === 'todos' || card.dataset.status === status) ? 'flex' : 'none';
+  });
+}
+</script>
+```
