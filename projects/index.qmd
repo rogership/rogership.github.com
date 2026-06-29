@@ -33,4 +33,8 @@ Cliente IRC com tray icon via Nativefier + AppIndicator3 no GNOME Wayland.
 `Electron` `Python` `Linux`
 :::
 
+::: {.g-col-12 .g-col-md-6}
+### Em breve
+:::
+
 :::
