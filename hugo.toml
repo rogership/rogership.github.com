@@ -1,0 +1,22 @@
+baseURL = "https://rogership.github.io/"
+title = "Roger Ribeiro"
+theme = "book"
+locale = "pt-br"
+
+[permalinks]
+  [permalinks.page]
+    posts = "/:year/:month/:day/:slug"
+
+[params]
+  BookSection = "/"
+  BookTheme = "auto"
+  BookToC = true
+  BookSearch = true
+  BookRepo = "https://github.com/rogership/rogership.github.com"
+  BookDateFormat = "02/01/2006"
+
+[markup]
+  [markup.highlight]
+    style = "monokai"
+  [markup.goldmark.renderer]
+    unsafe = true
