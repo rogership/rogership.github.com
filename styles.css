@@ -139,6 +139,8 @@ main#quarto-document-content {
 main#quarto-document-content h2 {
   margin-top: 3rem !important;
   margin-bottom: 1.5rem !important;
+  padding-left: 0.75rem !important;
+  border-left: 4px solid var(--bs-primary) !important;
   font-size: 1.5rem;
   font-weight: 600;
   line-height: 1.2;
@@ -147,6 +149,7 @@ main#quarto-document-content h2 {
 main#quarto-document-content h3 {
   margin-top: 2rem !important;
   margin-bottom: 1rem !important;
+  padding-left: 0.5rem !important;
   font-size: 1.25rem;
   font-weight: 600;
   line-height: 1.2;
@@ -162,6 +165,12 @@ main#quarto-document-content h4 {
 main#quarto-document-content p {
   word-wrap: break-word;
   margin-bottom: 1rem;
+  text-indent: 1.25em;
+}
+
+main#quarto-document-content li p,
+main#quarto-document-content blockquote p {
+  text-indent: 0;
 }
 
 main#quarto-document-content code {
