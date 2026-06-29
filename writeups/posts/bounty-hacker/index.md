@@ -98,7 +98,7 @@ Três serviços expostos: **FTP** (21), **SSH** (22) e **HTTP** (80).
 
 A página HTTP exibe uma provocação da personagem Jet:
 
-![[bountyhacker.png|bountyhacker.png]]
+![bountyhacker](bountyhacker.png)
 
 > [!quote] Jet
 > "Now you told Spike here you can hack any computer in the system. We'd let Ed do it but we need her working on something else and you were getting real bold in that bar back there. Now take a look around and see if you can get that root the system and don't ask any questions you know you don't need the answer to, if you're lucky I'll even make you some bell peppers and beef."
