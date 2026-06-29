@@ -130,3 +130,76 @@
   background: var(--bs-secondary-bg);
   color: var(--bs-secondary-color);
 }
+
+/* Post content */
+.quarto-post-content h2,
+article h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--bs-border-color);
+}
+
+.quarto-post-content h3,
+article h3 {
+  margin-top: 1.8rem;
+  margin-bottom: 0.75rem;
+}
+
+.quarto-post-content h4,
+article h4 {
+  margin-top: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.quarto-post-content p,
+article p {
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+.quarto-post-content pre,
+article pre {
+  margin: 1.25rem 0;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.quarto-post-content code,
+article code {
+  font-size: 0.875em;
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+  background: var(--bs-secondary-bg);
+}
+
+.quarto-post-content pre code,
+article pre code {
+  padding: 0;
+  background: transparent;
+}
+
+.quarto-post-content table,
+article table {
+  margin: 1.25rem 0;
+  font-size: 0.9rem;
+}
+
+.quarto-post-content blockquote,
+article blockquote {
+  border-left: 4px solid var(--bs-primary);
+  padding: 0.5rem 1rem;
+  margin: 1.25rem 0;
+  background: var(--bs-secondary-bg);
+  border-radius: 0 6px 6px 0;
+  color: var(--bs-secondary-color);
+}
+
+.quarto-post-content img,
+article img {
+  max-width: 100%;
+  border-radius: 6px;
+  margin: 1rem 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
