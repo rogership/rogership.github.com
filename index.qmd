@@ -17,6 +17,7 @@ graph neural networks e sistemas Linux.
 
 [Blog](blog/index.qmd){.btn .btn-primary}
 [Writeups](writeups/index.qmd){.btn .btn-outline-secondary}
+[Projetos](projects/index.qmd){.btn .btn-outline-secondary}
 [Livros](livros/index.qmd){.btn .btn-outline-secondary}
 [Sobre mim](about.qmd){.btn .btn-outline-secondary}
 
@@ -45,6 +46,13 @@ Implementações, experimentos e notas de estudo — de regressão linear até G
 Leituras em redes, segurança, machine learning e computação.
 
 [Ver lista →](livros/index.qmd)
+:::
+
+::: {.g-col-12 .g-col-md-4}
+### 🛠️ Projetos
+Ferramentas, automações e experimentos em Linux, redes e segurança.
+
+[Ver projetos →](projects/index.qmd)
 :::
 
 :::
