@@ -23,9 +23,9 @@ main#quarto-document-content h6 {
     font-weight: 700;
 }
 
-main#quarto-document-content h2 { font-size: 1.5rem !important; margin-top: 1.5em !important; margin-bottom: 4rem !important; }
-main#quarto-document-content h3 { font-size: 1.25rem !important; margin-top: 1.5em !important; margin-bottom: 4rem !important; }
-main#quarto-document-content h4 { font-size: 1.125rem !important; margin-top: 1.5em !important; margin-bottom: 4rem !important; }
+main#quarto-document-content h2 { font-size: 1.5rem !important; margin-top: 1.5em !important; margin-bottom: 2em !important; }
+main#quarto-document-content h3 { font-size: 1.25rem !important; margin-top: 1.5em !important; margin-bottom: 2em !important; }
+main#quarto-document-content h4 { font-size: 1.125rem !important; margin-top: 1.5em !important; margin-bottom: 2em !important; }
 main#quarto-document-content h5 { font-size: 1rem !important; }
 main#quarto-document-content h6 { font-size: 0.875rem !important; }
 
