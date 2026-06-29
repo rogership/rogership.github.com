@@ -131,66 +131,88 @@
   color: var(--bs-secondary-color);
 }
 
-/* Post content */
-main#quarto-document-content h2 {
-  margin-top: 2.5rem !important;
+/* Post content — baseado no Hugo Book */
+main#quarto-document-content {
+  line-height: 1.6;
+}
+
+main#quarto-document-content h1,
+main#quarto-document-content h2,
+main#quarto-document-content h3,
+main#quarto-document-content h4,
+main#quarto-document-content h5,
+main#quarto-document-content h6 {
+  margin-top: 1.5em !important;
   margin-bottom: 1rem !important;
-  padding-bottom: 0.3rem;
-  border-bottom: 1px solid var(--bs-border-color);
+  line-height: 1.2;
+  font-weight: 600;
 }
 
-main#quarto-document-content h3 {
-  margin-top: 1.8rem !important;
-  margin-bottom: 0.75rem !important;
-}
-
-main#quarto-document-content h4 {
-  margin-top: 1.4rem !important;
-  margin-bottom: 0.5rem !important;
-}
+main#quarto-document-content h2 { font-size: 1.5rem; }
+main#quarto-document-content h3 { font-size: 1.25rem; }
+main#quarto-document-content h4 { font-size: 1.125rem; }
 
 main#quarto-document-content p {
-  line-height: 1.75;
+  word-wrap: break-word;
   margin-bottom: 1rem;
 }
 
-main#quarto-document-content pre {
-  margin: 1.25rem 0;
-  border-radius: 6px;
-  font-size: 0.85rem;
-  line-height: 1.5;
+main#quarto-document-content code {
+  padding: .125em .35em;
+  background: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 0.875em;
 }
 
-main#quarto-document-content code {
-  font-size: 0.875em;
-  padding: 0.15em 0.4em;
-  border-radius: 3px;
-  background: var(--bs-secondary-bg);
+main#quarto-document-content pre {
+  padding: 1rem;
+  background: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  overflow-x: auto;
+  margin: 1rem 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
 }
 
 main#quarto-document-content pre code {
   padding: 0;
-  background: transparent;
+  border: 0;
+  background: none;
   font-size: inherit;
 }
 
+main#quarto-document-content blockquote {
+  margin: 1rem 0;
+  padding: 0.5rem 1rem 0.5rem 0.75rem;
+  border-left: 4px solid #e0e0e0;
+  border-radius: 4px;
+}
+
 main#quarto-document-content table {
-  margin: 1.25rem 0;
+  display: block;
+  overflow: auto;
+  border-spacing: 0;
+  border-collapse: collapse;
+  margin: 1rem 0;
   font-size: 0.9rem;
 }
 
-main#quarto-document-content blockquote {
-  border-left: 4px solid var(--bs-primary);
+main#quarto-document-content table th,
+main#quarto-document-content table td {
   padding: 0.5rem 1rem;
-  margin: 1.25rem 0;
-  background: var(--bs-secondary-bg);
-  border-radius: 0 6px 6px 0;
-  color: var(--bs-secondary-color);
+  border: 1px solid #e0e0e0;
+  text-align: left;
+}
+
+main#quarto-document-content table tr:nth-child(2n) {
+  background: #f5f5f5;
 }
 
 main#quarto-document-content img {
   max-width: 100%;
-  border-radius: 6px;
+  height: auto;
+  border-radius: 4px;
   margin: 1rem 0;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
 }
