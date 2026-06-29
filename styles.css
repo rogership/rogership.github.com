@@ -143,9 +143,16 @@ main#quarto-document-content h4,
 main#quarto-document-content h5,
 main#quarto-document-content h6 {
   margin-top: 1.5em !important;
-  margin-bottom: 1rem !important;
+  margin-bottom: 1.25rem !important;
   line-height: 1.2;
   font-weight: 600;
+}
+
+main#quarto-document-content h1 + *,
+main#quarto-document-content h2 + *,
+main#quarto-document-content h3 + *,
+main#quarto-document-content h4 + * {
+  margin-top: 0.75rem !important;
 }
 
 main#quarto-document-content h2 { font-size: 1.5rem; }
@@ -166,14 +173,15 @@ main#quarto-document-content code {
 }
 
 main#quarto-document-content pre {
-  padding: 1rem;
+  padding: 1rem 1.25rem;
   background: #f5f5f5;
   border: 1px solid #e0e0e0;
   border-radius: 4px;
   overflow-x: auto;
   margin: 1rem 0;
   font-size: 0.875rem;
-  line-height: 1.5;
+  line-height: 1.6;
+  tab-size: 2;
 }
 
 main#quarto-document-content pre code {
