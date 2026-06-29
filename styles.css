@@ -1,3 +1,8 @@
+/* DEBUG — remover após confirmar */
+main#quarto-document-content h2 {
+  color: red !important;
+}
+
 /* Hero */
 .hero {
   padding: 3rem 0 2.5rem;
