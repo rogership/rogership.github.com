@@ -8,7 +8,7 @@ categories:
   - ctf
   - linux
 description: FTP anônimo expõe wordlist → brute-force SSH → sudo tar para escalar para root.
-image: Images/bountyhacker.png
+image: bountyhacker.png
 tags:
   - writeup
   - tryhackme
@@ -24,7 +24,6 @@ data: 2026-05-24
 status: concluído
 ---
 
-> [!quote] Descrição
 > You were boasting on and on about your elite hacker skills in the bar and a few Bounty Hunters decided they'd take you up on claims! Prove your status is more than just a few glasses at the bar. I sense bell peppers & beef in your future!
 
 ---
