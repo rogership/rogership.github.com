@@ -11,7 +11,9 @@ description: Unrestricted File Upload → Password Reuse → sudo vim para root.
 image: ECorp.png
 ---
 
-> **[INFO]** Resolução do CTF EvilCorp elaborado por Roger Ribeiro — 2026-06-28
+::: {.callout-note}
+## **Resolução do CTF EvilCorp elaborado por Roger Ribeiro — 2026-06-28**
+:::
 
 
 ---
