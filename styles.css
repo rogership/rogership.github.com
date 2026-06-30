@@ -83,7 +83,7 @@ main#quarto-document-content pre {
     margin: 0 0 1.75em 0 !important;
     border: #E3EDF3 1px solid !important;
     width: 100%;
-    padding: 3rem !important;
+    padding: 0.8em !important;
     font-family: Inconsolata, monospace, sans-serif;
     font-size: 0.8em !important;
     white-space: pre;
