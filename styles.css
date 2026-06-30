@@ -69,6 +69,12 @@ main#quarto-document-content ol {
     margin: 0 0 2em 0;
 }
 
+main#quarto-document-content table + p,
+main#quarto-document-content table + ul,
+main#quarto-document-content table + ol {
+    margin-top: 3rem !important;
+}
+
 main#quarto-document-content ol,
 main#quarto-document-content ul {
     padding-left: 3rem;
