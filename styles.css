@@ -155,6 +155,7 @@ main#quarto-document-content table td {
     text-align: left;
     vertical-align: top;
     border-top: #EFEFEF 1px solid;
+    font-size: 0.8em;
 }
 
 main#quarto-document-content table th { color: #000; }
