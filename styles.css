@@ -17,7 +17,7 @@
 
 #title-block-header .description {
     font-size: 0.9rem;
-    color: var(--bs-secondary-color);
+    color: #6c757d;
     margin-top: 0.25rem;
 }
 
@@ -38,7 +38,7 @@
 #title-block-header {
     margin-bottom: 2rem;
     padding-bottom: 1rem;
-    border-bottom: 1px solid var(--bs-border-color);
+    border-bottom: 1px solid #dee2e6;
 }
 
 /* Post content — Jasper theme port */
@@ -47,7 +47,7 @@ main#quarto-document-content {
     letter-spacing: 0.01rem;
     font-size: 1rem;
     line-height: 1.8;
-    color: var(--bs-body-color);
+    color: #3A4145;
     text-rendering: geometricPrecision;
 }
 
@@ -58,7 +58,7 @@ main#quarto-document-content h4,
 main#quarto-document-content h5,
 main#quarto-document-content h6 {
     font-family: ui-monospace, "SFMono-Regular", "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
-    color: var(--bs-emphasis-color) !important;
+    color: #2E2E2E !important;
     line-height: 1.15em;
     margin: 0 0 0.4em 0 !important;
     text-rendering: geometricPrecision;
@@ -96,7 +96,7 @@ main#quarto-document-content hr {
     display: block;
     height: 1px;
     border: 0;
-    border-top: 1px solid var(--bs-border-color);
+    border-top: #EFEFEF 1px solid;
     margin: 3.2em 0;
     padding: 0;
 }
@@ -105,7 +105,7 @@ main#quarto-document-content blockquote {
     box-sizing: border-box;
     margin: 1.75em 0 1.75em -2.2em !important;
     padding: 0 0 0 1.75em !important;
-    border-left: 0.4em solid var(--bs-border-color) !important;
+    border-left: #4A4A4A 0.4em solid !important;
     background: transparent !important;
     border-radius: 0 !important;
     color: inherit !important;
@@ -121,26 +121,24 @@ main#quarto-document-content code {
     font-family: Inconsolata, monospace, sans-serif;
     font-size: 0.85em !important;
     white-space: pre-wrap;
-    border: 1px solid var(--bs-border-color) !important;
-    background: var(--bs-secondary-bg) !important;
+    border: #E3EDF3 1px solid !important;
+    background: #F7FAFB !important;
     border-radius: 2px !important;
-    color: var(--bs-body-color) !important;
 }
 
 main#quarto-document-content pre {
     box-sizing: border-box;
     margin: 0 0 1.75em 0 !important;
-    border: 1px solid var(--bs-border-color) !important;
+    border: #E3EDF3 1px solid !important;
     width: 100%;
     padding: 0.8em !important;
     font-family: Inconsolata, monospace, sans-serif;
     font-size: 0.8em !important;
     white-space: pre;
     overflow: auto;
-    background: var(--bs-tertiary-bg) !important;
+    background: #e8e8e8 !important;
     border-radius: 3px !important;
     line-height: 1.6;
-    color: var(--bs-body-color) !important;
 }
 
 main#quarto-document-content pre code {
@@ -164,16 +162,15 @@ main#quarto-document-content table td {
     line-height: 20px;
     text-align: left;
     vertical-align: top;
-    border-top: 1px solid var(--bs-border-color);
+    border-top: #EFEFEF 1px solid;
     font-size: 0.8em;
-    color: var(--bs-body-color);
 }
 
-main#quarto-document-content table th { color: var(--bs-emphasis-color); }
+main#quarto-document-content table th { color: #000; }
 
 main#quarto-document-content table tbody > tr:nth-child(odd) > td,
 main#quarto-document-content table tbody > tr:nth-child(odd) > th {
-    background-color: var(--bs-tertiary-bg);
+    background-color: #F6F6F6;
 }
 
 main#quarto-document-content img {
@@ -315,4 +312,50 @@ main#quarto-document-content img {
   background: var(--bs-secondary-bg);
   color: var(--bs-secondary-color);
 }
+
+/* ── Dark mode (body.quarto-dark) ───────────────────────────────── */
+body.quarto-dark main#quarto-document-content { color: #d0d0d0; }
+
+body.quarto-dark main#quarto-document-content h1,
+body.quarto-dark main#quarto-document-content h2,
+body.quarto-dark main#quarto-document-content h3,
+body.quarto-dark main#quarto-document-content h4,
+body.quarto-dark main#quarto-document-content h5,
+body.quarto-dark main#quarto-document-content h6 { color: #f0f0f0 !important; }
+
+body.quarto-dark main#quarto-document-content code {
+    background: #2a2a2a !important;
+    border-color: #444 !important;
+    color: #e0e0e0 !important;
+}
+
+body.quarto-dark main#quarto-document-content pre {
+    background: #1e1e1e !important;
+    border-color: #444 !important;
+    color: #e0e0e0 !important;
+}
+
+body.quarto-dark main#quarto-document-content pre code {
+    background: transparent !important;
+    color: inherit !important;
+}
+
+body.quarto-dark main#quarto-document-content table th { color: #f0f0f0; }
+
+body.quarto-dark main#quarto-document-content table th,
+body.quarto-dark main#quarto-document-content table td {
+    border-top-color: #444;
+    color: #d0d0d0;
+}
+
+body.quarto-dark main#quarto-document-content table tbody > tr:nth-child(odd) > td,
+body.quarto-dark main#quarto-document-content table tbody > tr:nth-child(odd) > th {
+    background-color: #2a2a2a;
+}
+
+body.quarto-dark main#quarto-document-content hr { border-top-color: #444; }
+body.quarto-dark main#quarto-document-content blockquote { border-left-color: #666 !important; }
+
+body.quarto-dark #title-block-header { border-bottom-color: #444; }
+body.quarto-dark #title-block-header .description { color: #aaa; }
 
