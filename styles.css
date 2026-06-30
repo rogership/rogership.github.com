@@ -17,7 +17,7 @@
 
 #title-block-header .description {
     font-size: 0.9rem;
-    color: #6c757d;
+    color: var(--bs-secondary-color);
     margin-top: 0.25rem;
 }
 
@@ -38,7 +38,7 @@
 #title-block-header {
     margin-bottom: 2rem;
     padding-bottom: 1rem;
-    border-bottom: 1px solid #dee2e6;
+    border-bottom: 1px solid var(--bs-border-color);
 }
 
 /* Post content — Jasper theme port */
@@ -47,7 +47,7 @@ main#quarto-document-content {
     letter-spacing: 0.01rem;
     font-size: 1rem;
     line-height: 1.8;
-    color: #3A4145;
+    color: var(--bs-body-color);
     text-rendering: geometricPrecision;
 }
 
@@ -58,7 +58,7 @@ main#quarto-document-content h4,
 main#quarto-document-content h5,
 main#quarto-document-content h6 {
     font-family: ui-monospace, "SFMono-Regular", "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
-    color: #2E2E2E !important;
+    color: var(--bs-emphasis-color) !important;
     line-height: 1.15em;
     margin: 0 0 0.4em 0 !important;
     text-rendering: geometricPrecision;
@@ -96,7 +96,7 @@ main#quarto-document-content hr {
     display: block;
     height: 1px;
     border: 0;
-    border-top: #EFEFEF 1px solid;
+    border-top: 1px solid var(--bs-border-color);
     margin: 3.2em 0;
     padding: 0;
 }
@@ -105,7 +105,7 @@ main#quarto-document-content blockquote {
     box-sizing: border-box;
     margin: 1.75em 0 1.75em -2.2em !important;
     padding: 0 0 0 1.75em !important;
-    border-left: #4A4A4A 0.4em solid !important;
+    border-left: 0.4em solid var(--bs-border-color) !important;
     background: transparent !important;
     border-radius: 0 !important;
     color: inherit !important;
@@ -121,24 +121,26 @@ main#quarto-document-content code {
     font-family: Inconsolata, monospace, sans-serif;
     font-size: 0.85em !important;
     white-space: pre-wrap;
-    border: #E3EDF3 1px solid !important;
-    background: #F7FAFB !important;
+    border: 1px solid var(--bs-border-color) !important;
+    background: var(--bs-secondary-bg) !important;
     border-radius: 2px !important;
+    color: var(--bs-body-color) !important;
 }
 
 main#quarto-document-content pre {
     box-sizing: border-box;
     margin: 0 0 1.75em 0 !important;
-    border: #E3EDF3 1px solid !important;
+    border: 1px solid var(--bs-border-color) !important;
     width: 100%;
     padding: 0.8em !important;
     font-family: Inconsolata, monospace, sans-serif;
     font-size: 0.8em !important;
     white-space: pre;
     overflow: auto;
-    background: #e8e8e8 !important;
+    background: var(--bs-tertiary-bg) !important;
     border-radius: 3px !important;
     line-height: 1.6;
+    color: var(--bs-body-color) !important;
 }
 
 main#quarto-document-content pre code {
@@ -162,15 +164,16 @@ main#quarto-document-content table td {
     line-height: 20px;
     text-align: left;
     vertical-align: top;
-    border-top: #EFEFEF 1px solid;
+    border-top: 1px solid var(--bs-border-color);
     font-size: 0.8em;
+    color: var(--bs-body-color);
 }
 
-main#quarto-document-content table th { color: #000; }
+main#quarto-document-content table th { color: var(--bs-emphasis-color); }
 
 main#quarto-document-content table tbody > tr:nth-child(odd) > td,
 main#quarto-document-content table tbody > tr:nth-child(odd) > th {
-    background-color: #F6F6F6;
+    background-color: var(--bs-tertiary-bg);
 }
 
 main#quarto-document-content img {
@@ -313,54 +316,3 @@ main#quarto-document-content img {
   color: var(--bs-secondary-color);
 }
 
-/* ── Dark mode overrides ─────────────────────────────────────────── */
-[data-bs-theme="dark"] main#quarto-document-content {
-    color: #d0d0d0;
-}
-
-[data-bs-theme="dark"] main#quarto-document-content h1,
-[data-bs-theme="dark"] main#quarto-document-content h2,
-[data-bs-theme="dark"] main#quarto-document-content h3,
-[data-bs-theme="dark"] main#quarto-document-content h4,
-[data-bs-theme="dark"] main#quarto-document-content h5,
-[data-bs-theme="dark"] main#quarto-document-content h6 {
-    color: #f0f0f0 !important;
-}
-
-[data-bs-theme="dark"] main#quarto-document-content code {
-    background: #2a2a2a !important;
-    border-color: #444 !important;
-    color: #e0e0e0 !important;
-}
-
-[data-bs-theme="dark"] main#quarto-document-content pre {
-    background: #1e1e1e !important;
-    border-color: #444 !important;
-    color: #e0e0e0 !important;
-}
-
-[data-bs-theme="dark"] main#quarto-document-content table th {
-    color: #f0f0f0;
-}
-
-[data-bs-theme="dark"] main#quarto-document-content table th,
-[data-bs-theme="dark"] main#quarto-document-content table td {
-    border-top-color: #444;
-}
-
-[data-bs-theme="dark"] main#quarto-document-content table tbody > tr:nth-child(odd) > td,
-[data-bs-theme="dark"] main#quarto-document-content table tbody > tr:nth-child(odd) > th {
-    background-color: #2a2a2a;
-}
-
-[data-bs-theme="dark"] main#quarto-document-content hr {
-    border-top-color: #444;
-}
-
-[data-bs-theme="dark"] #title-block-header {
-    border-bottom-color: #444;
-}
-
-[data-bs-theme="dark"] #title-block-header .description {
-    color: #aaa;
-}
