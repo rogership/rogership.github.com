@@ -1,8 +1,8 @@
 
 /* Listing thumbnails — tamanho fixo e uniforme */
 .thumbnail-image {
-    width: 288px !important;
-    height: 192px !important;
+    width: 346px !important;
+    height: 230px !important;
     object-fit: cover;
     border-radius: 4px;
 }
