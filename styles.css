@@ -57,22 +57,22 @@ main#quarto-document-content h6 {
     font-weight: 700;
 }
 
-main#quarto-document-content h2 { font-size: 1.5rem !important; margin-top: 1.5em !important; margin-bottom: 2em !important; }
-main#quarto-document-content h3 { font-size: 1.25rem !important; margin-top: 1.5em !important; margin-bottom: 2em !important; }
-main#quarto-document-content h4 { font-size: 1.125rem !important; margin-top: 1.5em !important; margin-bottom: 2em !important; }
+main#quarto-document-content h2 { font-size: 1.5rem !important; margin-top: 4rem !important; margin-bottom: 4rem !important; }
+main#quarto-document-content h3 { font-size: 1.25rem !important; margin-top: 4rem !important; margin-bottom: 4rem !important; }
+main#quarto-document-content h4 { font-size: 1.125rem !important; margin-top: 4rem !important; margin-bottom: 4rem !important; }
 main#quarto-document-content h5 { font-size: 1rem !important; }
 main#quarto-document-content h6 { font-size: 0.875rem !important; }
 
 main#quarto-document-content p,
 main#quarto-document-content ul,
 main#quarto-document-content ol {
-    margin: 0 0 2em 0;
+    margin: 0 0 4rem 0;
 }
 
 main#quarto-document-content table + p,
 main#quarto-document-content table + ul,
 main#quarto-document-content table + ol {
-    margin-top: 3rem !important;
+    margin-top: 4rem !important;
 }
 
 main#quarto-document-content ol,
@@ -143,7 +143,7 @@ main#quarto-document-content pre code {
 
 main#quarto-document-content table {
     box-sizing: border-box;
-    margin: 1.75em 0 3rem 0;
+    margin: 1.75em 0 4rem 0;
     width: 100%;
     max-width: 100%;
 }
