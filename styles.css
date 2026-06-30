@@ -1,10 +1,44 @@
 
+/* Title block — reduz destaque do frontmatter */
+#title-block-header h1.title {
+    font-size: 1.6rem !important;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-family: ui-monospace, "SFMono-Regular", "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+#title-block-header .description {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-top: 0.25rem;
+}
+
+#title-block-header .quarto-categories {
+    margin-top: 0.5rem;
+}
+
+#title-block-header .quarto-category {
+    font-size: 0.75rem;
+    padding: 2px 8px;
+}
+
+#title-block-header .quarto-title-meta {
+    font-size: 0.8rem;
+    margin-top: 0.75rem;
+}
+
+#title-block-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #dee2e6;
+}
+
 /* Post content — Jasper theme port */
 main#quarto-document-content {
     font-family: ui-monospace, "SFMono-Regular", "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
     letter-spacing: 0.01rem;
     font-size: 1rem;
-    line-height: 1.6;
+    line-height: 1.8;
     color: #3A4145;
     text-rendering: geometricPrecision;
 }
@@ -32,7 +66,7 @@ main#quarto-document-content h6 { font-size: 0.875rem !important; }
 main#quarto-document-content p,
 main#quarto-document-content ul,
 main#quarto-document-content ol {
-    margin: 0 0 1.75em 0;
+    margin: 0 0 2em 0;
 }
 
 main#quarto-document-content ol,
