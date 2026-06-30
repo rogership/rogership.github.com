@@ -1,4 +1,12 @@
 
+/* Listing thumbnails — tamanho fixo e uniforme */
+.thumbnail-image {
+    width: 120px !important;
+    height: 80px !important;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
 /* Title block — reduz destaque do frontmatter */
 #title-block-header h1.title {
     font-size: 1.6rem !important;
