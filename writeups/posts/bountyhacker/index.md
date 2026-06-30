@@ -7,7 +7,7 @@ categories:
   - ctf
   - linux
 description: FTP anônimo expõe wordlist → brute-force SSH → sudo tar para escalar para root.
-image: bountyhacker.png
+image: bebop.png
 ---
 
 > **Descrição**
