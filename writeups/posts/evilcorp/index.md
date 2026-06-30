@@ -13,6 +13,55 @@ image: ECorp.png
 
 >[!info] Resolução do CTF EvilCorp elaborado por Roger Ribeiro — 2026-06-28
 
+---
+
+## Configuração do Ambiente
+
+O ambiente roda localmente via Docker. A imagem está publicada no Docker Hub e é baixada automaticamente.
+
+**Requisitos:** Docker Engine ≥ 20.x · Docker Compose ≥ 2.x
+
+```
+# Baixar a imagem
+docker pull pandadub/evilcorp-ctf:1.0
+
+# Subir o ambiente (download automático na primeira execução)
+docker compose up -d
+
+# Acompanhar a inicialização (aguardar "[+] Iniciando servicos...")
+docker compose logs -f web
+```
+
+O ambiente cria a rede `172.20.0.0/24` com dois containers:
+
+| Container      | IP           | Serviços                          |
+| -------------- | ------------ | --------------------------------- |
+| `evilcorp_db`  | 172.20.0.10  | MySQL 8.0 (acesso interno)        |
+| `evilcorp_web` | 172.20.0.20  | HTTPS (443), HTTP (80), SSH (22)  |
+
+**TARGET\_IP:** `172.20.0.20` · **Atacante:** `172.20.0.1` (gateway da rede Docker)
+
+O servidor usa HTTPS com certificado autoassinado — use `-k` no curl ou aceite o aviso no browser:
+
+```
+# Verificar acesso
+curl -sk https://172.20.0.20 -o /dev/null -w "%{http_code}"
+
+# Instalar certificado (opcional — Arch/Manjaro)
+docker cp evilcorp_web:/etc/ssl/certs/evilcorp.crt /tmp/evilcorp.crt
+sudo cp /tmp/evilcorp.crt /etc/ca-certificates/trust-source/anchors/evilcorp.crt
+sudo update-ca-trust
+```
+
+Para parar o ambiente:
+
+```
+docker compose down      # para os containers (preserva banco)
+docker compose down -v   # reset completo (apaga banco de dados)
+```
+
+---
+
 ## Target Info
 
 | Campo       | Valor                                          |
