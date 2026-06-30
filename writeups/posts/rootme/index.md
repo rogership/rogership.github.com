@@ -7,7 +7,7 @@ categories:
   - ctf
   - linux
 description: File upload bypass com .php5 → PHP reverse shell → SUID python2.7 para root.
-image: webpage-panel.png
+image: rootme.png
 ---
 
 ## Visão Geral
