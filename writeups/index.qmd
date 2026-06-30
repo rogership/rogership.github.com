@@ -3,8 +3,8 @@ title: "Writeups"
 listing:
   contents: posts
   sort: "date desc"
-  type: default
+  type: grid
   categories: true
-  fields: [date, title, categories, description]
+  fields: [image, date, title, categories, description]
 page-layout: full
 ---
