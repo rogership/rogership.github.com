@@ -8,7 +8,7 @@ categories:
   - wordpress
   - docker
 description: Unrestricted File Upload → Password Reuse → sudo vim para root.
-image: newsletter-upload.png
+image: ECorp.png
 ---
 
 >[!info] Resolução do CTF EvilCorp elaborado por Roger Ribeiro — 2026-06-28
