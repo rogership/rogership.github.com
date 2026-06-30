@@ -13,6 +13,7 @@ image: ECorp.png
 
 >[!info] Resolução do CTF EvilCorp elaborado por Roger Ribeiro — 2026-06-28
 
+![ECorp](ECorp.png|center|200)
 ---
 
 ## Configuração do Ambiente
