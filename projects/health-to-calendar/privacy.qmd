@@ -1,0 +1,29 @@
+---
+title: "Health to Calendar — Política de Privacidade"
+toc: false
+---
+
+*Última atualização: 22 de outubro de 2026*
+
+**Health to Calendar** é uma ferramenta de uso pessoal, mantida por Roger Ribeiro, que lê os dados de sono da conta Google do próprio usuário e cria eventos correspondentes no Google Calendar dessa mesma conta.
+
+## Dados acessados
+- **Google Health API** (`googlehealth.sleep.readonly`): horários de início e fim, fases e resumo das sessões de sono. Acesso somente leitura.
+- **Google Calendar API** (`calendar.events`): criação e atualização de eventos em um calendário dedicado ao sono.
+
+## Uso dos dados
+Os dados são usados exclusivamente para gerar os eventos de sono no calendário do próprio usuário. Não são usados para publicidade, perfilamento ou qualquer outra finalidade.
+
+## Armazenamento e compartilhamento
+- Nenhum dado de saúde é armazenado fora das contas Google do usuário; a ferramenta apenas os transfere de uma API para outra durante a execução.
+- Os tokens de acesso OAuth ficam guardados como segredos criptografados, acessíveis somente ao autor.
+- Nenhum dado é vendido, compartilhado ou transferido a terceiros.
+
+## Conformidade
+O uso de informações recebidas das APIs do Google segue a [Google API Services User Data Policy](https://developers.google.com/terms/api-services-user-data-policy), incluindo os requisitos de Uso Limitado.
+
+## Revogação
+O acesso pode ser revogado a qualquer momento em [myaccount.google.com/permissions](https://myaccount.google.com/permissions).
+
+## Contato
+roger.ribeiro6@gmail.com

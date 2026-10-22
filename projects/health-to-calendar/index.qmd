@@ -1,0 +1,14 @@
+---
+title: "Health to Calendar"
+toc: false
+---
+
+Ferramenta pessoal que copia as sessões de sono registradas no **Google Health** para um calendário do **Google Calendar** do próprio usuário, com duração, fases do sono e uma nota de qualidade.
+
+- Uso exclusivamente pessoal: o único usuário é o autor deste site.
+- Acesso somente leitura aos dados de sono (`googlehealth.sleep.readonly`) e criação de eventos em um calendário próprio (`calendar.events`).
+- Nenhum dado é vendido, compartilhado ou enviado a terceiros.
+
+[Política de privacidade](privacy.qmd)
+
+`Python` `Google Health API` `Google Calendar API` `GitHub Actions`
