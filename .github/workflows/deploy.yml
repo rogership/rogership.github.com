@@ -3,6 +3,7 @@ name: Deploy Quarto
 on:
   push:
     branches: [master]
+  workflow_dispatch:
   schedule:
     - cron: '0 8 * * *'  # sync Goodreads diariamente às 8h
 
