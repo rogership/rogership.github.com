@@ -5,7 +5,7 @@ on:
     branches: [master]
   workflow_dispatch:
   schedule:
-    - cron: '0 8 * * *'  # sync Goodreads diariamente às 8h
+    - cron: '0 8 * * *'  # sync Hardcover diariamente às 8h
 
 permissions:
   contents: read
@@ -23,8 +23,10 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Fetch Goodreads
-        run: python fetch_goodreads.py
+      - name: Fetch Hardcover
+        env:
+          HARDCOVER_TOKEN: ${{ secrets.HARDCOVER_TOKEN }}
+        run: python fetch_hardcover.py
 
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
@@ -52,7 +54,7 @@ jobs:
         uses: actions/deploy-pages@v4
 
   # GitHub desativa workflows agendados após 60 dias sem commits no repo.
-  # Reabilitar via API zera esse contador, mantendo o sync diário do Goodreads vivo.
+  # Reabilitar via API zera esse contador, mantendo o sync diário do Hardcover vivo.
   keepalive:
     if: github.event_name == 'schedule'
     runs-on: ubuntu-latest
