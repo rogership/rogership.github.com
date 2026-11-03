@@ -15,11 +15,6 @@ SHELVES = {
     "read": "Lido",
     "to-read": "Quero ler",
 }
-STATUS_COLORS = {
-    "currently-reading": "#0d6efd",
-    "read": "#198754",
-    "to-read": "#6c757d",
-}
 # status_id do Hardcover -> estante do site (4 = abandonado, fica de fora)
 STATUS_IDS = {1: "to-read", 2: "currently-reading", 3: "read"}
 
@@ -89,31 +84,60 @@ def fetch_books(token: str) -> tuple[str, dict[str, list[dict]]]:
     return username, all_books
 
 
-def card_html(book: dict, label: str, color: str) -> str:
+def reading_html(book: dict) -> str:
+    """Livro em leitura: capa grande ao lado de título e autor."""
     img = html.escape(book["image"])
     title = html.escape(book["title"])
     author = html.escape(book["author"])
+    cover = f'<img src="{img}" alt="{title}" loading="lazy">' if img else ""
     return f"""
-  <div class="book-card" data-status="{book['shelf']}">
-    <div class="book-status" style="background:{color}">{label}</div>
-    <img src="{img}" alt="{title}" loading="lazy" onerror="this.style.display='none'">
-    <div class="book-info">
-      <h4>{title}</h4>
-      <p class="book-author">{author}</p>
+  <div class="reading-book">
+    <div class="reading-cover">{cover}</div>
+    <div class="reading-info">
+      <div class="reading-title">{title}</div>
+      <div class="book-author">{author}</div>
     </div>
   </div>"""
 
 
+def shelf_html(book: dict) -> str:
+    """Livro na estante: só a capa; título e autor aparecem no hover."""
+    img = html.escape(book["image"])
+    title = html.escape(book["title"])
+    author = html.escape(book["author"])
+    # Sem capa (ou capa quebrada): a legenda fica sempre visível no lugar
+    cover = (f'<img src="{img}" alt="{title}" loading="lazy" '
+             f'onerror="this.parentElement.classList.add(\'no-cover\');this.remove()">') if img else ""
+    no_cover = "" if img else " no-cover"
+    return f"""
+  <figure class="shelf-book{no_cover}" title="{title} — {author}">
+    {cover}
+    <figcaption><strong>{title}</strong><span>{author}</span></figcaption>
+  </figure>"""
+
+
 def generate_page(username: str, all_books: dict[str, list[dict]]) -> str:
     total = sum(len(v) for v in all_books.values())
-    counts = {s: len(b) for s, b in all_books.items()}
+    reading = all_books["currently-reading"]
 
-    cards = ""
-    for shelf, books in all_books.items():
-        label = SHELVES[shelf]
-        color = STATUS_COLORS[shelf]
-        for book in books:
-            cards += card_html(book, label, color)
+    sections = ""
+    if reading:
+        cards = "".join(reading_html(b) for b in reading)
+        sections += f"""
+<h2 class="shelf-title">Lendo agora</h2>
+<div class="reading-list">{cards}
+</div>
+"""
+    for shelf, heading in (("read", "Lidos"), ("to-read", "Quero ler")):
+        books = all_books[shelf]
+        if not books:
+            continue
+        cards = "".join(shelf_html(b) for b in books)
+        sections += f"""
+<h2 class="shelf-title">{heading} <span class="shelf-count">{len(books)}</span></h2>
+<div class="shelf">{cards}
+</div>
+"""
 
     return f"""---
 title: "Livros"
@@ -124,26 +148,7 @@ page-layout: full
 Lista sincronizada automaticamente com o [Hardcover](https://hardcover.app/@{username}) · {total} livros
 
 ```{{=html}}
-<div class="book-filters">
-  <button class="filter-btn active" onclick="filterBooks('todos', this)">Todos ({total})</button>
-  <button class="filter-btn" onclick="filterBooks('currently-reading', this)">Lendo ({counts['currently-reading']})</button>
-  <button class="filter-btn" onclick="filterBooks('read', this)">Lidos ({counts['read']})</button>
-  <button class="filter-btn" onclick="filterBooks('to-read', this)">Quero ler ({counts['to-read']})</button>
-</div>
-
-<div class="books-grid">
-{cards}
-</div>
-
-<script>
-function filterBooks(status, btn) {{
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  document.querySelectorAll('.book-card').forEach(card => {{
-    card.style.display = (status === 'todos' || card.dataset.status === status) ? 'flex' : 'none';
-  }});
-}}
-</script>
+{sections}
 ```
 """
 

@@ -215,102 +215,114 @@ main#quarto-document-content img {
   margin: 0.25rem;
 }
 
-/* Books grid */
-.book-filters {
+/* Livros (livros/index.qmd, gerado por fetch_hardcover.py) */
+.shelf-title {
   display: flex;
+  align-items: baseline;
   gap: 0.5rem;
-  margin-bottom: 1.5rem;
-  flex-wrap: wrap;
+}
+.shelf-count {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 1px 9px;
+  border-radius: 10px;
+  background: var(--bs-secondary-bg);
+  color: var(--bs-secondary-color);
 }
 
-.filter-btn {
-  padding: 0.35rem 1rem;
-  border: 1px solid var(--bs-border-color);
-  border-radius: 20px;
-  background: transparent;
-  cursor: pointer;
-  font-size: 0.9rem;
-  transition: all 0.2s;
-  color: var(--bs-body-color);
+/* Lendo agora: capa grande + texto */
+.reading-list,
+.shelf {
+  margin-bottom: 3rem;
 }
-
-.filter-btn:hover,
-.filter-btn.active {
-  background: var(--bs-primary);
-  border-color: var(--bs-primary);
-  color: white;
-}
-
-.books-grid {
+.reading-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 1.5rem;
-  margin-top: 1rem;
 }
-
-.book-card {
+.reading-book {
   display: flex;
-  flex-direction: column;
-  position: relative;
-  border-radius: 8px;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+.reading-cover {
+  flex: 0 0 130px;
+  aspect-ratio: 2 / 3;
+  border-radius: 4px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-  transition: transform 0.2s, box-shadow 0.2s;
-  background: var(--bs-body-bg);
-  border: 1px solid var(--bs-border-color);
+  background: var(--bs-secondary-bg);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.2);
 }
-
-.book-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.18);
-}
-
-.book-card img {
+/* #quarto-document-content: vence a regra global de img (padding, height: auto) */
+#quarto-document-content .reading-cover img {
+  padding: 0;
   width: 100%;
-  height: 220px;
+  height: 100%;
   object-fit: cover;
   display: block;
 }
-
-.book-status {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  padding: 2px 8px;
-  border-radius: 12px;
-  font-size: 0.7rem;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-.book-status.lendo  { background: #0d6efd; color: white; }
-.book-status.lido   { background: #198754; color: white; }
-.book-status.quero  { background: #6c757d; color: white; }
-
-.book-info {
-  padding: 0.75rem;
-  flex: 1;
-}
-
-.book-info h4 {
-  font-size: 0.85rem;
-  font-weight: 600;
-  margin: 0 0 0.25rem;
+.reading-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0.25rem 0 0.35rem;
   line-height: 1.3;
 }
 
 .book-author {
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   color: var(--bs-secondary-color);
-  margin: 0 0 0.5rem;
 }
 
-.book-tag {
-  font-size: 0.7rem;
-  padding: 2px 8px;
-  border-radius: 10px;
+/* Estantes: só capas, legenda no hover */
+.shelf {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+  gap: 0.9rem;
+}
+.shelf-book {
+  position: relative;
+  margin: 0;
+  aspect-ratio: 2 / 3;
+  border-radius: 3px;
+  overflow: hidden;
   background: var(--bs-secondary-bg);
-  color: var(--bs-secondary-color);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.shelf-book:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+#quarto-document-content .shelf-book img {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.shelf-book figcaption {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.2rem;
+  padding: 0.5rem;
+  font-size: 0.7rem;
+  line-height: 1.25;
+  color: white;
+  background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.1) 70%);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.shelf-book figcaption span { opacity: 0.8; }
+.shelf-book:hover figcaption { opacity: 1; }
+.shelf-book.no-cover figcaption {
+  opacity: 1;
+  justify-content: center;
+  text-align: center;
+  color: var(--bs-body-color);
+  background: none;
 }
 
 /* ── Dark mode (body.quarto-dark) ───────────────────────────────── */
