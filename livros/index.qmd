@@ -29,7 +29,7 @@ Lista sincronizada automaticamente com o [Hardcover](https://hardcover.app/@roge
     <img src="https://assets.hardcover.app/book_mappings/7374172/6de13dc5c5118610d89b3f439e96186adc193b89.jpeg" alt="Almost Human: The Astonishing Tale of Homo naledi and the Discovery That Changed Our Human Story" loading="lazy" onerror="this.style.display='none'">
     <div class="book-info">
       <h4>Almost Human: The Astonishing Tale of Homo naledi and the Discovery That Changed Our Human Story</h4>
-      <p class="book-author">Douglas Chadwick, Harrison Ford</p>
+      <p class="book-author">Lee Berger, John Hawks</p>
     </div>
   </div>
   <div class="book-card" data-status="read">
@@ -53,7 +53,7 @@ Lista sincronizada automaticamente com o [Hardcover](https://hardcover.app/@roge
     <img src="https://assets.hardcover.app/editions/30401722/203725739738019-PxOL.jpg" alt="Neuromancer" loading="lazy" onerror="this.style.display='none'">
     <div class="book-info">
       <h4>Neuromancer</h4>
-      <p class="book-author">William Gibson, Giampaolo Cossato</p>
+      <p class="book-author">William Gibson</p>
     </div>
   </div>
   <div class="book-card" data-status="read">
@@ -85,7 +85,7 @@ Lista sincronizada automaticamente com o [Hardcover](https://hardcover.app/@roge
     <img src="https://assets.hardcover.app/edition/29258002/fb69559e-7c34-40cb-8518-3ef4898b830c.jpg" alt="1984" loading="lazy" onerror="this.style.display='none'">
     <div class="book-info">
       <h4>1984</h4>
-      <p class="book-author">George Orwell, Shepard Fairey</p>
+      <p class="book-author">George Orwell</p>
     </div>
   </div>
   <div class="book-card" data-status="read">
@@ -109,7 +109,7 @@ Lista sincronizada automaticamente com o [Hardcover](https://hardcover.app/@roge
     <img src="https://assets.hardcover.app/external_data/59342378/24681740db9f10d5cbb1b96b8b6557ca901d2cc7.jpeg" alt="Things Fall Apart" loading="lazy" onerror="this.style.display='none'">
     <div class="book-info">
       <h4>Things Fall Apart</h4>
-      <p class="book-author">Chinua Achebe, Biyi Bandele</p>
+      <p class="book-author">Chinua Achebe</p>
     </div>
   </div>
   <div class="book-card" data-status="read">
@@ -117,7 +117,7 @@ Lista sincronizada automaticamente com o [Hardcover](https://hardcover.app/@roge
     <img src="https://assets.hardcover.app/book_mappings/7333370/509b2fa094cc96d1ae301b6c498615839fa99015.jpeg" alt="The Neverending Story" loading="lazy" onerror="this.style.display='none'">
     <div class="book-info">
       <h4>The Neverending Story</h4>
-      <p class="book-author">Michael Ende, Roswitha Quadflieg</p>
+      <p class="book-author">Michael Ende</p>
     </div>
   </div>
   <div class="book-card" data-status="read">
@@ -149,7 +149,7 @@ Lista sincronizada automaticamente com o [Hardcover](https://hardcover.app/@roge
     <img src="https://assets.hardcover.app/edition/32570752/49ea4db93a3acc144efcfea8a5d44dadb2b3ba45.jpeg" alt="Psicocibernetica: Un nuovo metodo per dare più vita alla nostra vita" loading="lazy" onerror="this.style.display='none'">
     <div class="book-info">
       <h4>Psicocibernetica: Un nuovo metodo per dare più vita alla nostra vita</h4>
-      <p class="book-author">Laura Bava, Maxwell Maltz</p>
+      <p class="book-author">Maxwell Maltz</p>
     </div>
   </div>
   <div class="book-card" data-status="to-read">
@@ -261,7 +261,7 @@ Lista sincronizada automaticamente com o [Hardcover](https://hardcover.app/@roge
     <img src="https://assets.hardcover.app/external_data/4014331/292242b9753d2033386675cb60f63f6efb36036a.jpeg" alt="The Archetypes and the Collective Unconscious" loading="lazy" onerror="this.style.display='none'">
     <div class="book-info">
       <h4>The Archetypes and the Collective Unconscious</h4>
-      <p class="book-author">Carl Gustav Jung, Herbert Read</p>
+      <p class="book-author">Carl Gustav Jung</p>
     </div>
   </div>
   <div class="book-card" data-status="to-read">
@@ -349,7 +349,7 @@ Lista sincronizada automaticamente com o [Hardcover](https://hardcover.app/@roge
     <img src="https://assets.hardcover.app/edition/30405706/2ff2b3f7c52439133219623498812f604d38ca68.jpeg" alt="Cosmos" loading="lazy" onerror="this.style.display='none'">
     <div class="book-info">
       <h4>Cosmos</h4>
-      <p class="book-author">Carl Sagan, Paulo Geiger</p>
+      <p class="book-author">Carl Sagan</p>
     </div>
   </div>
   <div class="book-card" data-status="to-read">
@@ -381,7 +381,7 @@ Lista sincronizada automaticamente com o [Hardcover](https://hardcover.app/@roge
     <img src="https://assets.hardcover.app/external_data/59676443/e24800dd92a2afe0db82bde93944f7c36c9acc2a.jpeg" alt="How to Lie with Statistics" loading="lazy" onerror="this.style.display='none'">
     <div class="book-info">
       <h4>How to Lie with Statistics</h4>
-      <p class="book-author">Irving Geis, Darrell Huff</p>
+      <p class="book-author">Darrell Huff</p>
     </div>
   </div>
   <div class="book-card" data-status="to-read">
@@ -525,7 +525,7 @@ Lista sincronizada automaticamente com o [Hardcover](https://hardcover.app/@roge
     <img src="https://assets.hardcover.app/external_data/60358699/94b0f0f2c78f74f6b1a221358dfc54c022d210fa.jpeg" alt="Histórias de Ninar Para Garotas Rebeldes" loading="lazy" onerror="this.style.display='none'">
     <div class="book-info">
       <h4>Histórias de Ninar Para Garotas Rebeldes</h4>
-      <p class="book-author">Carla Bitelli, Flávia Yacubian</p>
+      <p class="book-author">Elena Favilli, Francesca Cavallo</p>
     </div>
   </div>
   <div class="book-card" data-status="to-read">
@@ -589,7 +589,7 @@ Lista sincronizada automaticamente com o [Hardcover](https://hardcover.app/@roge
     <img src="https://assets.hardcover.app/edition/25834214/24d319dd-2071-4f59-8ec2-7d4f4fe96473.jpg" alt="Black Skin, White Masks" loading="lazy" onerror="this.style.display='none'">
     <div class="book-info">
       <h4>Black Skin, White Masks</h4>
-      <p class="book-author">Frantz Fanon, Kwame Anthony Appiah</p>
+      <p class="book-author">Frantz Fanon</p>
     </div>
   </div>
   <div class="book-card" data-status="to-read">
@@ -605,7 +605,7 @@ Lista sincronizada automaticamente com o [Hardcover](https://hardcover.app/@roge
     <img src="https://assets.hardcover.app/editions/5627427/1472171673776330-breath.jpg" alt="When Breath Becomes Air" loading="lazy" onerror="this.style.display='none'">
     <div class="book-info">
       <h4>When Breath Becomes Air</h4>
-      <p class="book-author">Abraham Verghese, Paul Kalanithi</p>
+      <p class="book-author">Paul Kalanithi</p>
     </div>
   </div>
   <div class="book-card" data-status="to-read">
@@ -653,7 +653,7 @@ Lista sincronizada automaticamente com o [Hardcover](https://hardcover.app/@roge
     <img src="https://assets.hardcover.app/edition/30853870/b9479560-b7d2-45b1-90e8-dc782fbd9413.jpg" alt="Battle Royale" loading="lazy" onerror="this.style.display='none'">
     <div class="book-info">
       <h4>Battle Royale</h4>
-      <p class="book-author">Maciej Kamuda, Urszula Knap</p>
+      <p class="book-author">Koushun Takami</p>
     </div>
   </div>
   <div class="book-card" data-status="to-read">
@@ -661,7 +661,7 @@ Lista sincronizada automaticamente com o [Hardcover](https://hardcover.app/@roge
     <img src="https://assets.hardcover.app/external_data/59960242/1ad90257a054d12f23b949f0ea4823578da5ab5c.jpeg" alt="The Like Switch: An Ex-FBI Agent’s Guide to Influencing, Attracting, and Winning People Over" loading="lazy" onerror="this.style.display='none'">
     <div class="book-info">
       <h4>The Like Switch: An Ex-FBI Agent’s Guide to Influencing, Attracting, and Winning People Over</h4>
-      <p class="book-author">George Newbern, Jack Schafer</p>
+      <p class="book-author">Jack Schafer, Marvin Karlins</p>
     </div>
   </div>
   <div class="book-card" data-status="to-read">
@@ -725,7 +725,7 @@ Lista sincronizada automaticamente com o [Hardcover](https://hardcover.app/@roge
     <img src="https://assets.hardcover.app/edition/31605402/0f6796c0db2470a9117ddd6d2fb746ce6635a549.jpeg" alt="Metro 2033" loading="lazy" onerror="this.style.display='none'">
     <div class="book-info">
       <h4>Metro 2033</h4>
-      <p class="book-author">Dmitry Glukhovsky, Σταυρούλα Αργυροπούλου</p>
+      <p class="book-author">Dmitry Glukhovsky</p>
     </div>
   </div>
   <div class="book-card" data-status="to-read">
@@ -741,7 +741,7 @@ Lista sincronizada automaticamente com o [Hardcover](https://hardcover.app/@roge
     <img src="https://assets.hardcover.app/book_mappings/7373678/39503e50b5773d72df762d43d419aa99c1f26105.jpeg" alt="Alamut" loading="lazy" onerror="this.style.display='none'">
     <div class="book-info">
       <h4>Alamut</h4>
-      <p class="book-author">Vladimir Bartol, Andrée Lück-Gaye</p>
+      <p class="book-author">Vladimir Bartol</p>
     </div>
   </div>
   <div class="book-card" data-status="to-read">
@@ -797,7 +797,7 @@ Lista sincronizada automaticamente com o [Hardcover](https://hardcover.app/@roge
     <img src="https://assets.hardcover.app/edition/13679832/4bd8c80120b14d6f236ae0bafef1bb043c8e2991.jpeg" alt="Thinking the Twentieth Century" loading="lazy" onerror="this.style.display='none'">
     <div class="book-info">
       <h4>Thinking the Twentieth Century</h4>
-      <p class="book-author">Tony Judt, Timothy Snyder</p>
+      <p class="book-author">Tony Judt</p>
     </div>
   </div>
   <div class="book-card" data-status="to-read">
@@ -805,7 +805,7 @@ Lista sincronizada automaticamente com o [Hardcover](https://hardcover.app/@roge
     <img src="https://assets.hardcover.app/book_mappings/7332507/488f5702a797385ab4e5532825d2e11aebde45da.jpeg" alt="The Shadow of the Wind" loading="lazy" onerror="this.style.display='none'">
     <div class="book-info">
       <h4>The Shadow of the Wind</h4>
-      <p class="book-author">Lucia Graves, Carlos Ruiz Zafón</p>
+      <p class="book-author">Carlos Ruiz Zafón</p>
     </div>
   </div>
   <div class="book-card" data-status="to-read">
@@ -845,7 +845,7 @@ Lista sincronizada automaticamente com o [Hardcover](https://hardcover.app/@roge
     <img src="https://assets.hardcover.app/edition/30974534/5f6e3e95-4f7a-4a82-804f-8b3c30a8488b.jpg" alt="The Early History of God: Yahweh and the Other Deities in Ancient Israel" loading="lazy" onerror="this.style.display='none'">
     <div class="book-info">
       <h4>The Early History of God: Yahweh and the Other Deities in Ancient Israel</h4>
-      <p class="book-author">Mark S. Smith, Patrick D. Miller</p>
+      <p class="book-author">Mark S. Smith</p>
     </div>
   </div>
 </div>

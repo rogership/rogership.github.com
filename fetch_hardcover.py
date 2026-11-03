@@ -4,6 +4,7 @@
 import html
 import json
 import os
+import time
 import urllib.error
 import urllib.request
 from pathlib import Path
@@ -22,57 +23,70 @@ STATUS_COLORS = {
 # status_id do Hardcover -> estante do site (4 = abandonado, fica de fora)
 STATUS_IDS = {1: "to-read", 2: "currently-reading", 3: "read"}
 
-# Tokens sem o escopo read:me: user_books já vem restrito ao dono do token
-QUERY = """
-query {
-  user_books(order_by: {updated_at: desc}) {
+# Tokens sem o escopo read:me: user_books já vem restrito ao dono do token.
+# Sem filtro explícito por user_id, porém, a consulta passa de ~15s e o servidor
+# responde 408; por isso descobrimos o user_id primeiro e filtramos por ele.
+WHOAMI_QUERY = "{ user_books(limit: 1) { user_id user { username } } }"
+BOOKS_QUERY = """
+query ($uid: Int!) {
+  user_books(where: {user_id: {_eq: $uid}}, order_by: {updated_at: desc}) {
     status_id
-    user { username }
-    book {
-      title
-      image { url }
-      contributions { author { name } }
-    }
+    book { title cached_image cached_contributors }
   }
 }
 """
 
 
-def fetch_books(token: str) -> tuple[str, dict[str, list[dict]]]:
+def graphql(token: str, query: str, variables: dict | None = None, attempts: int = 3) -> dict:
     # O site do Hardcover exibe o token já com o prefixo "Bearer "
     auth = token if token.lower().startswith("bearer ") else f"Bearer {token}"
     req = urllib.request.Request(
         API_URL,
-        data=json.dumps({"query": QUERY}).encode(),
+        data=json.dumps({"query": query, "variables": variables or {}}).encode(),
         headers={
             "Content-Type": "application/json",
             "Authorization": auth,
             "User-Agent": "rogership.github.com livros sync",
         },
     )
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        payload = json.load(resp)
+    for attempt in range(1, attempts + 1):
+        try:
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                payload = json.load(resp)
+            break
+        except (urllib.error.URLError, TimeoutError) as e:
+            retryable = not isinstance(e, urllib.error.HTTPError) or e.code in (408, 429) or e.code >= 500
+            if not retryable or attempt == attempts:
+                raise
+            print(f"  tentativa {attempt} falhou ({e}); tentando de novo...")
+            time.sleep(5 * attempt)
     if payload.get("errors"):
         raise RuntimeError(payload["errors"][0].get("message", payload["errors"]))
+    return payload["data"]
 
-    user_books = payload["data"]["user_books"]
-    if not user_books:
+
+def fetch_books(token: str) -> tuple[str, dict[str, list[dict]]]:
+    whoami = graphql(token, WHOAMI_QUERY)["user_books"]
+    if not whoami:
         raise RuntimeError("nenhum livro retornado")
+    uid, username = whoami[0]["user_id"], whoami[0]["user"]["username"]
 
     all_books = {shelf: [] for shelf in SHELVES}
-    for ub in user_books:
+    for ub in graphql(token, BOOKS_QUERY, {"uid": uid})["user_books"]:
         shelf = STATUS_IDS.get(ub["status_id"])
         if not shelf:
             continue
         book = ub["book"]
-        authors = [c["author"]["name"] for c in book.get("contributions") or [] if c.get("author")]
+        contributors = book.get("cached_contributors") or []
+        # Prefere autores; tradutores, ilustradores etc. só se não houver autor
+        authors = [c for c in contributors if c.get("contribution") in (None, "Author")] or contributors
         all_books[shelf].append({
             "title": book["title"],
-            "author": ", ".join(authors[:2]),
-            "image": (book.get("image") or {}).get("url") or "",
+            "author": ", ".join(c["author"]["name"] for c in authors[:2]),
+            "image": (book.get("cached_image") or {}).get("url") or "",
             "shelf": shelf,
         })
-    return user_books[0]["user"]["username"], all_books
+    return username, all_books
 
 
 def card_html(book: dict, label: str, color: str) -> str:
