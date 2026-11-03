@@ -112,12 +112,17 @@ function filterBooks(status, btn) {{
 def main():
     print("Fetching Goodreads shelves...")
     all_books = {}
-    for shelf, label in SHELVES.items():
-        books = fetch_shelf(shelf)
-        all_books[shelf] = books
-        print(f"  {label}: {len(books)} livros")
-
     out = Path("livros/index.qmd")
+    try:
+        for shelf, label in SHELVES.items():
+            books = fetch_shelf(shelf)
+            all_books[shelf] = books
+            print(f"  {label}: {len(books)} livros")
+    except Exception as e:
+        # Goodreads fora do ar não deve bloquear o deploy: mantém a página versionada
+        print(f"::warning::Falha ao buscar Goodreads ({e}); mantendo {out} existente")
+        return
+
     out.write_text(generate_page(all_books), encoding="utf-8")
     print(f"Generated {out} ({sum(len(v) for v in all_books.values())} livros total)")
 
