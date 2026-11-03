@@ -146,7 +146,8 @@ def main():
         username, all_books = fetch_books(token)
     except urllib.error.HTTPError as e:
         hint = " (token expirado ou inválido? gere outro em hardcover.app/account/api)" if e.code in (401, 403) else ""
-        print(f"::warning::Falha ao buscar Hardcover (HTTP {e.code}){hint}; mantendo {out} existente")
+        body = e.read()[:200].decode(errors="replace").replace("\n", " ")
+        print(f"::warning::Falha ao buscar Hardcover (HTTP {e.code}: {body}){hint}; mantendo {out} existente")
         return
     except Exception as e:
         # Hardcover fora do ar não deve bloquear o deploy: mantém a página versionada
