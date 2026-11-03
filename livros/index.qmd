@@ -4,18 +4,26 @@ toc: false
 page-layout: full
 ---
 
-Lista sincronizada automaticamente com o [Goodreads](https://www.goodreads.com/user/show/85180846-rogership) · 92 livros
+Lista sincronizada automaticamente com o [Goodreads](https://www.goodreads.com/user/show/85180846-rogership) · 103 livros
 
 ```{=html}
 <div class="book-filters">
-  <button class="filter-btn active" onclick="filterBooks('todos', this)">Todos (92)</button>
-  <button class="filter-btn" onclick="filterBooks('currently-reading', this)">Lendo (1)</button>
+  <button class="filter-btn active" onclick="filterBooks('todos', this)">Todos (103)</button>
+  <button class="filter-btn" onclick="filterBooks('currently-reading', this)">Lendo (2)</button>
   <button class="filter-btn" onclick="filterBooks('read', this)">Lidos (12)</button>
-  <button class="filter-btn" onclick="filterBooks('to-read', this)">Quero ler (79)</button>
+  <button class="filter-btn" onclick="filterBooks('to-read', this)">Quero ler (89)</button>
 </div>
 
 <div class="books-grid">
 
+  <div class="book-card" data-status="currently-reading">
+    <div class="book-status" style="background:#0d6efd">Lendo</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1471295627l/30719050.jpg" alt="Almost Human: The Astonishing Tale of Homo naledi and the Discovery That Changed Our Human Story" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Almost Human: The Astonishing Tale of Homo naledi and the Discovery That Changed Our Human Story</h4>
+      <p class="book-author">Lee Berger</p>
+    </div>
+  </div>
   <div class="book-card" data-status="currently-reading">
     <div class="book-status" style="background:#0d6efd">Lendo</div>
     <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1629679336l/55723020.jpg" alt="Dopamine Nation: Finding Balance in the Age of Indulgence" loading="lazy" onerror="this.style.display='none'">
@@ -118,6 +126,86 @@ Lista sincronizada automaticamente com o [Goodreads](https://www.goodreads.com/u
     <div class="book-info">
       <h4>Can't Hurt Me: Master Your Mind and Defy the Odds</h4>
       <p class="book-author">David Goggins</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1764368264l/244550124.jpg" alt="The Black Book of Power" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>The Black Book of Power</h4>
+      <p class="book-author">Stan  Taylor</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1718849013l/211004048.jpg" alt="The Psychology of Leadership: Timeless Principles to Improve Your Leadership of Individuals and Teams" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>The Psychology of Leadership: Timeless Principles to Improve Your Leadership of Individuals and Teams</h4>
+      <p class="book-author">Sebastien Page</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1343634699l/7120047.jpg" alt="The School For Gods" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>The School For Gods</h4>
+      <p class="book-author">Stefano Elio D'Anna</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1451165638l/28358917.jpg" alt="Psicocibernética" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Psicocibernética</h4>
+      <p class="book-author">Maxwell Maltz</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1492677644l/25899336.jpg" alt="When Breath Becomes Air" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>When Breath Becomes Air</h4>
+      <p class="book-author">Paul Kalanithi</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1386924010l/68984.jpg" alt="The Power of Your Subconscious Mind" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>The Power of Your Subconscious Mind</h4>
+      <p class="book-author">Joseph Murphy</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1583763517l/39101777.jpg" alt="Surrounded by Idiots" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Surrounded by Idiots</h4>
+      <p class="book-author">Thomas Erikson</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1350302352l/567782.jpg" alt="How to Read a Person Like a Book" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>How to Read a Person Like a Book</h4>
+      <p class="book-author">Gerard I. Nierenberg</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1538742778l/42186465.jpg" alt="Good Vibes, Good Life: How Self-Love Is the Key to Unlocking Your Greatness" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>Good Vibes, Good Life: How Self-Love Is the Key to Unlocking Your Greatness</h4>
+      <p class="book-author">Vex King</p>
+    </div>
+  </div>
+  <div class="book-card" data-status="to-read">
+    <div class="book-status" style="background:#6c757d">Quero ler</div>
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1525207534l/36560496.jpg" alt="The Perfect Weapon: How the Cyber Arms Race Set the World Afire" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <h4>The Perfect Weapon: How the Cyber Arms Race Set the World Afire</h4>
+      <p class="book-author">David E. Sanger</p>
     </div>
   </div>
   <div class="book-card" data-status="to-read">
